@@ -205,7 +205,7 @@
                             $.post('/ajaxfunctions/makeFinisherContactSelect', data, function(d){
                                 $('div#contact_selector_'+this_finisher_ind).html(d.html);
                                 $('.selectpicker').selectpicker();
-                            }); 
+                            });
                             actions.common.createDeliverToCheckboxes();
                             return false;
                         }
@@ -299,6 +299,7 @@
                                             var fclass = $(this).attr("class");
                                             $(this).attr("name", "finishers["+i+"]["+fclass+"]");
                                         });
+                                        actions.common.createDeliverToCheckboxes();
                                     });
                                 }
                             });
