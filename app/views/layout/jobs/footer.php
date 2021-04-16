@@ -18,7 +18,6 @@
                                 $('div#finishers_holder').append(d.html);
                                 actions.common.removeFinisher();
                                 actions.common.finisherAutocomplete();
-                                actions.common.createDeliverToCheckboxes();
                                 $([document.documentElement, document.body]).animate({
                                     scrollTop: $("#finisher_"+finisher_count).offset().top
                                 }, 1000);
@@ -206,7 +205,8 @@
                             $.post('/ajaxfunctions/makeFinisherContactSelect', data, function(d){
                                 $('div#contact_selector_'+this_finisher_ind).html(d.html);
                                 $('.selectpicker').selectpicker();
-                            });
+                            }); 
+                            actions.common.createDeliverToCheckboxes();
                             return false;
                         }
                         function changeFinisherCallback(event, ui)
