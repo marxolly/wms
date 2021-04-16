@@ -42,6 +42,17 @@
                             });
                         });
                     },
+                    createDeliverToCheckboxes: function(){
+                        var numberWords = ['Zero','One ','Two ','Three ','Four ', 'Five ','Six ','Seven ','Eight ','Nine ','Ten '];
+                        var html;
+                        $("div#delivery_address_holder div.anaddress").each(function(i,v){
+                            var $that = $(this);
+                            $("div#finishers_holder div.afinisher").each(function(ind,val){
+                                html = "<div class='form-group row custom-control custom-checkbox custom-control-right'><input class='custom-control-input send_to_address send_to_finisher' data-finisher='"+ind"' type='checkbox' id='send_to_finisher_"+ind+"' name='send_to_finisher_"+ind+"' /><label class='custom-control-label col-md-7 send_to_finisher' for='send_to_finisher_"+ind+"'>Use Finisher " + numberWords[ind] + " Address</label></div>";
+                                $('div#deliver_to_finisher_checkbox_holder_'+i).append(html);
+                            });
+                        });
+                    },
                     customerContactChange: function(){
                         $('select#customer_contact_id').change(function(e){
                             if($(this).val() != 0)
