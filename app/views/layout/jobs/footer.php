@@ -34,6 +34,7 @@
                             }
                             $.post('/ajaxfunctions/addJobDeliveryAddress', data, function(d){
                                 $('div#delivery_address_holder').append(d.html);
+                                actions.common.createDeliverToCheckboxes();
                                 //actions.common.removeFinisher();
                                 //actions.common.finisherAutocomplete();
                                 $([document.documentElement, document.body]).animate({
