@@ -285,10 +285,67 @@ else
                                 <input class="custom-control-input send_to_address" type="checkbox" id="held_in_store" name="held_in_store" />
                                 <label class="custom-control-label col-md-6" for="held_in_store">Hold Job In Store</label>
                             </div>
-                            <div class="col">
-                                <a class="add-delivery-address" style="cursor:pointer" title="Add Another Delivery Address"><h4><i class="fad fa-plus-square text-success"></i> Add Another Address</a></h4>
+                            <div id="delivery_address_holder">
+                                <div class="form-group row">
+                                    <label class="col-md-4 col-form-label"><sup><small><i class="fas fa-asterisk text-danger"></i></small></sup> Deliver To</label>
+                                    <div class="col-md-8">
+                                        <input type="text" class="form-control required" name="ship_to" id="ship_to" value="<?php echo $ship_to;?>" />
+                                        <?php echo Form::displayError('ship_to');?>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-md-4 col-form-label">Attention</label>
+                                    <div class="col-md-8">
+                                        <input type="text" class="form-control" name="attention" id="attention" value="<?php echo $attention;?>" />
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-md-4 col-form-label">Delivery Instructions</label>
+                                    <div class="col-md-8">
+                                        <textarea class="form-control" name="delivery_instructions" id="delivery_instructions" placeholder="Instructions For Driver"><?php echo Form::value('delivery_instructions');?></textarea>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-md-4"><sup><small><i class="fas fa-asterisk text-danger"></i></small></sup> Address Line 1</label>
+                                    <div class="col-md-8">
+                                        <input type="text" class="form-control required" name="address" id="address" value="<?php echo $address;?>" />
+                                        <?php echo Form::displayError('address');?>
+                                    </div>
+                                    <div class="custom-control custom-checkbox col-md-7 offset-md-5">
+                                        <input type="checkbox" class="custom-control-input" id="ignore_address_error" name="ignore_address_error" <?php if(!empty(Form::value('ignore_address_error'))) echo 'checked';?> />
+                                        <label class="custom-control-label" for="ignore_address_error">No need for a number</label>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-md-4">Address Line 2</label>
+                                    <div class="col-md-8">
+                                        <input type="text" class="form-control" name="address2" id="address2" value="<?php echo $address2;?>" />
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-md-4"><sup><small><i class="fas fa-asterisk text-danger"></i></small></sup> Suburb/Town</label>
+                                    <div class="col-md-8">
+                                        <input type="text" class="form-control required" name="suburb" id="suburb" value="<?php echo $suburb;?>" />
+                                        <?php echo Form::displayError('suburb');?>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-md-4"><sup><small><i class="fas fa-asterisk text-danger"></i></small></sup> State</label>
+                                    <div class="col-md-8">
+                                        <input type="text" class="form-control required" name="state" id="state" value="<?php echo $state;?>" />
+                                        <span class="inst">Use VIC, NSW, QLD, ACT, TAS, WA, SA, NT only</span>
+                                        <?php echo Form::displayError('state');?>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-md-4 "><sup><small><i class="fas fa-asterisk text-danger"></i></small></sup> Postcode</label>
+                                    <div class="col-md-8">
+                                        <input type="text" class="form-control required" name="postcode" id="postcode" value="<?php echo $postcode;?>" />
+                                        <?php echo Form::displayError('postcode');?>
+                                    </div>
+                                </div>
+                                <input type="hidden" name="country" value = "AU">
                             </div>
-                            <div id="delivery_address_holder"></div>
                         </div>
                     </div>
                 </div>
