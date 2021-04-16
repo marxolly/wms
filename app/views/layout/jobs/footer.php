@@ -24,6 +24,24 @@
                             });
                         });
                     },
+                    addDeliveryAddress: function(){
+                        $("a.add-delivery-address").click(function(e){
+                            e.preventDefault();
+                            var address_count = $("div#delivery_address_holder div.anaddress").length;
+                            //console.log('packages: '+contact_count);
+                            var data = {
+                                i: address_count
+                            }
+                            $.post('/ajaxfunctions/addJobDeliveryAddress', data, function(d){
+                                $('div#delivery_address_holder').append(d.html);
+                                //actions.common.removeFinisher();
+                                //actions.common.finisherAutocomplete();
+                                $([document.documentElement, document.body]).animate({
+                                    scrollTop: $("#address_"+address_count).offset().top
+                                }, 1000);
+                            });
+                        });
+                    },
                     customerContactChange: function(){
                         $('select#customer_contact_id').change(function(e){
                             if($(this).val() != 0)
