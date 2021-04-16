@@ -299,8 +299,8 @@
                                             var fclass = $(this).attr("class");
                                             $(this).attr("name", "finishers["+i+"]["+fclass+"]");
                                         });
-                                        actions.common.createDeliverToCheckboxes();
                                     });
+                                    actions.common.createDeliverToCheckboxes();
                                 }
                             });
                         });
