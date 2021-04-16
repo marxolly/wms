@@ -18,6 +18,7 @@
                                 $('div#finishers_holder').append(d.html);
                                 actions.common.removeFinisher();
                                 actions.common.finisherAutocomplete();
+                                actions.common.createDeliverToCheckboxes();
                                 $([document.documentElement, document.body]).animate({
                                     scrollTop: $("#finisher_"+finisher_count).offset().top
                                 }, 1000);
