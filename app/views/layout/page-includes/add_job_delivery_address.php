@@ -12,7 +12,8 @@ $f = new NumberFormatter("en", NumberFormatter::SPELLOUT);
         </div>
     </div>
     <div class="form-group row custom-control custom-checkbox custom-control-right">
-        <input class="custom-control-input send_to_address" type="checkbox" id="send_to_customer" name="send_to_customer" />
+        <input class="custom-control-input send_to_address" type="checkbox" id="send_to_customer" data-address="<?php echo $i;?>" name="send_to_customer" />
         <label class="custom-control-label col-md-7" for="send_to_customer">Use Customer's Address</label>
     </div>
+    <div id="deliver_to_finisher_checkbox_holder"></div>
 </div>
