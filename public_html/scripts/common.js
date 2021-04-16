@@ -268,22 +268,11 @@ var jobDeliveryDestinations = {
         $('input#held_in_store').off('change').change(function(e){
             if($('input#held_in_store').prop('checked'))
             {
-                //console.log('will disable everything');
-                $("div#delivery_address_holder input").each(function(i,e){
-                    if(!(this.id == "csrf_token" || this.id == "job_id"))
-                    {
-                        $( this ).prop( "disabled", true );
-                        $( this ).val( "" );
-                    }
-                });
+                $('#add_delivery_address_button_holder').hide();
             }
             else
             {
-                //console.log('will enable everything');
-                $("div#delivery_address_holder input").each(function(i,e){
-                    if(!(this.id == "csrf_token" || this.id == "job_id"))
-                        $( this ).prop( "disabled", false );
-                });
+                $('#add_delivery_address_button_holder').show();
             }
         });
         $('input#send_to_customer').off('change').change(function(e){

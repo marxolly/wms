@@ -281,7 +281,7 @@ else
                             Delivery Details
                         </div>
                         <div class="card-body">
-                            <div class="col">
+                            <div id="add_delivery_address_button_holder" class="col">
                                 <a class="add-delivery-address" style="cursor:pointer" title="Add Delivery Address"><h4><i class="fad fa-plus-square text-success"></i> Add Delivery Address</a></h4>
                             </div>
                             <div class="form-group row custom-control custom-checkbox custom-control-right">
