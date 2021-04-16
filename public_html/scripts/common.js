@@ -269,6 +269,7 @@ var jobDeliveryDestinations = {
             if($('input#held_in_store').prop('checked'))
             {
                 $('#add_delivery_address_button_holder').hide();
+                $('div#delivery_address_holder').empty();
             }
             else
             {
