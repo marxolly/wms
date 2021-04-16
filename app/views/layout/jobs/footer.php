@@ -435,6 +435,7 @@
                         actions.common.customerAutoComplete();
                         actions.common.doDates();
                         actions.common.addFinisher();
+                        actions.common.addDeliveryAddress();
                         jobDeliveryDestinations.updateEvents();
                         $("form#add_production_job").submit(function(e){
                             if($(this).valid())
