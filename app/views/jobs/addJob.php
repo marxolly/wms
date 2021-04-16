@@ -286,7 +286,7 @@ else
                                 <label class="custom-control-label col-md-6" for="held_in_store">Hold Job In Store</label>
                             </div>
                             <div class="col">
-                                <a class="add-delivery-address" style="cursor:pointer" title="Add Another Delivery Address"><h4><i class="fad fa-plus-square text-success"></i> Add Another Address</a></h4>
+                                <a class="add-delivery-address" style="cursor:pointer" title="Add Delivery Address"><h4><i class="fad fa-plus-square text-success"></i> Add Delivery Address</a></h4>
                             </div>
                             <div id="delivery_address_holder"></div>
                         </div>
