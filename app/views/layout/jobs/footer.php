@@ -46,6 +46,7 @@
                     createDeliverToCheckboxes: function(){
                         var numberWords = ['One ','Two ','Three ','Four ', 'Five ','Six ','Seven ','Eight ','Nine ','Ten '];
                         var html;
+                        console.log('There are '+$("div#finishers_holder div.afinisher").length+' finshers now');
                         $("div#delivery_address_holder div.anaddress").each(function(i,v){
                             $('div#deliver_to_finisher_checkbox_holder_'+i).empty();
                             $("div#finishers_holder div.afinisher").each(function(ind,val){
