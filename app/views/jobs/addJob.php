@@ -150,10 +150,6 @@ else
                                     <?php echo Form::displayError('customer_name');?>
                                 </div>
                             </div>
-                            <div class="form-group row custom-control custom-checkbox custom-control-right">
-                                <input class="custom-control-input send_to_address" type="checkbox" id="send_to_customer" name="send_to_customer" />
-                                <label class="custom-control-label col-md-4" for="send_to_customer">Send Job To Customer</label>
-                            </div>
                             <div class="p-3 pb-0 mb-2 rounded-top mid-grey">
                                 <div class="form-group row">
                                     <h4 class="col-md-8">Contact Details</h4>
