@@ -80,6 +80,7 @@
                                     if($(this).hasClass('send_to_finisher'))
                                     {
                                         var this_finisher_ind = $(this).data("finisher");
+                                        console.log("this_finisher_ind: "+this_finisher_ind+" address_ind: "+address_ind);
                                         $('#shipto_'+address_ind).val($('input[name="finishers['+this_finisher_ind+'][name]"]').val()).valid();
                                         $('#attention_'+address_ind).val($('select[name="finishers['+this_finisher_ind+'][contact_id]"]').find('option:selected[value!=0]').text());
                                         $('#address_'+address_ind).val($('input[name="finishers['+this_finisher_ind+'][address]"]').val()).valid();
