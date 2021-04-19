@@ -117,7 +117,7 @@ $dcountry = empty(Form::value('addresses['.$i.'][country]'))?  $taa['country'] :
             <?php echo Form::displayError('postcode');?>
         </div>
     </div>
-    <input type="hidden" name="addresses[<?php echo $i;?>][country]" value = "AU">
+    <input type="hidden" name="addresses[<?php echo $i;?>][country]" id="country_<?php echo $i;?>" value = "AU">
 
 
 
