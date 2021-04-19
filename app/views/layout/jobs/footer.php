@@ -317,7 +317,7 @@
                                 icon: "warning",
                                 buttons: true,
                                 dangerMode: true
-                            }).then( function(removeAddres) {
+                            }).then( function(removeAddress) {
                                 if(removeAddress)
                                 {
                                     var this_address = $this.data('address');
