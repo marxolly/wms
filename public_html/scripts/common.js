@@ -260,11 +260,6 @@ var barcodeScanner = {
 ************/
 var jobDeliveryDestinations = {
     updateEvents: function(){
-        var $checkboxes = $("input.send_to_address");
-        $checkboxes.off('click').click(function(){
-            //console.log('click');
-            $checkboxes.not(this).prop('checked', false).change();
-        });
         $('input#held_in_store').off('change').change(function(e){
             if($('input#held_in_store').prop('checked'))
             {

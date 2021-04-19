@@ -68,17 +68,13 @@
 
                                     if($(this).hasClass('send_to_finisher'))
                                     {
-                                        var finisher_ind = $(this).data("finisher");
-                                        var attention = ($("select[name='finishers["+finisher_ind+"][contact_id]']").find("option:selected").text() != "Choose One")?
-                                        $("select[name='finishers["+finisher_ind+"][contact_id]']").find("option:selected").text() :
-                                        "";
-                                        $('input#attention_'+address_ind).val(attention);
-                                        //console.log("Finisher to use "+finisher_ind+" to address "+address_ind);
+
+                                        jobDeliveryDestinations.updateEvents();
 
                                     }
                                     else if($(this).hasClass('send_to_customer'))
                                     {
-                                        //console.log("will send to customer for address "+address_ind)
+                                        jobDeliveryDestinations.updateEvents();
                                     }
                                 }
 
