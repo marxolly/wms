@@ -308,7 +308,7 @@
                         });
                     },
                     removeAddress: function(){
-                        $('a.remove-address').off('click').click(function(e)){
+                        $('a.remove-address').off('click').click(function(e){
                             e.preventDefault();
                             var $this = $(this);
                             swal({
