@@ -50,7 +50,7 @@
                         $("div#delivery_address_holder div.anaddress").each(function(i,v){
                             $('div#deliver_to_finisher_checkbox_holder_'+i).empty();
                             $("div#finishers_holder div.afinisher").each(function(ind,val){
-                                html = "<div class='form-group row custom-control custom-checkbox custom-control-right'><input class='custom-control-input send_to_address send_to_finisher' data-finisher='"+ind+"' type='checkbox' id='send_to_finisher_"+ind+"' name='send_to_finisher_"+ind+"' /><label class='custom-control-label col-md-7 send_to_finisher' for='send_to_finisher_"+ind+"'>Use Finisher " + numberWords[ind] + "'s Address</label></div>";
+                                html = "<div class='form-group row custom-control custom-checkbox custom-control-right'><input class='custom-control-input send_to_address send_to_finisher' data-finisher='"+ind+"' data-address='"+i+"' type='checkbox' id='send_to_finisher_"+ind+"' name='send_to_finisher_"+ind+"' /><label class='custom-control-label col-md-7 send_to_finisher' for='send_to_finisher_"+ind+"'>Use Finisher " + numberWords[ind] + "'s Address</label></div>";
                                 $('div#deliver_to_finisher_checkbox_holder_'+i).append(html);
                             });
                         });
@@ -61,15 +61,16 @@
                             $(this).off('click').on('click', function(e){
                                 if($(this).prop('checked'))
                                 {
-                                    $('input.send_to_address').not(this).prop('checked', false); 
+                                    $('input.send_to_address').not(this).prop('checked', false);
+                                    var address_ind = $(this).data("address");
                                     if($(this).hasClass('send_to_finisher'))
                                     {
                                         var finisher_ind = $(this).data("finisher");
-                                        console.log("Finisher to use "+finisher_ind);
+                                        console.log("Finisher to use "+finisher_ind+" to address "+address_ind);
                                     }
                                     else if($(this).hasClass('send_to_customer'))
                                     {
-                                        console.log("will send to customer")
+                                        console.log("will send to customer for address "+address_ind)
                                     }
                                 }
 
