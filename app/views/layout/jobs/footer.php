@@ -84,7 +84,7 @@
                                         $('#shipto_'+address_ind).val($('input[name="finishers['+this_finisher_ind+'][name]"]').val()).valid();
                                         $('#attention_'+address_ind).val($('select[name="finishers['+this_finisher_ind+'][contact_id]"]').find('option:selected[value!=0]').text());
                                         console.log("Gonna put "+$('input[name="finishers['+this_finisher_ind+'][address]"]').val()+" into #address_"+address_ind);
-                                        $('#address_'+address_ind).val($('input[name="finishers['+this_finisher_ind+'][address]"]').val()).valid();
+                                        $('#address_'+address_ind).val($('input[name="finishers['+this_finisher_ind+'][address]"]').val());
                                         $('#address2_'+address_ind).val($('input[name="finishers['+this_finisher_ind+'][address2]"]').val());
                                         $('#suburb_'+address_ind).val($('input[name="finishers['+this_finisher_ind+'][suburb]"]').val()).valid();
                                         $('#state_'+address_ind).val($('input[name="finishers['+this_finisher_ind+'][state]"]').val()).valid();
