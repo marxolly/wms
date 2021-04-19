@@ -59,15 +59,19 @@
                     deliveryCheckboxActions: function(){
                         $("input.send_to_address").each(function(i,v){
                             $(this).off('click').on('click', function(e){
-                                if($(this).hasClass('send_to_finisher'))
+                                if($(this).prop('checked'))
                                 {
-                                    var finisher_ind = $(this).data("finisher");
-                                    console.log("Finisher to use "+finisher_ind);
+                                    if($(this).hasClass('send_to_finisher'))
+                                    {
+                                        var finisher_ind = $(this).data("finisher");
+                                        console.log("Finisher to use "+finisher_ind);
+                                    }
+                                    else if($(this).hasClass('send_to_customer'))
+                                    {
+                                        console.log("will send to customer")
+                                    }
                                 }
-                                else if($(this).hasClass('send_to_customer'))
-                                {
-                                    console.log("will send to customer")
-                                }
+
                             });
                         })
                     },
