@@ -47,11 +47,13 @@
                         var numberWords = ['One ','Two ','Three ','Four ', 'Five ','Six ','Seven ','Eight ','Nine ','Ten '];
                         var html;
                         //console.log('There are '+$("div#finishers_holder div.afinisher").length+' finshers now');
+                        var c = 0;
                         $("div#delivery_address_holder div.anaddress").each(function(i,v){
                             $('div#deliver_to_finisher_checkbox_holder_'+i).empty();
                             $("div#finishers_holder div.afinisher").each(function(ind,val){
-                                html = "<div class='form-group row custom-control custom-checkbox custom-control-right'><input class='custom-control-input send_to_address send_to_finisher' data-finisher='"+ind+"' data-address='"+i+"' type='checkbox' id='send_to_finisher_"+ind+"' name='send_to_finisher_"+ind+"' /><label class='custom-control-label col-md-7 send_to_finisher' for='send_to_finisher_"+ind+"'>Use Finisher " + numberWords[ind] + "'s Address</label></div>";
+                                html = "<div class='form-group row custom-control custom-checkbox custom-control-right'><input class='custom-control-input send_to_address send_to_finisher' data-finisher='"+ind+"' data-address='"+i+"' type='checkbox' id='send_to_finisher_"+c+"' name='send_to_finisher_"+c+"' /><label class='custom-control-label col-md-7 send_to_finisher' for='send_to_finisher_"+c+"'>Use Finisher " + numberWords[ind] + "'s Address</label></div>";
                                 $('div#deliver_to_finisher_checkbox_holder_'+i).append(html);
+                                c = c + 1;
                             });
                         });
                         actions.common.deliveryCheckboxActions();
