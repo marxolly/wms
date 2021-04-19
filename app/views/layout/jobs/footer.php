@@ -321,7 +321,7 @@
                                 if(removeAddress)
                                 {
                                     var this_address = $this.data('address');
-                                    ("div#address_"+this_finisher).remove();
+                                    ("div#address_"+this_address).remove();
                                     //any addresses left?  Make the hold in store box required
                                     if(!$("div#delivery_address_holder div.anaddress").length)
                                         $('input#held_in_store').attr('required', 'required').valid();
