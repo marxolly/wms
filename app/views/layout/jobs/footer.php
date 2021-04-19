@@ -38,7 +38,7 @@
                         });
                         $("a.add-delivery-address").click(function(e){
                             e.preventDefault();
-                            $('input#held_in_store').removeAttr('required');
+                            $('input#held_in_store').removeAttr('required').valid();
                             var address_count = $("div#delivery_address_holder div.anaddress").length;
                             //console.log('packages: '+contact_count);
                             var data = {
