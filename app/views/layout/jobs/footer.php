@@ -46,7 +46,7 @@
                     createDeliverToCheckboxes: function(){
                         var numberWords = ['One ','Two ','Three ','Four ', 'Five ','Six ','Seven ','Eight ','Nine ','Ten '];
                         var html;
-                        console.log('There are '+$("div#finishers_holder div.afinisher").length+' finshers now');
+                        //console.log('There are '+$("div#finishers_holder div.afinisher").length+' finshers now');
                         $("div#delivery_address_holder div.anaddress").each(function(i,v){
                             $('div#deliver_to_finisher_checkbox_holder_'+i).empty();
                             $("div#finishers_holder div.afinisher").each(function(ind,val){
@@ -54,6 +54,22 @@
                                 $('div#deliver_to_finisher_checkbox_holder_'+i).append(html);
                             });
                         });
+                        actions.common.deliveryCheckboxActions();
+                    },
+                    deliveryCheckboxActions: function(){
+                        $("input.send_to_address").each(function(i,v){
+                            $(this).off('click').on('click', function(e){
+                                if($(this).hasClass('send_to_finisher'))
+                                {
+                                    var finisher_ind = $(this).data("finisher");
+                                    console.log("Finisher to use "+finisher_ind);
+                                }
+                                else if($(this).hasClass('send_to_customer'))
+                                {
+                                    console.log("will send to customer")
+                                }
+                            });
+                        })
                     },
                     customerContactChange: function(){
                         $('select#customer_contact_id').change(function(e){
