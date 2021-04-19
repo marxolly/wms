@@ -81,7 +81,7 @@ $dcountry = empty(Form::value('addresses['.$i.'][country]'))?  $taa['country'] :
     <div class="form-group row">
         <label class="col-md-4"><sup><small><i class="fas fa-asterisk text-danger"></i></small></sup> Address Line 1</label>
         <div class="col-md-8">
-            <input type="text" class="form-control required" name="addresses[<?php echo $i;?>][address]" id="address_<?php echo $i;?>" value="<?php echo $daddress;?>" />
+            <input type="text" class="form-control required" name="addresses[<?php echo $i;?>][address]" id="daddress_<?php echo $i;?>" value="<?php echo $daddress;?>" />
             <?php echo Form::displayError('address_'.$i);?>
         </div>
         <div class="custom-control custom-checkbox col-md-7 offset-md-5">
