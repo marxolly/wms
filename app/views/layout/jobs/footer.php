@@ -61,6 +61,7 @@
                             $(this).off('click').on('click', function(e){
                                 if($(this).prop('checked'))
                                 {
+                                    $('input.send_to_address').not(this).prop('checked', false); 
                                     if($(this).hasClass('send_to_finisher'))
                                     {
                                         var finisher_ind = $(this).data("finisher");
