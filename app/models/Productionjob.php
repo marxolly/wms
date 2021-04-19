@@ -654,11 +654,15 @@ class Productionjob extends Model{
                 ) AS finishers,
                 GROUP_CONCAT(
                     IFNULL(pja.id,''),',',
+                    IFNULL(pja.ship_to,''),',',
+                    IFNULL(pja.attention,''),',',
+                    IFNULL(pja.delivery_instructions,''),',',
                     IFNULL(pja.address,''),',',
                     IFNULL(pja.address_2,''),',',
                     IFNULL(pja.suburb,''),',',
                     IFNULL(pja.state,''),',',
-                    IFNULL(pja.postcode,'')
+                    IFNULL(pja.postcode,''),',',
+                    IFNULL(pja.country,'')
                     SEPARATOR '|'
                 ) AS addresses,
                 js.name AS `status`, js.colour AS status_colour, js.text_colour AS status_text_colour, js.ranking
