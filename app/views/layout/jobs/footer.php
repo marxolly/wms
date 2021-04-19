@@ -47,7 +47,7 @@
                             $.post('/ajaxfunctions/addJobDeliveryAddress', data, function(d){
                                 $('div#delivery_address_holder').append(d.html);
                                 actions.common.createDeliverToCheckboxes();
-                                //actions.common.removeFinisher();
+                                actions.common.removeAddress();
                                 //actions.common.finisherAutocomplete();
                                 $([document.documentElement, document.body]).animate({
                                     scrollTop: $("#address_"+address_count).offset().top
@@ -305,6 +305,28 @@
                                     }
                                 });
                             }
+                        });
+                    },
+                    removeAddress: function(){
+                        $('a.remove-address').off('click').click(function(e)){
+                            e.preventDefault();
+                            var $this = $(this);
+                            swal({
+                                title: "Really Remove This Address?",
+                                text: "It cannot be undone and can only be re-added manually",
+                                icon: "warning",
+                                buttons: true,
+                                dangerMode: true
+                            }).then( function(removeAddres) {
+                                if(removeAddress)
+                                {
+                                    var this_address = $this.data('address');
+                                    ("div#address_"+this_finisher).remove();
+                                    //any addresses left?  Make the hold in store box required
+                                    if(!$("div#delivery_address_holder div.anaddress").length)
+                                        $('input#held_in_store').attr('required', 'required').valid();
+                                }
+                            });
                         });
                     },
                     removeFinisher: function(){
