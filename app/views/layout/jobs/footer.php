@@ -69,11 +69,14 @@
                                     if($(this).hasClass('send_to_finisher'))
                                     {
                                         var finisher_ind = $(this).data("finisher");
-                                        console.log("Finisher to use "+finisher_ind+" to address "+address_ind);
+                                        var attention = $("select[name='finishers["+finisher_ind+"][contact_id]']").text();
+                                        $('input#attention_'+address_ind).val(attention);
+                                        //console.log("Finisher to use "+finisher_ind+" to address "+address_ind);
+
                                     }
                                     else if($(this).hasClass('send_to_customer'))
                                     {
-                                        console.log("will send to customer for address "+address_ind)
+                                        //console.log("will send to customer for address "+address_ind)
                                     }
                                 }
 
