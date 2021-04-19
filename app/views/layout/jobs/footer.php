@@ -25,6 +25,17 @@
                         });
                     },
                     addDeliveryAddress: function(){
+                        $('input#held_in_store').off('change').change(function(e){
+                            if($('input#held_in_store').prop('checked'))
+                            {
+                                $('#add_delivery_address_button_holder').hide();
+                                $('div#delivery_address_holder').empty();
+                            }
+                            else
+                            {
+                                $('#add_delivery_address_button_holder').show();
+                            }
+                        });
                         $("a.add-delivery-address").click(function(e){
                             e.preventDefault();
                             var address_count = $("div#delivery_address_holder div.anaddress").length;
@@ -68,13 +79,15 @@
 
                                     if($(this).hasClass('send_to_finisher'))
                                     {
+                                        var this_finisher_ind = $(this).data("finisher");
+                                        $('#shipto_'+address_ind).val($('input[name="finishers['+this_finisher_ind+'][name]"]').val()).valid();
+                                        
 
-                                        jobDeliveryDestinations.updateEvents();
 
                                     }
                                     else if($(this).hasClass('send_to_customer'))
                                     {
-                                        jobDeliveryDestinations.updateEvents();
+                                        //console.log("will send to customer for address "+address_ind)
                                     }
                                 }
 
@@ -477,7 +490,6 @@
                         actions.common.doDates();
                         actions.common.addFinisher();
                         actions.common.addDeliveryAddress();
-                        jobDeliveryDestinations.updateEvents();
                         $("form#add_production_job").submit(function(e){
                             if($(this).valid())
                             {
