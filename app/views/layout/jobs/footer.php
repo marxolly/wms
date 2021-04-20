@@ -48,7 +48,7 @@
                                 $('div#delivery_address_holder').append(d.html);
                                 actions.common.createDeliverToCheckboxes();
                                 actions.common.removeAddress();
-                                //actions.common.finisherAutocomplete();
+                                actions.common.deliverToAutoComplete();
                                 $([document.documentElement, document.body]).animate({
                                     scrollTop: $("#address_"+address_count).offset().top
                                 }, 1000);
@@ -135,27 +135,15 @@
                             }
                         });
                     },
-                    deliverToAutoCompleteCustomer: function(){
-                        autoCompleter.productionJobCustomerAutoComplete($('input#ship_to'), selectDeliveryCallback, changeDeliveryCallback);
-                        function selectDeliveryCallback(event, ui)
-                        {
-                            $('input#ship_to').val(ui.item.value).valid();
-                            $('input#address').val(ui.item.address).valid();
-                            $('input#address2').val(ui.item.address_2);
-                            $('input#suburb').val(ui.item.suburb).valid();
-                            $('input#state').val(ui.item.state).valid();
-                            $('input#postcode').val(ui.item.postcode).valid();
-                            if(ui.item.contacts)
+                    deliverToAutoComplete: function(){
+                        $("div#delivery_address_holder div.anaddress").each(function(i,v){
+                            if($('#d_'+i+"_address").data('ui-autocomplete') != undefined)
                             {
-                                var contacts =  (ui.item.contacts).split('|');
-                                var contact = contacts[0].split(',');
-                                $('input#attention').val(contact[1]);
+                                $('#d_'+i+"_address").autocomplete("destroy" );
                             }
-                        }
-                        function changeDeliveryCallback(event, ui)
-                        {
-                            return false;
-                        }
+                            autoCompleter.addressAutoComplete($('#d_'+i+"_address"), 'd_'+i+"_");
+                            autoCompleter.suburbAutoComplete($('#d_'+i+'_suburb'), '#d_'+i+'customer_');
+                        });
                     },
                     customerAutoComplete: function(){
                         autoCompleter.addressAutoComplete($('#customer_address'), 'customer_');
@@ -535,7 +523,6 @@
                 'add-job':{
                     init: function(){
                         actions.common.autoComplete();
-                        actions.common.deliverToAutoCompleteCustomer();
                         actions.common.customerAutoComplete();
                         actions.common.doDates();
                         actions.common.addFinisher();
