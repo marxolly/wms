@@ -82,15 +82,15 @@
                                     {
                                         var this_finisher_ind = $(this).data("finisher");
                                         //console.log("this_finisher_ind: "+this_finisher_ind+" address_ind: "+address_ind);
-                                        $('#shipto_'+address_ind).val($('input[name="finishers['+this_finisher_ind+'][name]"]').val()).valid();
-                                        $('#attention_'+address_ind).val($('select[name="finishers['+this_finisher_ind+'][contact_id]"]').find('option:selected[value!=0]').text());
+                                        $('#d_'+address_ind+'_shipto').val($('input[name="finishers['+this_finisher_ind+'][name]"]').val()).valid();
+                                        $('#d_'+address_ind+'_attention').val($('select[name="finishers['+this_finisher_ind+'][contact_id]"]').find('option:selected[value!=0]').text());
                                         //console.log("Gonna put "+$('input[name="finishers['+this_finisher_ind+'][address]"]').val()+" into #address_"+address_ind);
-                                        $('#daddress_'+address_ind).val($('input[name="finishers['+this_finisher_ind+'][address]"]').val()).valid();
-                                        $('#address2_'+address_ind).val($('input[name="finishers['+this_finisher_ind+'][address2]"]').val());
-                                        $('#suburb_'+address_ind).val($('input[name="finishers['+this_finisher_ind+'][suburb]"]').val()).valid();
-                                        $('#state_'+address_ind).val($('input[name="finishers['+this_finisher_ind+'][state]"]').val()).valid();
-                                        $('#postcode_'+address_ind).val($('input[name="finishers['+this_finisher_ind+'][postcode]"]').val()).valid();
-                                        $('#country_'+address_ind).val($('input[name="finishers['+this_finisher_ind+'][country]"]').val()).valid();
+                                        $('#d_'+address_ind+'_address').val($('input[name="finishers['+this_finisher_ind+'][address]"]').val()).valid();
+                                        $('#d_'+address_ind+'_address2').val($('input[name="finishers['+this_finisher_ind+'][address2]"]').val());
+                                        $('#d_'+address_ind+'_suburb').val($('input[name="finishers['+this_finisher_ind+'][suburb]"]').val()).valid();
+                                        $('#d_'+address_ind+'_state').val($('input[name="finishers['+this_finisher_ind+'][state]"]').val()).valid();
+                                        $('#d_'+address_ind+'_postcode').val($('input[name="finishers['+this_finisher_ind+'][postcode]"]').val()).valid();
+                                        $('#d_'+address_ind+'_country').val($('input[name="finishers['+this_finisher_ind+'][country]"]').val()).valid();
 
 
                                     }
@@ -98,14 +98,14 @@
                                     {
                                         //console.log("will send to customer for address "+address_ind)
 
-                                        $('#shipto_'+address_ind).val($('#customer_name').val()).valid();
-                                        $('#attention_'+address_ind).val($('#customer_contact_name').val()).valid();
-                                        $('#daddress_'+address_ind).val($('#customer_address').val()).valid();
-                                        $('#address2_'+address_ind).val($('#customer_address2').val());
-                                        $('#suburb_'+address_ind).val($('#customer_suburb').val()).valid();
-                                        $('#state_'+address_ind).val($('#customer_state').val()).valid();
-                                        $('#postcode_'+address_ind).val($('#customer_postcode').val()).valid();
-                                        $('#country_'+address_ind).val($('#customer_country').val()).valid();
+                                        $('#d_'+address_ind+'_shipto').val($('#customer_name').val()).valid();
+                                        $('#d_'+address_ind+'_attention').val($('#customer_contact_name').val()).valid();
+                                        $('#d_'+address_ind+'_address').val($('#customer_address').val()).valid();
+                                        $('#d_'+address_ind+'_address2').val($('#customer_address2').val());
+                                        $('#d_'+address_ind+'_suburb').val($('#customer_suburb').val()).valid();
+                                        $('#d_'+address_ind+'_state').val($('#customer_state').val()).valid();
+                                        $('#d_'+address_ind+'_postcode').val($('#customer_postcode').val()).valid();
+                                        $('#d_'+address_ind+'_country').val($('#customer_country').val()).valid();
                                         //$('#ignore_address_error').prop('checked', $('#ignore_customer_address_error').prop('checked' )).change();
                                     }
                                 }
