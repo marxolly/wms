@@ -338,7 +338,8 @@
                                             $(this).find("h4.address_title").text("Delivery Address "+uc_new_num+"'s Details");
                                             $(this).find("a.remove-address").data("address", i);
                                             $(this).find("input.send_to_customer").attr("id", "send_to_customer_"+i).data("address", i);
-                                            $(this).find("label.send_to_customer").attr("for", "send_to_customer_"+i)
+                                            $(this).find("label.send_to_customer").attr("for", "send_to_customer_"+i);
+                                            $(this).find("div.deliver_to_finisher_checkbox_holder").attr("id", "deliver_to_finisher_checkbox_holder_"+i);
                                             $(this).find("input.hasgroup").each(function(ind, elem){
                                                 var input_name = $(this).data("group");
                                                 $(this).attr("name", "addresses["+i+"]["+input_name+"]");
