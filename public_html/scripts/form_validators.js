@@ -182,6 +182,9 @@ $(document).ready(function() {
             date_due:{
                 required:"#strict_dd:checked"
             },
+            held_in_store:{
+                required: true
+            }
     	},
 		messages:{
 			status_id:{
