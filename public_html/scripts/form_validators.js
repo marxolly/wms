@@ -106,7 +106,7 @@ $(document).ready(function() {
             //error.addClass("font-italic");
         	if ( (element.prop( "type" ) === "checkbox")  ) {
                 if ( element.hasClass('send_to_address'))
-                    error.insertAfter( element.parent() );
+                    error.insertBefore( element.parent() );
                 else
         		    error.insertAfter( element.parent().find( "label" ) );
         	}
