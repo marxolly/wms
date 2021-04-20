@@ -195,6 +195,9 @@ $(document).ready(function() {
 			},
             date_due:{
                 required: 'This is required for strict due date '
+            },
+            held_in_store:{
+                required: "This is required if no delivery address is provided"
             }
 		}
     });
