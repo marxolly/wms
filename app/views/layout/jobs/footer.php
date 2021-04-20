@@ -173,16 +173,6 @@
                             $('input#customer_country').val(ui.item.country);
                             $('input#customer_postcode').val(ui.item.postcode);
                             $('input#customer_website').val(ui.item.website);
-                            if($('#send_to_customer').prop('checked'))
-                            {
-                                $('input#ship_to').val(ui.item.value).valid();
-                                $('input#address').val(ui.item.address).valid();
-                                $('input#address2').val(ui.item.address_2);
-                                $('input#suburb').val(ui.item.suburb).valid();
-                                $('input#state').val(ui.item.state).valid();
-                                $('input#country').val(ui.item.country).valid();
-                                $('input#postcode').val(ui.item.postcode).valid();
-                            }
                             //contacts
                             if(ui.item.contacts)
                             {
