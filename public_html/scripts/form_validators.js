@@ -105,7 +105,10 @@ $(document).ready(function() {
         	error.addClass( "text-danger" );
             //error.addClass("font-italic");
         	if ( (element.prop( "type" ) === "checkbox")  ) {
-        		error.insertAfter( element.parent().find( "label" ) );
+                if ( element.hasClass('send_to_address'))
+                    error.insertAfter( element.parent() );
+                else
+        		    error.insertAfter( element.parent().find( "label" ) );
         	}
             else if( (element.prop( "type" ) === "radio") ) {
                 error.insertAfter( element.parent().parent().parent() );
