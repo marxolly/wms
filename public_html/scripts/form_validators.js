@@ -181,9 +181,6 @@ $(document).ready(function() {
             },
             date_due:{
                 required:"#strict_dd:checked"
-            },
-            held_in_store:{
-                required: true
             }
     	},
 		messages:{
@@ -198,9 +195,6 @@ $(document).ready(function() {
 			},
             date_due:{
                 required: 'This is required for strict due date '
-            },
-            held_in_store:{
-                required: "This is required if no delivery address is provided"
             }
 		}
     });
