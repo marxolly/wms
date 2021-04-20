@@ -337,6 +337,7 @@
                                             var uc_new_num = new_num.charAt(0).toUpperCase() + new_num.slice(1)
                                             $(this).find("h4.address_title").text("Delivery Address "+uc_new_num+"'s Details");
                                             $(this).find("a.remove-address").data("address", i);
+                                            $(this).find("input.send_to_customer").attr("id", "send_to_customer_"+i).data("address", i);
                                             $(this).find("input.hasgroup").each(function(ind, elem){
                                                 var input_name = $(this).data("group");
                                                 $(this).attr("name", "addresses["+i+"]["+input_name+"]");
