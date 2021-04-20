@@ -63,7 +63,7 @@ $dcountry = empty(Form::value('addresses['.$i.'][country]'))?  $taa['country'] :
         <label class="col-md-4 col-form-label"><sup><small><i class="fas fa-asterisk text-danger"></i></small></sup> Deliver To</label>
         <div class="col-md-8">
             <input type="text" data-group="shipto" class="form-control required hasgroup" name="addresses[<?php echo $i;?>][shipto]" id="d_<?php echo $i;?>_shipto" value="<?php echo $shipto;?>" />
-            <?php echo Form::displayError('shipto_'.$i);?>
+            <?php echo Form::displayError('a'.$i.'_shipto');?>
         </div>
     </div>
     <div class="form-group row">
@@ -82,7 +82,7 @@ $dcountry = empty(Form::value('addresses['.$i.'][country]'))?  $taa['country'] :
         <label class="col-md-4"><sup><small><i class="fas fa-asterisk text-danger"></i></small></sup> Address Line 1</label>
         <div class="col-md-8">
             <input type="text" data-group="address" class="form-control required hasgroup" name="addresses[<?php echo $i;?>][address]" id="d_<?php echo $i;?>_address" value="<?php echo $daddress;?>" />
-            <?php echo Form::displayError('address_'.$i);?>
+            <?php echo Form::displayError('a'.$i.'_address');?>
         </div>
         <div class="custom-control custom-checkbox col-md-7 offset-md-5">
             <input type="checkbox" class="custom-control-input" id="ignore_address_error" name="ignore_address_error" <?php if(!empty(Form::value('ignore_address_error'))) echo 'checked';?> />
@@ -99,7 +99,7 @@ $dcountry = empty(Form::value('addresses['.$i.'][country]'))?  $taa['country'] :
         <label class="col-md-4"><sup><small><i class="fas fa-asterisk text-danger"></i></small></sup> Suburb/Town</label>
         <div class="col-md-8">
             <input type="text" data-group="suburb" class="form-control required hasgroup" name="addresses[<?php echo $i;?>][suburb]" id="d_<?php echo $i;?>_suburb" value="<?php echo $dsuburb;?>" />
-            <?php echo Form::displayError('suburb_'.$i);?>
+            <?php echo Form::displayError('a'.$i.'_suburb');?>
         </div>
     </div>
     <div class="form-group row">
@@ -107,14 +107,14 @@ $dcountry = empty(Form::value('addresses['.$i.'][country]'))?  $taa['country'] :
         <div class="col-md-8">
             <input type="text" data-group="state" class="form-control required hasgroup" name="addresses[<?php echo $i;?>][state]" id="d_<?php echo $i;?>_state" value="<?php echo $dstate;?>" />
             <span class="inst">Use VIC, NSW, QLD, ACT, TAS, WA, SA, NT only</span>
-            <?php echo Form::displayError('state');?>
+            <?php echo Form::displayError('a'.$i.'_state');?>
         </div>
     </div>
     <div class="form-group row">
         <label class="col-md-4 "><sup><small><i class="fas fa-asterisk text-danger"></i></small></sup> Postcode</label>
         <div class="col-md-8">
             <input type="text" data-group="postcode" class="form-control required hasgroup" name="addresses[<?php echo $i;?>][postcode]" id="d_<?php echo $i;?>_postcode" value="<?php echo $dpostcode;?>" />
-            <?php echo Form::displayError('postcode');?>
+            <?php echo Form::displayError('a'.$i.'_postcode');?>
         </div>
     </div>
     <input type="hidden" class="hasgroup" data-group="country" name="addresses[<?php echo $i;?>][country]" id="d_<?php echo $i;?>_country" value = "AU">

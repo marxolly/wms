@@ -1425,8 +1425,24 @@ class FormController extends Controller {
         {
             $this->validateAddress($customer_address, $customer_suburb, $customer_state, $customer_postcode, 'AU', isset($ignore_customer_address_error), "customer_", "show_customer_address");
         }
-        if(!isset($held_in_store))
-            $this->validateAddress($address, $suburb, $state, $postcode, "AU", isset($ignore_address_error));
+        if( !isset($held_in_store) )
+        {
+            if(!count($addresses))
+            {
+                Form::setError('general', 'A Delivery Option Is Required');
+            }
+            else
+            {
+                foreach($addresses as $key => $a)
+                {
+                    if(!$this->dataSubbed($a['shipto']))
+                    {
+                        Form::setError('a'.$key.'_shipto', 'A Ship To Name Is Required');
+                    }
+                    $this->validateAddress($a['address'], $a['suburb'], $a['state'], $a['postcode'], "AU", false, "a$key_");
+                }
+            }
+        }
         if(Form::$num_errors > 0)		/* Errors exist, have user correct them */
         {
             Session::set('value_array', $_POST);
@@ -1434,7 +1450,7 @@ class FormController extends Controller {
         }
         else
         {
-            //echo "ALL GOOD<pre>",print_r($post_data),"</pre>"; die();
+            echo "ALL GOOD<pre>",print_r($post_data),"</pre>"; die();
             //customer details
             $customer_data = array(
                 'name'  => $customer_name
