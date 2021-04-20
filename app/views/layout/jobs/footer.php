@@ -81,10 +81,10 @@
                                     if($(this).hasClass('send_to_finisher'))
                                     {
                                         var this_finisher_ind = $(this).data("finisher");
-                                        console.log("this_finisher_ind: "+this_finisher_ind+" address_ind: "+address_ind);
+                                        //console.log("this_finisher_ind: "+this_finisher_ind+" address_ind: "+address_ind);
                                         $('#shipto_'+address_ind).val($('input[name="finishers['+this_finisher_ind+'][name]"]').val()).valid();
                                         $('#attention_'+address_ind).val($('select[name="finishers['+this_finisher_ind+'][contact_id]"]').find('option:selected[value!=0]').text());
-                                        console.log("Gonna put "+$('input[name="finishers['+this_finisher_ind+'][address]"]').val()+" into #address_"+address_ind);
+                                        //console.log("Gonna put "+$('input[name="finishers['+this_finisher_ind+'][address]"]').val()+" into #address_"+address_ind);
                                         $('#daddress_'+address_ind).val($('input[name="finishers['+this_finisher_ind+'][address]"]').val()).valid();
                                         $('#address2_'+address_ind).val($('input[name="finishers['+this_finisher_ind+'][address2]"]').val());
                                         $('#suburb_'+address_ind).val($('input[name="finishers['+this_finisher_ind+'][suburb]"]').val()).valid();
@@ -97,6 +97,16 @@
                                     else if($(this).hasClass('send_to_customer'))
                                     {
                                         //console.log("will send to customer for address "+address_ind)
+
+                                        $('#shipto_'+address_ind).val($('#customer_name').val()).valid();
+                                        $('#attention_'+address_ind).val($('#customer_contact_name').val()).valid();
+                                        $('#daddress_'+address_ind).val($('#customer_address').val()).valid();
+                                        $('#address2_'+address_ind).val($('#customer_address2').val());
+                                        $('#suburb_'+address_ind).val($('#customer_suburb').val()).valid();
+                                        $('#state_'+address_ind).val($('#customer_state').val()).valid();
+                                        $('#postcode_'+address_ind).val($('#customer_postcode').val()).valid();
+                                        $('#country_'+address_ind).val($('#customer_country').val()).valid();
+                                        //$('#ignore_address_error').prop('checked', $('#ignore_customer_address_error').prop('checked' )).change();
                                     }
                                 }
 
