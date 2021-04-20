@@ -62,26 +62,26 @@ $dcountry = empty(Form::value('addresses['.$i.'][country]'))?  $taa['country'] :
     <div class="form-group row">
         <label class="col-md-4 col-form-label"><sup><small><i class="fas fa-asterisk text-danger"></i></small></sup> Deliver To</label>
         <div class="col-md-8">
-            <input type="text" class="form-control required" name="addresses[<?php echo $i;?>][shipto]" id="shipto_<?php echo $i;?>" value="<?php echo $shipto;?>" />
+            <input type="text" data-group="shipto" class="form-control required hasgroup" name="addresses[<?php echo $i;?>][shipto]" id="shipto_<?php echo $i;?>" value="<?php echo $shipto;?>" />
             <?php echo Form::displayError('shipto_'.$i);?>
         </div>
     </div>
     <div class="form-group row">
         <label class="col-md-4 col-form-label">Attention</label>
         <div class="col-md-8">
-            <input type="text" class="form-control" name="addresses[<?php echo $i;?>][attention]" id="attention_<?php echo $i;?>" value="<?php echo $attention;?>" />
+            <input type="text" data-group="attention" class="form-control hasgroup" name="addresses[<?php echo $i;?>][attention]" id="attention_<?php echo $i;?>" value="<?php echo $attention;?>" />
         </div>
     </div>
     <div class="form-group row">
         <label class="col-md-4 col-form-label">Delivery Instructions</label>
         <div class="col-md-8">
-            <textarea class="form-control" name="addresses[<?php echo $i;?>][delivery_instructions]" id="deliveryinstructions_<?php echo $i;?>" placeholder="Instructions For Driver"><?php echo $delivery_instructions;?></textarea>
+            <textarea class="form-control hasgroup" data-group="delivery_instructions" name="addresses[<?php echo $i;?>][delivery_instructions]" id="delivery_instructions_<?php echo $i;?>" placeholder="Instructions For Driver"><?php echo $delivery_instructions;?></textarea>
         </div>
     </div>
     <div class="form-group row">
         <label class="col-md-4"><sup><small><i class="fas fa-asterisk text-danger"></i></small></sup> Address Line 1</label>
         <div class="col-md-8">
-            <input type="text" class="form-control required" name="addresses[<?php echo $i;?>][address]" id="daddress_<?php echo $i;?>" value="<?php echo $daddress;?>" />
+            <input type="text" data-group="daddress" class="form-control required hasgroup" name="addresses[<?php echo $i;?>][daddress]" id="daddress_<?php echo $i;?>" value="<?php echo $daddress;?>" />
             <?php echo Form::displayError('address_'.$i);?>
         </div>
         <div class="custom-control custom-checkbox col-md-7 offset-md-5">
@@ -92,20 +92,20 @@ $dcountry = empty(Form::value('addresses['.$i.'][country]'))?  $taa['country'] :
     <div class="form-group row">
         <label class="col-md-4">Address Line 2</label>
         <div class="col-md-8">
-            <input type="text" class="form-control" name="addresses[<?php echo $i;?>][address_2]" id="address2_<?php echo $i;?>" value="<?php echo $daddress_2;?>" />
+            <input type="text" data-group="address_2" class="form-control hasgroup" name="addresses[<?php echo $i;?>][address_2]" id="address_2_<?php echo $i;?>" value="<?php echo $daddress_2;?>" />
         </div>
     </div>
     <div class="form-group row">
         <label class="col-md-4"><sup><small><i class="fas fa-asterisk text-danger"></i></small></sup> Suburb/Town</label>
         <div class="col-md-8">
-            <input type="text" class="form-control required" name="addresses[<?php echo $i;?>][suburb]" id="suburb_<?php echo $i;?>" value="<?php echo $dsuburb;?>" />
+            <input type="text" data-group="suburb" class="form-control required hasgroup" name="addresses[<?php echo $i;?>][suburb]" id="suburb_<?php echo $i;?>" value="<?php echo $dsuburb;?>" />
             <?php echo Form::displayError('suburb_'.$i);?>
         </div>
     </div>
     <div class="form-group row">
         <label class="col-md-4"><sup><small><i class="fas fa-asterisk text-danger"></i></small></sup> State</label>
         <div class="col-md-8">
-            <input type="text" class="form-control required" name="addresses[<?php echo $i;?>][state]" id="state_<?php echo $i;?>" value="<?php echo $dstate;?>" />
+            <input type="text" data-group="state" class="form-control required hasgroup" name="addresses[<?php echo $i;?>][state]" id="state_<?php echo $i;?>" value="<?php echo $dstate;?>" />
             <span class="inst">Use VIC, NSW, QLD, ACT, TAS, WA, SA, NT only</span>
             <?php echo Form::displayError('state');?>
         </div>
@@ -113,11 +113,11 @@ $dcountry = empty(Form::value('addresses['.$i.'][country]'))?  $taa['country'] :
     <div class="form-group row">
         <label class="col-md-4 "><sup><small><i class="fas fa-asterisk text-danger"></i></small></sup> Postcode</label>
         <div class="col-md-8">
-            <input type="text" class="form-control required" name="addresses[<?php echo $i;?>][postcode]" id="postcode_<?php echo $i;?>" value="<?php echo $dpostcode;?>" />
+            <input type="text" data-group="postcode" class="form-control required hasgroup" name="addresses[<?php echo $i;?>][postcode]" id="postcode_<?php echo $i;?>" value="<?php echo $dpostcode;?>" />
             <?php echo Form::displayError('postcode');?>
         </div>
     </div>
-    <input type="hidden" name="addresses[<?php echo $i;?>][country]" id="country_<?php echo $i;?>" value = "AU">
+    <input type="hidden" class="hasgroup" data-group="country" name="addresses[<?php echo $i;?>][country]" id="country_<?php echo $i;?>" value = "AU">
 
 
 

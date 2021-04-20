@@ -324,7 +324,25 @@
                                     $("div#address_"+this_address).remove();
                                     //any addresses left?  Make the hold in store box required
                                     if(!$("div#delivery_address_holder div.anaddress").length)
+                                    {
                                         $('input#held_in_store').attr('required', 'required').valid();
+                                    }
+                                    else
+                                    {
+                                       //redo indexing of addresses
+                                       $("div#delivery_address_holder div.anaddress").each(function(i,e){
+                                            $(this).attr("id", "address_"+i);
+                                            var plusi = i + 1;
+                                            var new_num = toWords(plusi);
+                                            var uc_new_num = new_num.charAt(0).toUpperCase() + new_num.slice(1)
+                                            $(this).find("h4.address_title").text("Delivery Address "+uc_new_num+"'s Details");
+                                            $(this).find("a.remove-address").data("address", i);
+                                            $(this).find("input.hasgroup").each(function(ind, elem){
+                                                var input_name = $(this).data("group");
+                                                $(this).attr("name", "addresses["+i+"]["+input_name+"]");
+                                            });
+                                       }
+                                    }
                                 }
                             });
                         });
@@ -352,7 +370,6 @@
                                         var uc_new_num = new_num.charAt(0).toUpperCase() + new_num.slice(1)
                                         $(this).find("h4.finisher_title").text("Finisher "+uc_new_num+"'s Details");
                                         $(this).find("a.remove-finisher").data("finisher", i);
-                                        $(this).find("input.send_to_finisher").data("finisher", i);
                                         $(this).find("input.finisher_name").data("finisher", i);
                                         $(this).find("input.finisher_name").attr("name", "finishers["+i+"][name]");
                                         $(this).find("input.finisher_po").attr("name", "finishers["+i+"][purchase_order]");
@@ -360,10 +377,7 @@
                                         $(this).find("select.finisher_contact_id").attr("name", "finishers["+i+"][contact_id]");
                                         $(this).find("input.finisher_ed_date").attr("name", "finishers["+i+"][ed_date]");
                                         $(this).find("input.finisher_ed_date_value").attr("name", "finishers["+i+"][ed_date_value]");
-                                        $(this).find("input.send_to_finisher").attr("name", "send_to_finisher_"+i);
-                                        $(this).find("input.send_to_finisher").attr("id", "send_to_finisher_"+i);
                                         $(this).find("div.contact_selector").attr("id", "contact_selector_"+i);
-                                        $(this).find("label.send_to_finisher").attr("for", "send_to_finisher_"+i);
                                         var $this_finisher_details = $(this).find("div.this_finisher_hidden_details");
                                         //$this_finisher_details.find('input.finisher_id').val(ui.item.finisher_id);
                                         $this_finisher_details.find("input").each(function(element, index){
