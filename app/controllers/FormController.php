@@ -1439,7 +1439,7 @@ class FormController extends Controller {
                     {
                         Form::setError('a'.$key.'_shipto', 'A Ship To Name Is Required');
                     }
-                    $this->validateAddress($a['address'], $a['suburb'], $a['state'], $a['postcode'], "AU", false, "a$key_");
+                    $this->validateAddress($a['address'], $a['suburb'], $a['state'], $a['postcode'], "AU", false, "a".$key."_");
                 }
             }
         }
