@@ -56,7 +56,7 @@ $dcountry = empty(Form::value('addresses['.$i.'][country]'))?  $taa['country'] :
         <input class="custom-control-input send_to_address send_to_customer" type="checkbox" id="send_to_customer_<?php echo $i;?>" data-address="<?php echo $i;?>" name="send_to_customer" />
         <label class="custom-control-label col-md-7 send_to_customer" for="send_to_customer_<?php echo $i;?>">Use Customer's Address</label>
     </div>
-    <div id="deliver_to_finisher_checkbox_holder_<?php echo $i;?>"></div>
+    <div id="deliver_to_finisher_checkbox_holder_<?php echo $i;?>" class="deliver_to_finisher_checkbox_holder"></div>
 
 
     <div class="form-group row">
