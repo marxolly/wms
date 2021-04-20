@@ -341,7 +341,7 @@
                                                 var input_name = $(this).data("group");
                                                 $(this).attr("name", "addresses["+i+"]["+input_name+"]");
                                             });
-                                       }
+                                       });
                                     }
                                 }
                             });
