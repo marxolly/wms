@@ -340,7 +340,7 @@
                                             $(this).find("input.hasgroup").each(function(ind, elem){
                                                 var input_name = $(this).data("group");
                                                 $(this).attr("name", "addresses["+i+"]["+input_name+"]");
-                                                $(this).attr("id", input_name+"_"+i);
+                                                $(this).attr("id", "d_"+i+"_"+input_name);
                                             });
                                        });
                                     }
