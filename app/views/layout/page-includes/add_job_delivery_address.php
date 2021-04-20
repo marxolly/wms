@@ -118,7 +118,7 @@ $dcountry = empty(Form::value('addresses['.$i.'][country]'))?  $taa['country'] :
         </div>
     </div>
     <input type="hidden" class="hasgroup" data-group="country" name="addresses[<?php echo $i;?>][country]" id="country_<?php echo $i;?>" value = "AU">
-
+    <input type="hidden" class="hasgroup" data-group="address_id" name="addresses[<?php echo $i;?>][address_id]" id="address_id_<?php echo $i;?>" value="<?php echo $address_id;?>"
 
 
 </div>
