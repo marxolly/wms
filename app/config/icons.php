@@ -1,6 +1,6 @@
 <?php
     /**
-     * Fontastic Icons To Use for page tiles throughout the app
+     * Font Awesome Icons To Use for page tiles throughout the app
      *
      * try to keep it alphabetical to avoid double ups
      *
@@ -35,6 +35,9 @@ $fontastic_icons = array(
         'drivers'               => '<span class="fa-3x align-middle"><i class="fad fa-steering-wheel" data-fa-transform="shrink-6 down-6" data-fa-mask="fad fa-user"></i></span>',
         'edit-job-status'       => '<div class="fa-2x"><span class="fa-layers fa-fw"><i class="fal fa-list-alt" data-fa-transform="grow-2"></i><i class="fad fa-pencil-alt" data-fa-transform="shrink-4 up-5 right-8"></i></span></div>',
         'finisher-categories'   => '<div class="fa-2x"><span class="fa-layers fa-fw"><i class="fad fa-people-arrows"></i><i class="fal fa-list-ol" data-fa-transform="shrink-5 up-6"></i></span></div>'
+    ),
+    'purchase-orders'   => array(
+        'default'   => '<i class="fal fa-file-invoice-dollar"></i>'
     ),
     'orders'    => array(
         'default'       => '<i class="fad fa-truck fa-2x"></i>',

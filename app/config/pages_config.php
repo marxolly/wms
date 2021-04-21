@@ -16,6 +16,7 @@
 include(APP."/config/icons.php");
 $padmin = array(
     'jobs'  => array(), //merges with production later
+    'purchase-orders'  => array(), //merges with production sales admin later
     'customers' => array(
         'add-customer'  => array(
             'display'       => true,
@@ -303,6 +304,13 @@ $prod_sales_admin = array(
         'job-search-results'    => array(
             'display'   => false,
             'icon'      => ''
+        )
+    ),
+    'purchase-orders' => array(
+        'purchase-orders-index' => true,
+        'default-icon'          => array(
+            'display'   => false,
+            'icon'      => $fontastic_icons['purchase-orders']['default']
         )
     ),
     'customers' => array(
@@ -918,12 +926,13 @@ $client = array(
 );
 
 //merge and tidy page arrays
-$padmin['jobs'] = array_merge($padmin['jobs'], $prod['jobs']);
-$padmin['customers'] = array_merge($padmin['customers'], $prod['customers']);
-$padmin['finishers'] = array_merge($padmin['finishers'], $prod['finishers']);
+$padmin['jobs']             = array_merge($padmin['jobs'], $prod['jobs']);
+$padmin['purchase-orders']  = array_merge($padmin['purchase-orders'], $prod_sales_admin['purchase-orders']);
+$padmin['customers']        = array_merge($padmin['customers'], $prod['customers']);
+$padmin['finishers']        = array_merge($padmin['finishers'], $prod['finishers']);
 
-//$admin['runsheets'] = array_merge($admin['runsheets'], $padmin['runsheets']);
-$admin['jobs'] = array_merge($admin['jobs'], $prod['jobs']);
+//$admin['runsheets']   = array_merge($admin['runsheets'], $padmin['runsheets']);
+$admin['jobs']          = array_merge($admin['jobs'], $prod['jobs']);
 
 $prod_admin = array_merge($prod, $padmin);
 //return the pages
