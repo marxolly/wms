@@ -38,7 +38,7 @@ $fontastic_icons = array(
     ),
     'purchase-orders'   => array(
         'default'               => '<i class="fal fa-file-invoice-dollar"></i>',
-        'add-purchase-order'    => '<div class="fa-2x"><span class="fa-layers fa-fw"><i class="fal fa-file-invoice-dollar"></i><i class="far fa-plus" data-fa-transform="shrink-4 down-4 right-3"></i></span></div>',
+        'add-purchase-order'    => '<div class="fa-2x"><span class="fa-layers fa-fw"><i class="fal fa-file-invoice-dollar"></i><i class="fal fa-plus" data-fa-transform="shrink-4 down-4 right-3"></i></span></div>',
         'view-purchase-orders'  => '<div class="fa-2x"><span class="fa-layers fa-fw"><i class="fal fa-file-invoice-dollar"></i><i class="fal fa-binoculars" data-fa-transform="shrink-6 up-2 right-6 rotate-30"></i></span></div>'
     ),
     'orders'    => array(
