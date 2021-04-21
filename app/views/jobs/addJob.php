@@ -1,12 +1,4 @@
 <?php
-$ship_to = Form::value('ship_to');
-$attention = Form::value('attention');
-$address = Form::value('address');
-$address2 = Form::value('address2');
-$suburb = Form::value('suburb');
-$state = Form::value('state');
-$postcode = Form::value('postcode');
-$country = (empty(Form::value('country')))? "AU" : Form::value('country');
 $date_entered = (empty(Form::value('date_entered_value')))? time() : Form::value('date_entered_value');
 $date_due = (empty(Form::value('date_due_value')))? strtotime('+7 days') : Form::value('date_due_value');
 $customer_id = ( empty(Form::value('customer_id')) )? 0 : Form::value('customer_id');
