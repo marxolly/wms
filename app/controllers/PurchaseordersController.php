@@ -9,7 +9,7 @@
  * @author     Mark Solly <mark.solly@fsg.com.au>
  */
 
-class PurchaseordersController extends Controller
+class PurchaseOrdersController extends Controller
 {
     public function beforeAction()
     {
