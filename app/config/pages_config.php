@@ -935,7 +935,7 @@ $client = array(
 
 //merge and tidy page arrays
 $padmin['jobs']             = array_merge($padmin['jobs'], $prod['jobs']);
-$padmin['purchase-orders']  = array_merge($padmin['purchase-orders'], $prod_sales_admin['purchase-orders']);
+$padmin['purchase-orders']  = array_merge($prod_sales_admin['purchase-orders'],$padmin['purchase-orders']) ;
 $padmin['customers']        = array_merge($padmin['customers'], $prod['customers']);
 $padmin['finishers']        = array_merge($padmin['finishers'], $prod['finishers']);
 
