@@ -316,6 +316,10 @@ $prod_sales_admin = array(
             'display'   => true,
             'icon'      => $fontastic_icons['purchase-orders']['add-purchase-order']
         ),
+        'view-purchase-orders'   => array(
+            'display'   => true,
+            'icon'      => $fontastic_icons['purchase-orders']['view-purchase-orders']
+        )
     ),
     'customers' => array(
         'customers-index'   => true,
