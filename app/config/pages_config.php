@@ -311,7 +311,11 @@ $prod_sales_admin = array(
         'default-icon'          => array(
             'display'   => false,
             'icon'      => $fontastic_icons['purchase-orders']['default']
-        )
+        ),
+        'add-purchase-order'   => array(
+            'display'   => true,
+            'icon'      => $fontastic_icons['purchase-order']['add-purchase-order']
+        ),
     ),
     'customers' => array(
         'customers-index'   => true,
