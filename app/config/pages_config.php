@@ -45,6 +45,25 @@ $padmin = array(
             'display'   => false,
             'icon'      => ''
         )
+    ),
+    'fsg-contacts'    => array(
+        'fsg-contacts-index'   => true,
+        'default-icon'      => array(
+            'display'   => false,
+            'icon'      => $fontastic_icons['fsg-contacts']['default']
+        ),
+        'view-contacts' => array(
+            'display'   => true,
+            'icon'      => $fontastic_icons['fsg-contacts']['view-contacts']
+        ),
+        'add-contact'   => array(
+            'display'   => true,
+            'icon'      => $fontastic_icons['fsg-contacts']['add-contact']
+        ),
+        'edit-contact'  => array(
+            'display'   => false,
+            'icon'      => ''
+        )
     ),/*
     'runsheets' => array(
         'runsheets-index'   => true,
@@ -118,25 +137,6 @@ $padmin = array(
             'display'   => true,
             'icon'      => '<div class="fa-2x"><span class="fa-layers fa-fw"><i class="fad fa-file-import"></i><i class="fal fa-file-csv" data-fa-transform="shrink-5 left-6 up-2"></i></span></div>'
         ) */
-    ),
-    'fsg-contacts'    => array(
-        'fsg-contacts-index'   => true,
-        'default-icon'      => array(
-            'display'   => false,
-            'icon'      => $fontastic_icons['fsg-contacts']['default']
-        ),
-        'view-contacts' => array(
-            'display'   => true,
-            'icon'      => $fontastic_icons['fsg-contacts']['view-contacts']
-        ),
-        'add-contact'   => array(
-            'display'   => true,
-            'icon'      => $fontastic_icons['fsg-contacts']['add-contact']
-        ),
-        'edit-contact'  => array(
-            'display'   => false,
-            'icon'      => ''
-        )
     )
 );
 $prod = array(
@@ -935,19 +935,20 @@ $client = array(
 
 //merge and tidy page arrays
 $padmin['jobs']             = array_merge($padmin['jobs'], $prod['jobs']);
-$padmin['purchase-orders']  = array_merge($prod_sales_admin['purchase-orders'],$padmin['purchase-orders']) ;
+$padmin['purchase-orders']  = array_merge($padmin['purchase-orders'], $prod_sales_admin['purchase-orders']);
 $padmin['customers']        = array_merge($padmin['customers'], $prod['customers']);
 $padmin['finishers']        = array_merge($padmin['finishers'], $prod['finishers']);
+$padmin['fsg-contacts']     = array_merge($padmin['fsg-contacts'], $prod['fsg-contacts']);
 
 //$admin['runsheets']   = array_merge($admin['runsheets'], $padmin['runsheets']);
 $admin['jobs']          = array_merge($admin['jobs'], $prod['jobs']);
 
-$prod_admin = array_merge($prod, $padmin);
+//$prod_admin = array_merge($prod, $padmin);
 //return the pages
 return array(
     "PRODUCTION_SALES_ADMIN_PAGES"    => $prod_sales_admin,
     "PRODUCTION_SALES_PAGES"          => $prod_sales,
-    "PRODUCTION_ADMIN_PAGES"          => $prod_admin,
+    "PRODUCTION_ADMIN_PAGES"          => $padmin,
     "PRODUCTION_PAGES"                => $prod,
     "ADMIN_PAGES"                     => $admin ,
     'WAREHOUSE_PAGES'                 => $warehouse,
