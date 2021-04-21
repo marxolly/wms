@@ -314,7 +314,7 @@ $prod_sales_admin = array(
         ),
         'add-purchase-order'   => array(
             'display'   => true,
-            'icon'      => $fontastic_icons['purchase-order']['add-purchase-order']
+            'icon'      => $fontastic_icons['purchase-orders']['add-purchase-order']
         ),
     ),
     'customers' => array(
