@@ -8,11 +8,17 @@
                 common: {
                     init: function(){
 
+                    },
+                    createCKEditors: function(){
+                        var allEditors = document.querySelectorAll('.ckeditor');
+                        for (var i = 0; i < allEditors.length; ++i) {
+                            ClassicEditor.create(allEditors[i]);
+                        }
                     }
                 },
                 'add-purchase-order':{
                     init: function(){
-
+                        actions.common.createCKEditors();
                     }
                 }
             }

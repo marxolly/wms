@@ -30,6 +30,8 @@
                         </div>
                         <div class="card-body">
                             The Items Go Here
+                            <p>CKEditor</p>
+                            <textarea name="content0" class="ckeditor" id="c0">This is some sample content.</textarea>
                         </div>
                     </div>
                 </div>
