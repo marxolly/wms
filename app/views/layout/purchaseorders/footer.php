@@ -10,7 +10,10 @@
 
                     },
                     createCKEditors: function(){
-                        $( 'textarea.ckeditor' ).ckeditor();    
+                        $( 'textarea.ckeditor' ).ckeditor();
+                        $( 'textarea.ckeditor' ).each(function(){
+                            CKEDITOR.replace( $(this).attr('id') );
+                        });
                     }
                 },
                 'add-purchase-order':{
