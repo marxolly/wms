@@ -18,6 +18,7 @@
                                CKEDITOR.instances[$(this).attr('name')].destroy();
                             }
                             CKEDITOR.replace( $(this).attr('name') );
+                            console.log("done textarea[name] "+$(this).attr('name'));
                         });
                     }
                 },
