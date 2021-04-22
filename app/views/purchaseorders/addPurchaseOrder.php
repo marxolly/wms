@@ -33,7 +33,7 @@
                             <p>CKEditor 1</p>
                             <textarea name="content0" class="wysiwyg_editor" name="c0">This is some <strong>sample</strong> content.</textarea>
                             <p>CKEditor 2</p>
-                            <textarea name="content1" class="editor" name="c1">This is some <span class="font-italic">sample</span> content.</textarea>
+                            <textarea name="content1" class="wysiwyg_editor" name="c1">This is some <span class="font-italic">sample</span> content.</textarea>
                         </div>
                     </div>
                 </div>
