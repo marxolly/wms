@@ -31,7 +31,7 @@
                         <div class="card-body">
                             The Items Go Here
                             <p>CKEditor 1</p>
-                            <textarea name="content0" class="ckeditor" name="c0">This is some <strong>sample</strong> content.</textarea>
+                            <textarea name="content0" class="wysiwyg_editor" name="c0">This is some <strong>sample</strong> content.</textarea>
                             <p>CKEditor 2</p>
                             <textarea name="content1" class="ckeditor" name="c1">This is some <span class="font-italic">sample</span> content.</textarea>
                         </div>
