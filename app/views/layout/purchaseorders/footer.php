@@ -12,25 +12,29 @@
                     createCKEditors: function(){
                         var allEditors = document.querySelectorAll('.ckeditor');
                         for (var i = 0; i < allEditors.length; ++i) {
-                            ClassicEditor.create(allEditors[i]),{
-                                toolbar: {
-                                    items: [
-                                        'heading', '|',
-                                        'alignment', '|',
-                                        'bold', 'italic', 'strikethrough', 'underline', 'subscript', 'superscript', '|',
-                                        'link', '|',
-                                        'bulletedList', 'numberedList', 'todoList',
-                                        '-', // break point
-                                        'fontfamily', 'fontsize', 'fontColor', 'fontBackgroundColor', '|',
-                                        'code', 'codeBlock', '|',
-                                        'insertTable', '|',
-                                        'outdent', 'indent', '|',
-                                        'uploadImage', 'blockQuote', '|',
-                                        'undo', 'redo'
-                                    ],
-                                    shouldNotGroupWhenFull: true
-                                }
-                            };
+                            ClassicEditor
+                                .create( allEditors[i] ,{
+                                    toolbar: {
+                                        items: [
+                                            'heading', '|',
+                                            'alignment', '|',
+                                            'bold', 'italic', 'strikethrough', 'underline', 'subscript', 'superscript', '|',
+                                            'link', '|',
+                                            'bulletedList', 'numberedList', 'todoList',
+                                            '-', // break point
+                                            'fontfamily', 'fontsize', 'fontColor', 'fontBackgroundColor', '|',
+                                            'code', 'codeBlock', '|',
+                                            'insertTable', '|',
+                                            'outdent', 'indent', '|',
+                                            'uploadImage', 'blockQuote', '|',
+                                            'undo', 'redo'
+                                        ],
+                                        shouldNotGroupWhenFull: true
+                                    }
+                                })
+                                .catch( error => {
+                                    console.log( error );
+                                });
                         }
                     }
                 },
