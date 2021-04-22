@@ -11,8 +11,12 @@
                     },
                     createCKEditors: function(){
                         $( 'textarea.ckeditor' ).each(function(){
+                            console.log("gonna do textarea[name] "+$(this).attr('name'));
                             if (CKEDITOR.instances[$(this).attr('name')])
-                                CKEDITOR.instances[$(this).attr('name')].destroy();
+                            {
+                                console.log("gonna destoy textarea[name] "+$(this).attr('name'));
+                               CKEDITOR.instances[$(this).attr('name')].destroy();
+                            }
                             CKEDITOR.replace( $(this).attr('name') );
                         });
                     }
