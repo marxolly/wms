@@ -10,7 +10,6 @@
 
                     },
                     createCKEditors: function(){
-                        $( 'textarea.ckeditor' ).ckeditor();
                         $( 'textarea.ckeditor' ).each(function(){
                             CKEDITOR.replace( $(this).attr('id') );
                         });
