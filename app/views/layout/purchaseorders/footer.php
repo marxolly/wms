@@ -11,9 +11,9 @@
                     },
                     createCKEditors: function(){
                         $( 'textarea.ckeditor' ).each(function(){
-                            if (CKEDITOR.instances[$(this).attr('id')])
-                                CKEDITOR.instances[$(this).attr('id')].destroy();
-                            CKEDITOR.replace( $(this).attr('id') );
+                            if (CKEDITOR.instances[$(this).attr('name')])
+                                CKEDITOR.instances[$(this).attr('name')].destroy();
+                            CKEDITOR.replace( $(this).attr('name') );
                         });
                     }
                 },
