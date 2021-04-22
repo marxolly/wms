@@ -24,7 +24,7 @@
                 },
                 'add-purchase-order':{
                     init: function(){
-                        actions.common.createCKEditors();
+                        
                     }
                 }
             }
