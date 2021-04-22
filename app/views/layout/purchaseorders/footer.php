@@ -10,7 +10,7 @@
 
                     },
                     createCKEditors: function(){
-                        $( 'textarea.ckeditor' ).each(function(){
+                        $( 'textarea.wysiwyg_editor' ).each(function(){
                             console.log("gonna do textarea[name] "+$(this).attr('name'));
                             if (CKEDITOR.instances[$(this).attr('name')])
                             {
@@ -24,7 +24,7 @@
                 },
                 'add-purchase-order':{
                     init: function(){
-                        
+                        actions.common.createCKEditors();
                     }
                 }
             }
