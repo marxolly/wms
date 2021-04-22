@@ -14,6 +14,9 @@
                         for (var i = 0; i < allEditors.length; ++i) {
                             ClassicEditor
                                 .create( allEditors[i] ,{
+                                    alignment: {
+                                        options: [ 'left', 'right', 'center', 'justify']
+                                    },
                                     toolbar: {
                                         items: [
                                             'heading', '|',
