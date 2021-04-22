@@ -24,6 +24,17 @@ class PurchaseOrdersController extends Controller
         parent::displayIndex(get_class());
     }
 
+    public function addPurchaseOrder()
+    {
+        //render the page
+        Config::setJsConfig('curPage', "add-purchase-order");
+        Config::set('curPage', "add-purchase-order");
+        $this->view->renderWithLayouts(Config::get('VIEWS_PATH') . "layout/purchaseorders/", Config::get('VIEWS_PATH') . 'purchaseorders/addPurchaseOrder.php', [
+            'page_title'    =>  "Add Purchase Order",
+            'pht'           =>  ": Add Purchase Order"
+        ]);
+    }
+
 
     public function isAuthorized()
     {
