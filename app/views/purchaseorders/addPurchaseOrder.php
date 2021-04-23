@@ -30,14 +30,9 @@
                         </div>
                         <div class="card-body">
                             <div class="col">
-                                <a class="add-finisher" style="cursor:pointer" title="Add Another Finisher"><h4><i class="fad fa-plus-square text-success"></i> Add A Finisher</a></h4>
+                                <a class="add-poitem" style="cursor:pointer" title="Add An Item"><h4><i class="fad fa-plus-square text-success"></i> Add An Item</a></h4>
                             </div>
-                            <div id="finishers_holder"></div>
-                            The Items Go Here
-                            <p>CKEditor 1</p>
-                            <textarea name="content0" class="ckeditor" id="c0" name="c0" placeholder="Type Details Here"></textarea>
-                            <p>CKEditor 2</p>
-                            <textarea name="content1" class="ckeditor" id="c1" name="c1"></textarea>
+                            <div id="poitems_holder"></div>
                         </div>
                     </div>
                 </div>
