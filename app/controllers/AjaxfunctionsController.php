@@ -181,6 +181,21 @@ class ajaxfunctionsController extends Controller
         $this->view->renderJson($data);
     }
 
+    public function addPOItem()
+    {
+        $i = $this->request->data['i'];
+        $data = array(
+            'error'     =>  false,
+            'feedback'  =>  '',
+            'html'      =>  ''
+        );
+        $html = $this->view->render(Config::get('VIEWS_PATH') . 'layout/page-includes/add_poitem.php', [
+            'i'     =>  $i
+        ]);
+        $data['html'] = $html;
+        $this->view->renderJson($data);
+    }
+
     public function makeFinisherContactSelect()
     {
         $finisher_id = $this->request->data['finisher_id'];

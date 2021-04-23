@@ -68,7 +68,21 @@
                 },
                 'add-purchase-order':{
                     init: function(){
-                        actions.common.createCKEditors();
+                        $("a.add-poitem").click(function(e){
+                            e.preventDefault();
+                            var item_count = $("div#poitems_holder div.apoitem").length;
+                            //console.log('packages: '+contact_count);
+                            var data = {
+                                i: item_count
+                            }
+                            $.post('/ajaxfunctions/addPOItem', data, function(d){
+                                $('div#poitems_holder').append(d.html);
+                                actions.common.createCKEditors();
+                                $([document.documentElement, document.body]).animate({
+                                    scrollTop: $("#poitem_" + item_count).offset().top
+                                }, 1000);
+                            });
+                        });
                     }
                 }
             }
