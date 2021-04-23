@@ -10,11 +10,6 @@
 
                     },
                     createCKEditors: function(){
-                        var allCurrentEditors = document.querySelector('.ck-editor__editable');
-                        for (var i = 0; i < allCurrentEditors.length; ++i)
-                        {
-
-                        }
                         //.ckeditorInstance.destroy()
                         var allTextAreas = document.querySelectorAll('textarea.ckeditor');
                         for (var i = 0; i < allTextAreas.length; ++i)
