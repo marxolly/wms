@@ -14,8 +14,48 @@
                             console.log("gonna do textarea[name] "+$(this).attr('id'));
                             ClassicEditor
                                 .create( document.querySelector( $(this).attr('id') ),{
-                                    toolbar:[]
-                                } )
+                                    toolbar: {
+                                        items: [
+                                            'heading',
+                                            '|',
+                                            'bold',
+                                            'italic',
+                                            'strikethrough',
+                                            'subscript',
+                                            'superscript',
+                                            'underline',
+                                            '|',
+                                            'fontSize',
+                                            'fontColor',
+                                            'fontBackgroundColor',
+                                            'highlight',
+                                            '|',
+                                            'outdent',
+                                            'indent',
+                                            'alignment',
+                                            'insertTable',
+                                            '|',
+                                            'undo',
+                                            'redo'
+                                        ]
+                                    },
+                                    language: 'en',
+                                    image: {
+                                        toolbar: [
+                                            'imageTextAlternative',
+                                            'imageStyle:full',
+                                            'imageStyle:side'
+                                        ]
+                                    },
+                                    table: {
+                                        contentToolbar: [
+                                            'tableColumn',
+                                            'tableRow',
+                                            'mergeTableCells'
+                                        ]
+                                    },
+                                    licenseKey: '',
+                                })
                                 .then( editor => {
                                     console.log( editor );
                                 } )
