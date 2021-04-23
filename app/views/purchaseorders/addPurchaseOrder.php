@@ -35,9 +35,9 @@
                             <div id="finishers_holder"></div>
                             The Items Go Here
                             <p>CKEditor 1</p>
-                            <textarea name="content0" class="ckeditor" id="c0" name="c0">This is some <strong>sample</strong> content.</textarea>
+                            <textarea name="content0" class="ckeditor" id="c0" name="c0" placeholder="Type Details Here"></textarea>
                             <p>CKEditor 2</p>
-                            <textarea name="content1" class="ckeditor" id="c1" name="c1">This is some <span class="font-italic">sample</span> content.</textarea>
+                            <textarea name="content1" class="ckeditor" id="c1" name="c1"></textarea>
                         </div>
                     </div>
                 </div>
