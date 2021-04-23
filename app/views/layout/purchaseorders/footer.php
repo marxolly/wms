@@ -28,7 +28,6 @@
                                             '|',
                                             'fontSize',
                                             'fontColor',
-                                            'fontBackgroundColor',
                                             'highlight',
                                             '-',
                                             'outdent',
@@ -38,8 +37,7 @@
                                             '|',
                                             'undo',
                                             'redo'
-                                        ],
-                                        shouldNotGroupWhenFull: true
+                                        ]
                                     },
                                     language: 'en',
                                     image: {
