@@ -10,10 +10,11 @@
 
                     },
                     createCKEditors: function(){
-                        //$( 'textarea.ckeditor' ).each(function(){
-                            //console.log("gonna do textarea[name] "+$(this).attr('id'));
+                        var allEditors = document.querySelectorAll('textarea.ckeditor');
+                        for (var i = 0; i < allEditors.length; ++i)
+                        {
                             ClassicEditor
-                                .create( document.querySelector( 'textarea.ckeditor' ),{
+                                .create( allEditors[i],{
                                     toolbar: {
                                         items: [
                                             'heading',
@@ -65,8 +66,7 @@
                                     console.warn( 'Build id: x86d9y47fxh6-q4s9v3hwa0g6' );
                                     console.error( error );
                                 } );
-                            //console.log("done textarea[name] "+$(this).attr('id'));
-                        //});
+                        }
                     }
                 },
                 'add-purchase-order':{
