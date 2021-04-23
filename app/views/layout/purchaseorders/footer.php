@@ -14,7 +14,7 @@
                         for (var i = 0; i < allEditors.length; ++i)
                         {
                             ClassicEditor
-                                .create( allEditors[i],{
+                                .create( allEditors[i] , {
                                     toolbar: {
                                         items: [
                                             'heading',
@@ -28,7 +28,7 @@
                                             '|',
                                             'fontColor',
                                             'highlight',
-                                            '-',
+                                            '|',
                                             'outdent',
                                             'indent',
                                             'alignment',
@@ -36,8 +36,7 @@
                                             '|',
                                             'undo',
                                             'redo'
-                                        ],
-                                        shouldNotGroupWhenFull: true
+                                        ]
                                     },
                                     language: 'en',
                                     image: {
@@ -53,8 +52,7 @@
                                             'tableRow',
                                             'mergeTableCells'
                                         ]
-                                    },
-                                    licenseKey: ''
+                                    }
                                 })
                                 .then( editor => {
                                     window.editor = editor
