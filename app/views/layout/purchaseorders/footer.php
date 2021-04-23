@@ -10,11 +10,20 @@
 
                     },
                     createCKEditors: function(){
-                        var allEditors = document.querySelectorAll('textarea.ckeditor');
-                        for (var i = 0; i < allEditors.length; ++i)
+                        var allCurrentEditors = document.querySelector('.ck-editor__editable');
+                        for (var i = 0; i < allCurrentEditors.length; ++i)
                         {
+
+                        }
+                        //.ckeditorInstance.destroy()
+                        var allTextAreas = document.querySelectorAll('textarea.ckeditor');
+                        for (var i = 0; i < allTextAreas.length; ++i)
+                        {
+                            elementId = document.getElementsByClassName('textarea.ckeditor')[i].id;
+                            console.log("element id: " + elementId);
+                            continue;
                             ClassicEditor
-                                .create( allEditors[i] , {
+                                .create( allTextAreas[i] , {
                                     toolbar: {
                                         items: [
                                             'heading',
