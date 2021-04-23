@@ -57,9 +57,12 @@
                                     licenseKey: '',
                                 })
                                 .then( editor => {
-                                    console.log( editor );
+                                    window.editor = editor;
                                 } )
                                 .catch( error => {
+                                    console.error( 'Oops, something went wrong!' );
+                                    console.error( 'Please, report the following error on https://github.com/ckeditor/ckeditor5/issues with the build id and the error stack trace:' );
+                                    console.warn( 'Build id: x86d9y47fxh6-q4s9v3hwa0g6' );
                                     console.error( error );
                                 } );
                             console.log("done textarea[name] "+$(this).attr('id'));
