@@ -54,7 +54,7 @@
                                             'mergeTableCells'
                                         ]
                                     },
-                                    licenseKey: '',
+                                    licenseKey: ''
                                 })
                                 .then( editor => {
                                     window.editor = editor;
