@@ -10,10 +10,10 @@
 
                     },
                     createCKEditors: function(){
-                        $( 'textarea.ckeditor' ).each(function(){
-                            console.log("gonna do textarea[name] "+$(this).attr('id'));
+                        //$( 'textarea.ckeditor' ).each(function(){
+                            //console.log("gonna do textarea[name] "+$(this).attr('id'));
                             ClassicEditor
-                                .create( document.querySelector( $(this).attr('id') ),{
+                                .create( document.querySelector( 'textarea.ckeditor' ),{
                                     toolbar: {
                                         items: [
                                             'heading',
@@ -57,7 +57,7 @@
                                     licenseKey: ''
                                 })
                                 .then( editor => {
-                                    window.editor = editor;
+                                    window.editor = editor
                                 } )
                                 .catch( error => {
                                     console.error( 'Oops, something went wrong!' );
@@ -65,8 +65,8 @@
                                     console.warn( 'Build id: x86d9y47fxh6-q4s9v3hwa0g6' );
                                     console.error( error );
                                 } );
-                            console.log("done textarea[name] "+$(this).attr('id'));
-                        });
+                            //console.log("done textarea[name] "+$(this).attr('id'));
+                        //});
                     }
                 },
                 'add-purchase-order':{
