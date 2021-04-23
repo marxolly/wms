@@ -25,7 +25,7 @@
                                             'subscript',
                                             'superscript',
                                             'underline',
-                                            '-',
+                                            '|',
                                             'fontSize',
                                             'fontColor',
                                             'fontBackgroundColor',
@@ -35,7 +35,7 @@
                                             'indent',
                                             'alignment',
                                             'insertTable',
-                                            '-',
+                                            '|',
                                             'undo',
                                             'redo'
                                         ],
