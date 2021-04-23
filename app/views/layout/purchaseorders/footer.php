@@ -26,7 +26,6 @@
                                             'superscript',
                                             'underline',
                                             '|',
-                                            'fontSize',
                                             'fontColor',
                                             'highlight',
                                             '-',
@@ -37,7 +36,8 @@
                                             '|',
                                             'undo',
                                             'redo'
-                                        ]
+                                        ],
+                                        shouldNotGroupWhenFull: true
                                     },
                                     language: 'en',
                                     image: {
