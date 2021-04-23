@@ -25,20 +25,21 @@
                                             'subscript',
                                             'superscript',
                                             'underline',
-                                            '|',
+                                            '-',
                                             'fontSize',
                                             'fontColor',
                                             'fontBackgroundColor',
                                             'highlight',
-                                            '|',
+                                            '-',
                                             'outdent',
                                             'indent',
                                             'alignment',
                                             'insertTable',
-                                            '|',
+                                            '-',
                                             'undo',
                                             'redo'
-                                        ]
+                                        ],
+                                        shouldNotGroupWhenFull: true
                                     },
                                     language: 'en',
                                     image: {
