@@ -12,7 +12,7 @@
         <!-- Bootstrap Select Styling -->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/bootstrap-select.min.js"></script>
         <!-- CKEditor JavaScript -->
-        <script src="https://cdn.ckeditor.com/4.16.0/standard/ckeditor.js"></script>
+        <script src="/scripts/ckeditor5/ckeditor.js"></script>
         <!-- DataTables JavaScript -->
         <script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
         <script src="//cdn.datatables.net/1.10.21/js/dataTables.bootstrap4.min.js"></script>

@@ -10,15 +10,17 @@
 
                     },
                     createCKEditors: function(){
-                        $( 'textarea.wysiwyg_editor' ).each(function(){
-                            console.log("gonna do textarea[name] "+$(this).attr('name'));
-                            if (CKEDITOR.instances[$(this).attr('name')])
-                            {
-                                console.log("gonna destoy textarea[name] "+$(this).attr('name'));
-                               CKEDITOR.instances[$(this).attr('name')].destroy();
-                            }
-                            CKEDITOR.replace( $(this).attr('name') );
-                            console.log("done textarea[name] "+$(this).attr('name'));
+                        $( 'textarea.ckeditor' ).each(function(){
+                            console.log("gonna do textarea[name] "+$(this).attr('id'));
+                            ClassicEditor
+                                .create( document.querySelector( $(this).attr('id') ) )
+                                .then( editor => {
+                                    console.log( editor );
+                                } )
+                                .catch( error => {
+                                    console.error( error );
+                                } );
+                            console.log("done textarea[name] "+$(this).attr('id'));
                         });
                     }
                 },

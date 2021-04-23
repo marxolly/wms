@@ -29,11 +29,15 @@
                             Purchase Order Items
                         </div>
                         <div class="card-body">
+                            <div class="col">
+                                <a class="add-finisher" style="cursor:pointer" title="Add Another Finisher"><h4><i class="fad fa-plus-square text-success"></i> Add A Finisher</a></h4>
+                            </div>
+                            <div id="finishers_holder"></div>
                             The Items Go Here
                             <p>CKEditor 1</p>
-                            <textarea name="content0" class="wysiwyg_editor" name="c0">This is some <strong>sample</strong> content.</textarea>
+                            <textarea name="content0" class="ckeditor" id="c0" name="c0">This is some <strong>sample</strong> content.</textarea>
                             <p>CKEditor 2</p>
-                            <textarea name="content1" class="wysiwyg_editor" name="c1">This is some <span class="font-italic">sample</span> content.</textarea>
+                            <textarea name="content1" class="ckeditor" id="c1" name="c1">This is some <span class="font-italic">sample</span> content.</textarea>
                         </div>
                     </div>
                 </div>
