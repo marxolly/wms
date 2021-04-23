@@ -13,7 +13,9 @@
                         $( 'textarea.ckeditor' ).each(function(){
                             console.log("gonna do textarea[name] "+$(this).attr('id'));
                             ClassicEditor
-                                .create( document.querySelector( $(this).attr('id') ) )
+                                .create( document.querySelector( $(this).attr('id') ),{
+                                    toolbar:[]
+                                } )
                                 .then( editor => {
                                     console.log( editor );
                                 } )
