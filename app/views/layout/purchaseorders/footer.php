@@ -14,8 +14,8 @@
                         var allTextAreas = document.querySelectorAll('textarea.ckeditor');
                         for (var i = 0; i < allTextAreas.length; ++i)
                         {
-                            elementId = allTextAreas[i].id;
-                            console.log("element id: " + elementId);
+                            var elementId = allTextAreas[i].id;
+                            console.log("element id: " + elementId );
                             console.log("all text areas: " + allTextAreas[i]);
                             continue;
                             ClassicEditor
