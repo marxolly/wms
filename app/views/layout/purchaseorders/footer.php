@@ -19,11 +19,6 @@
                         }
                         for (var i = 0; i < allTextAreas.length; ++i)
                         {
-                            var elementId = allTextAreas[i].id;
-                            //var elementId = $(allTextAreas[i]).attr('id');
-                            console.log("window.editor: " + window.editors );
-                            //console.log("all text areas: " + allTextAreas[i]);
-                            //continue;
                             ClassicEditor
                                 .create( allTextAreas[i] , {
                                     toolbar: {
@@ -86,9 +81,11 @@
                             var data = {
                                 i: item_count
                             }
+                            $('div#poitems_holder').block();
                             $.post('/ajaxfunctions/addPOItem', data, function(d){
                                 $('div#poitems_holder').append(d.html);
                                 actions.common.createCKEditors();
+                                $('div#poitems_holder').unblock();
                                 $([document.documentElement, document.body]).animate({
                                     scrollTop: $("#poitem_" + item_count).offset().top
                                 }, 1000);
