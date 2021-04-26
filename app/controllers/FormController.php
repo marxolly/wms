@@ -50,6 +50,7 @@ class FormController extends Controller {
             'procAddProductionCustomer',
             'procAddProductionFinisher',
             'procAddProductionJob',
+            'procAddPurchaseOrder',
             'procAddressUpdate',
             'procAddServiceJob',
             'procAddSerials',
@@ -143,6 +144,29 @@ class FormController extends Controller {
         ];
         $this->Security->config("form", [ 'fields' => ['csrf_token']]);
         $this->Security->requirePost($actions);
+    }
+
+    public function procAddPurchaseOrder()
+    {
+        echo "<pre>",print_r($this->request->data),"</pre>"; //die();
+        $post_data = array();
+        foreach($this->request->data as $field => $value)
+        {
+            if(!is_array($value))
+            {
+                ${$field} = $value;
+                $post_data[$field] = $value;
+            }
+            else
+            {
+                foreach($value as $key => $avalue)
+                {
+                    $post_data[$field][$key] = $avalue;
+                    ${$field}[$key] = $avalue;
+                }
+            }
+        }
+        echo "<pre>",print_r($post_data),"</pre>"; die();
     }
 
     public function procAddMiscTask()
