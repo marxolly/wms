@@ -35,10 +35,10 @@ $poidescription = empty(Form::value('poitems['.$i.'][decription]'))?  $tpoia['de
     <div class="form-group row">
         <label class="col-md-12"><sup><small><i class="fas fa-asterisk text-danger"></i></small></sup> Description</label>
         <div class="col-md-12">
-            <textarea class="ckeditor required" id="poitem_description_<?php echo $i;?>" name="poitems[<?php echo $i;?>][description]" placeholder="Enter the item description"><?php echo $poidescription;?></textarea>
+            <textarea class="ckeditor poitem_description required" id="poitem_description_<?php echo $i;?>" name="poitems[<?php echo $i;?>][description]" placeholder="Enter the item description"><?php echo $poidescription;?></textarea>
         </div>
     </div>
     <div class="this_poitem_hidden_details">
-        <input type="hidden" name="poitems[<?php echo $i;?>][item_id]" value="<?php echo $poitem_id;?>">
+        <input type="hidden" class="poitem_id" name="poitems[<?php echo $i;?>][item_id]" value="<?php echo $poitem_id;?>">
     </div>
 </div>
