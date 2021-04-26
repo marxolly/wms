@@ -17,8 +17,8 @@
                             var elementId = allTextAreas[i].id;
                             //var elementId = $(allTextAreas[i]).attr('id');
                             console.log("element id: " + elementId );
-                            console.log("all text areas: " + allTextAreas[i]);
-                            continue;
+                            //console.log("all text areas: " + allTextAreas[i]);
+                            //continue;
                             ClassicEditor
                                 .create( allTextAreas[i] , {
                                     toolbar: {
