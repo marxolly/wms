@@ -15,6 +15,7 @@
                         for (var i = 0; i < allTextAreas.length; ++i)
                         {
                             var elementId = allTextAreas[i].id;
+                            //var elementId = $(allTextAreas[i]).attr('id');
                             console.log("element id: " + elementId );
                             console.log("all text areas: " + allTextAreas[i]);
                             continue;
