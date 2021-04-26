@@ -12,6 +12,11 @@
                     createCKEditors: function(){
                         //.ckeditorInstance.destroy()
                         var allTextAreas = document.querySelectorAll('textarea.ckeditor');
+                        var currentCKEditors = document.querySelectorAll('.ck-editor__editable');
+                        for( var j = 0; j < currentCKEditors.length; ++j)
+                        {
+                            currentCKEditors[j].ckeditorInstance.destro();
+                        }
                         for (var i = 0; i < allTextAreas.length; ++i)
                         {
                             var elementId = allTextAreas[i].id;
@@ -61,7 +66,7 @@
                                     }
                                 })
                                 .then( editor => {
-                                    window.editors[elementId] = editor
+                                    window.editor = editor
                                 } )
                                 .catch( error => {
                                     console.error( 'Oops, something went wrong!' );
