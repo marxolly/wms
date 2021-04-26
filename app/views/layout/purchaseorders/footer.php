@@ -15,7 +15,7 @@
                         var currentCKEditors = document.querySelectorAll('.ck-editor__editable');
                         for( var j = 0; j < currentCKEditors.length; ++j)
                         {
-                            currentCKEditors[j].ckeditorInstance.destro();
+                            currentCKEditors[j].ckeditorInstance.destroy();
                         }
                         for (var i = 0; i < allTextAreas.length; ++i)
                         {
