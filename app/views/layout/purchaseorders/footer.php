@@ -16,7 +16,7 @@
                         {
                             var elementId = allTextAreas[i].id;
                             //var elementId = $(allTextAreas[i]).attr('id');
-                            console.log("window.editor: " + window.editor );
+                            console.log("window.editor: " + window.editors );
                             //console.log("all text areas: " + allTextAreas[i]);
                             //continue;
                             ClassicEditor
@@ -61,7 +61,7 @@
                                     }
                                 })
                                 .then( editor => {
-                                    window.editor.elementId = editor
+                                    window.editors[elementId] = editor
                                 } )
                                 .catch( error => {
                                     console.error( 'Oops, something went wrong!' );
