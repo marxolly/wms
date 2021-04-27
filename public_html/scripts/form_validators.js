@@ -133,7 +133,18 @@ $(document).ready(function() {
 	});
     ///////////////////////////////////////////////////////////////////////////////
     $("form#add_purchase_order").validate({
-        ignore: []
+        ignore: [],
+        rules: {
+            'poitems[][description]':{
+                required: function(){
+                    var currentCKEditors = document.querySelectorAll('.ck-editor__editable');
+                    for( var j = 0; j < currentCKEditors.length; ++j)
+                    {
+                        currentCKEditors[j].ckeditorInstance.updateElement();
+                    }
+                }
+            }
+        }
 	});
     ///////////////////////////////////////////////////////////////////////////////
     $("form#prepare_runsheet").validate({
