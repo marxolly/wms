@@ -140,7 +140,8 @@ $(document).ready(function() {
                     var currentCKEditors = document.querySelectorAll('.ck-editor__editable');
                     for( var j = 0; j < currentCKEditors.length; ++j)
                     {
-                        currentCKEditors[j].ckeditorInstance.updateSourceElement();
+                        //currentCKEditors[j].ckeditorInstance.updateSourceElement();
+                        CKEDITOR.instances.currentCKEditors[j].updateSourceElement();
                     }
                 }
             }
