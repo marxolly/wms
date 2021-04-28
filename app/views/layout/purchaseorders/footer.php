@@ -83,9 +83,7 @@
                                 },
                                 messages:{
                                     required: "Type A farkin message"
-                                },
-                                ignore: ".ck-editor__editable *"
-
+                                }
                             });
                         });
                     },
