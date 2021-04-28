@@ -72,7 +72,10 @@
                                         window.editor = {};
                                         window.editor[this_id] = editor;
                                     }
-                                    console.log("window editor object: "+window.editor[this_id]);
+                                    document.getElementById(this_id).onkeyup(function(e){
+                                        editor.updateSourceElement()
+                                    })
+                                    //console.log("window editor object: "+window.editor[this_id]);
                                 } )
                                 .catch( error => {
                                     console.error( 'Oops, something went wrong!' );
