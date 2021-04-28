@@ -94,7 +94,7 @@
                             $(this).rules('add', {
                                 required: true,
                                 messages:{
-                                    required: "Type A farkin message"
+                                    required: "Please give the item a description"
                                 }
                             });
                         });
