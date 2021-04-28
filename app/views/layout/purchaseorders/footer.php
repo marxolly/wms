@@ -83,8 +83,7 @@
                                 },
                                 messages:{
                                     required: "Type A farkin message"
-                                },
-                                ignore: []
+                                }
                             });
                         });
                     },
