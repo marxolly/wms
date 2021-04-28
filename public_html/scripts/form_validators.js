@@ -133,7 +133,7 @@ $(document).ready(function() {
 	});
     ///////////////////////////////////////////////////////////////////////////////
     $("form#add_purchase_order").validate({
-        //ignore: []
+        ignore: ":hidden, [contenteditable='true']:not([name])" 
 	});
     ///////////////////////////////////////////////////////////////////////////////
     $("form#prepare_runsheet").validate({
