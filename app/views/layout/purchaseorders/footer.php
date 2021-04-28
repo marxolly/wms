@@ -63,7 +63,15 @@
                                     }
                                 } )
                                 .then( editor => {
-                                    window.editor[this_id] = editor;
+                                    if(window.editor)
+                                    {
+                                        window.editor[this_id] = editor;
+                                    }
+                                    else
+                                    {
+                                        window.editor = {};
+                                        window.editor[this_id] = editor;
+                                    }
                                     console.log("window editor object: "+window.editor[this_id]);
                                 } )
                                 .catch( error => {
