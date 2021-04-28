@@ -20,7 +20,7 @@
                         for (var i = 0; i < allTextAreas.length; ++i)
                         {
                             var this_id = allTextAreas[j].id;
-                            console.log("this_id: "+this_id);
+                            //console.log("this_id: "+this_id);
                             ClassicEditor
                                 .create( allTextAreas[i] , {
                                     toolbar: {
@@ -63,7 +63,8 @@
                                     }
                                 } )
                                 .then( editor => {
-                                    window.editor = editor
+                                    window.editor[this_id] = editor;
+                                    console.log("window editor object: "+window.editor[this_id]);
                                 } )
                                 .catch( error => {
                                     console.error( 'Oops, something went wrong!' );
