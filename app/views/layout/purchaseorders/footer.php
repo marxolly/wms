@@ -71,18 +71,11 @@
                                     {
                                         window.editor = {};
                                         window.editor[this_id] = editor;
-                                    }
-                                    var this_editor = document.getElementById(this_id);
+                                    } 
                                     editor.model.document.on( 'change', () => {
-                                        console.log( 'The Document has changed!' );
+                                        //console.log( 'The Document has changed!' );
                                         editor.updateSourceElement();
                                     } );
-                                    /*
-                                    this_editor.onkeyup = function(e){
-                                        console.log("key up registered");
-                                        editor.updateSourceElement()
-                                    }*/
-                                    //console.log("window editor object: "+window.editor[this_id]);
                                 } )
                                 .catch( error => {
                                     console.error( 'Oops, something went wrong!' );
