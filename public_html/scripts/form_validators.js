@@ -137,13 +137,13 @@ $(document).ready(function() {
         rules: {
             'poitems[][description]':{
                 required: function(){
-                    var currentCKEditors = document.querySelectorAll('.ck-editor__editable');
-                    for( var j = 0; j < currentCKEditors.length; ++j)
-                    {
-                        return currentCKEditors[j].ckeditorInstance.updateSourceElement();
+                    //var currentCKEditors = document.querySelectorAll('.ck-editor__editable');
+                    //for( var j = 0; j < currentCKEditors.length; ++j)
+                    //{
+                        //return currentCKEditors[j].ckeditorInstance.updateSourceElement();
                         //return CKEDITOR.instances.currentCKEditors[j].updateSourceElement();
-                    }
-                    //return true;
+                    //}
+                    return true;
                 }
             }
         },
