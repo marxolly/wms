@@ -74,6 +74,7 @@
                                     }
                                     var this_editor = document.getElementById(this_id);
                                     this_editor.onkeyup = function(e){
+                                        console.log("key up registered");
                                         editor.updateSourceElement()
                                     }
                                     //console.log("window editor object: "+window.editor[this_id]);
