@@ -93,6 +93,7 @@
                         }
                         $('[id^=poitem_description_]').each(function(e) {
                             $(this).rules('add', {
+                                required: true,
                                 messages:{
                                     required: "Type A farkin message"
                                 }
