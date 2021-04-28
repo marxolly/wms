@@ -143,7 +143,13 @@ $(document).ready(function() {
                         //currentCKEditors[j].ckeditorInstance.updateSourceElement();
                         CKEDITOR.instances.currentCKEditors[j].updateSourceElement();
                     }
+                    return true;
                 }
+            }
+        },
+        messages: {
+            'poitems[][description]': {
+                required: "Type A farkin message"
             }
         }
 	});
