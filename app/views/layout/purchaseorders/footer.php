@@ -79,7 +79,6 @@
                                         //currentCKEditors[j].ckeditorInstance.updateSourceElement();
                                         CKEDITOR.instances.currentCKEditors[j].updateSourceElement();
                                     }
-                                    return true;
                                 }
                             });
                         });
