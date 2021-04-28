@@ -80,7 +80,11 @@
                                         //CKEDITOR.instances.currentCKEditors[j].updateSourceElement();
                                     //}
                                     return true;
+                                },
+                                messages:{
+                                    required: "Type A farkin message"
                                 }
+
                             });
                         });
                     },
