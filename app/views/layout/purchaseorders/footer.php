@@ -73,10 +73,15 @@
                                         window.editor[this_id] = editor;
                                     }
                                     var this_editor = document.getElementById(this_id);
+                                    editor.on("keyup", function(e){
+                                       console.log("key up fired");
+                                       editor.updateSourceElement();
+                                    });
+                                    /*
                                     this_editor.onkeyup = function(e){
                                         console.log("key up registered");
                                         editor.updateSourceElement()
-                                    }
+                                    }*/
                                     //console.log("window editor object: "+window.editor[this_id]);
                                 } )
                                 .catch( error => {
