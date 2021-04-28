@@ -73,10 +73,9 @@
                                         window.editor[this_id] = editor;
                                     }
                                     var this_editor = document.getElementById(this_id);
-                                    editor.on("keyup", function(e){
-                                       console.log("key up fired");
-                                       editor.updateSourceElement();
-                                    });
+                                    editor.model.document.on( 'change', () => {
+                                        console.log( 'The Document has changed!' );
+                                    } );
                                     /*
                                     this_editor.onkeyup = function(e){
                                         console.log("key up registered");
