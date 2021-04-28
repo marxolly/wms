@@ -133,25 +133,7 @@ $(document).ready(function() {
 	});
     ///////////////////////////////////////////////////////////////////////////////
     $("form#add_purchase_order").validate({
-        ignore: [],
-        rules: {
-            'poitems[][description]':{
-                required: function(){
-                    var currentCKEditors = document.querySelectorAll('.ck-editor__editable');
-                    for( var j = 0; j < currentCKEditors.length; ++j)
-                    {
-                        //currentCKEditors[j].ckeditorInstance.updateSourceElement();
-                        CKEDITOR.instances.currentCKEditors[j].updateSourceElement();
-                    }
-                    return true;
-                }
-            }
-        },
-        messages: {
-            'poitems[][description]': {
-                required: "Type A farkin message"
-            }
-        }
+        ignore: []
 	});
     ///////////////////////////////////////////////////////////////////////////////
     $("form#prepare_runsheet").validate({
