@@ -1013,6 +1013,11 @@ bootstrap adjustments
         color: #d9534f
     }
 
+    .btn.disabled,
+    .bth:disabled{
+        cursor: not-allowed
+    }
+
 /********
 Responsive adjustments
 *******  */
