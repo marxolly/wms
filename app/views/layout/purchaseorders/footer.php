@@ -72,7 +72,8 @@
                                         window.editor = {};
                                         window.editor[this_id] = editor;
                                     }
-                                    document.getElementById(this_id).onkeyup(function(e){
+                                    var this_editor = document.getElementById(this_id);
+                                    this_editor.onkeyup(function(e){
                                         editor.updateSourceElement()
                                     })
                                     //console.log("window editor object: "+window.editor[this_id]);
