@@ -9,6 +9,10 @@
                     init: function(){
 
                     },
+                    validateTextField: function(textfield_id)
+                    {
+                        $("#"+textfield_id).valid();
+                    },
                     createCKEditors: function(){
                         //.ckeditorInstance.destroy()
                         var allTextAreas = document.querySelectorAll('textarea.ckeditor');
@@ -76,7 +80,7 @@
                                     editor.model.document.on( 'change', () => {
                                         //console.log( 'The Document has changed!' );
                                         editor.updateSourceElement();
-                                        this_editor.valid();
+                                        actions.common.validateTextField(this_id);
                                     } );
                                 } )
                                 .catch( error => {
