@@ -72,10 +72,11 @@
                                         window.editor = {};
                                         window.editor[this_id] = editor;
                                     }
+                                    var this_editor = document.getElementById(this_id);
                                     editor.model.document.on( 'change', () => {
                                         //console.log( 'The Document has changed!' );
                                         editor.updateSourceElement();
-                                        $(this_id).valid();
+                                        this_editor.valid();
                                     } );
                                 } )
                                 .catch( error => {
