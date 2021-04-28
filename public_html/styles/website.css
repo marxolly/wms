@@ -1014,7 +1014,7 @@ bootstrap adjustments
     }
 
     .btn.disabled,
-    .bth:disabled{
+    .btn:disabled{
         cursor: not-allowed
     }
 
