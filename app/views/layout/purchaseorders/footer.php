@@ -71,10 +71,11 @@
                                     {
                                         window.editor = {};
                                         window.editor[this_id] = editor;
-                                    } 
+                                    }
                                     editor.model.document.on( 'change', () => {
                                         //console.log( 'The Document has changed!' );
                                         editor.updateSourceElement();
+                                        $(this_id).valid();
                                     } );
                                 } )
                                 .catch( error => {
