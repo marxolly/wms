@@ -117,13 +117,13 @@
                                 $(this).find("input.poitem_description").attr("name", "poitems["+i+"][description]");
                                 $(this).find("input.poitem_id").attr("name", "poitems["+i+"][item_id]");
                             });
-                            $("button#submitter").prop("disabled", $("div#poitems_holder div.apoitem").length > 0);
+                            $("button#submitter").prop("disabled", $("div#poitems_holder div.apoitem").length == 0);
                         });
                     }
                 },
                 'add-purchase-order':{
                     init: function(){
-                        $("button#submitter").prop("disabled", $("div#poitems_holder div.apoitem").length > 0);
+                        $("button#submitter").prop("disabled", $("div#poitems_holder div.apoitem").length == 0);
                         $("a.add-poitem").click(function(e){
                             e.preventDefault();
                             var item_count = $("div#poitems_holder div.apoitem").length;
@@ -140,7 +140,7 @@
                                 $([document.documentElement, document.body]).animate({
                                     scrollTop: $("#poitem_" + item_count).offset().top
                                 }, 1000);
-                                $("button#submitter").prop("disabled", $("div#poitems_holder div.apoitem").length > 0);
+                                $("button#submitter").prop("disabled", $("div#poitems_holder div.apoitem").length == 0);
                             });
                         });
                     }
