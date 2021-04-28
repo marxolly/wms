@@ -59,7 +59,7 @@
                                             'mergeTableCells'
                                         ]
                                     }
-                                })
+                                } )
                                 .then( editor => {
                                     window.editor = editor
                                 } )
@@ -70,6 +70,11 @@
                                     console.error( error );
                                 } );
                         }
+                        $('[id^=poitem_description_]').each(function(e) {
+                            $(this).rules('add', {
+                                required: true
+                            });
+                        });
                     },
                     removeCKEditor: function(){
                         $("a.remove-poitem").off('click').click(function(e){
