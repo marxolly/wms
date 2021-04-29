@@ -19,7 +19,7 @@
                             <div class="form-group row">
                                 <label class="col-md-12"><sup><small><i class="fas fa-asterisk text-danger"></i></small></sup> Finisher/Supplier Name</label>
                                 <div class="col-md-12">
-                                    <input type="text" class="form-control finisher_name required" name="finisher_name" value="<?php echo Form::value('finisher_name');?>">
+                                    <input type="text" class="form-control finisher_name required" name="finisher_name" id="finisher_name" value="<?php echo Form::value('finisher_name');?>">
                                     <span class="inst">
                                         Start typing a name and choose a finisher/supplier from the list<br>
                                         Only finishers/suppliers already in the system can be chosen here<br>
