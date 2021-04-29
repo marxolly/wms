@@ -9,6 +9,25 @@
                     init: function(){
 
                     },
+                    finisherAutocomplete: function(){
+                        autoCompleter.productionJobFinisherAutoComplete( $('#finisher_name'), selectFinisherCallback, changeFinisherCallback);
+                        function selectFinisherCallback(event, ui)
+                        {
+                            $('input#finisher_id').val(ui.item.finisher_id);
+
+                            return false;
+                        }
+                        function changeFinisherCallback(event, ui)
+                        {
+                            if (!ui.item)
+                	        {
+                                var $target = $(event.target);
+                                $target.val("");
+                                $('input#finisher_id').val("0");
+                                return false;
+                            }
+                        }
+                    },
                     validateTextField: function(textfield_id)
                     {
                         $("#"+textfield_id).valid();
