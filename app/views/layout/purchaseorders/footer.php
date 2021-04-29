@@ -100,7 +100,7 @@
                         }
                         for (var i = 0; i < allTextAreas.length; ++i)
                         {
-                            var this_id = allTextAreas[j].id;
+                            var this_id = allTextAreas[i].id;
                             console.log("this_id: "+this_id);
                             ClassicEditor
                                 .create( allTextAreas[i] , {
