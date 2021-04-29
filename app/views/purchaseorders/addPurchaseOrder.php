@@ -85,7 +85,20 @@ else
                             <div class="col">
                                 <a class="add-poitem" style="cursor:pointer" title="Add An Item"><h4><i class="fad fa-plus-square text-success"></i> Add An Item</a></h4>
                             </div>
-                            <div id="poitems_holder"></div>
+                            <div id="poitems_holder">
+                                <div class="form-group row">
+                                    <div class="col-12">
+                                        <span class="inst">At least one item is required</span>
+                                    </div>
+                                    <?php echo Form::displayError('items');?>
+                                </div>
+                                <?php if(!empty(Form::value('poitems'))):
+                                    foreach(Form::value('poitems') as $i => $d)
+                                    {
+                                        include(Config::get('VIEWS_PATH')."layout/page-includes/add_poitem.php");
+                                    }
+                                endif;?>
+                            </div>
                         </div>
                     </div>
                 </div>

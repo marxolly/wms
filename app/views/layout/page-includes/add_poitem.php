@@ -2,22 +2,10 @@
 $i = (isset($i))? $i : 0;
 $this_item = $i + 1;
 $f = new NumberFormatter("en", NumberFormatter::SPELLOUT);
-if(isset($tpoia))
-{
-    $tpoid = "block";
-    $poitem_id = $tpoia['item_id'];
-}
-else
-{
-    $tpoia = array(
-        'qty'           => '',
-        'description'   => '',
-    );
-    $tpoid = "none";
-    $poitem_id = 0;
-}
-$poiqty = empty(Form::value('poitems['.$i.'][qty]'))?  $tpoia['qty'] : Form::value('poitems['.$i.'][qty]');
-$poidescription = empty(Form::value('poitems['.$i.'][decription]'))?  $tpoia['description'] : Form::value('poitems['.$i.'][description]');
+
+$poiqty = isset($d['qty'])? $d['qty']:"";
+$poidescription = isset($d['description'])? $d['description']:"";
+$poitem_id = isset($d['item_id'])? $d['item_id']:"";
 ?>
 <div id="poitem_<?php echo $i;?>" class="p-3 mid-grey mb-3 apoitem">
     <div class="form-group row">
