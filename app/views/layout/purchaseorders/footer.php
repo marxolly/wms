@@ -9,6 +9,51 @@
                     init: function(){
 
                     },
+                    doPODates: function(){
+                        $("span#date_calendar").css('cursor', 'pointer').click(function(e){
+                            $('#date').focus();
+                        })
+                        if( !$('#date').hasClass("hasDatepicker") )
+                        {
+                            $('#date').datepicker({
+                                changeMonth: true,
+                                changeYear: true,
+                                dateFormat: "dd/mm/yy",
+                                onClose: function(selectedDate){
+                                    //console.log('selecteddate: '+ selectedDate);
+                                    if(selectedDate == "")
+                                    {
+                                        $('input#date_value').val('');
+                                        $('input#date').val('');
+                                    }
+                                    else
+                                    {
+                                        var d = new Date( selectedDate.replace( /(\d{2})[-/](\d{2})[-/](\d{4})/, "$2\/$1\/$3") );
+                                        s = d.valueOf()/1000;
+                                        $('input#date_value').val(s);
+                                    }
+                                }
+                            });
+                        }
+                        $("span#required_date_calendar").css('cursor', 'pointer').click(function(e){
+                            $('#required_date').focus();
+                        })
+                        if( !$('#required_date').hasClass("hasDatepicker") )
+                        {
+                            $('#required_date').datepicker({
+                                changeMonth: true,
+                                changeYear: true,
+                                dateFormat: "dd/mm/yy",
+                                constrainInput: false,
+                                onSelect: function(selectedDate){
+                                    //console.log('selecteddate: '+ selectedDate);
+                                    var d = new Date( selectedDate.replace( /(\d{2})[-/](\d{2})[-/](\d{4})/, "$2\/$1\/$3") );
+                                    s = d.valueOf()/1000;
+                                    $('input#required_date_value').val(s);
+                                }
+                            });
+                        }
+                    },
                     finisherAutocomplete: function(){
                         autoCompleter.productionJobFinisherAutoComplete( $('#finisher_name'), selectFinisherCallback, changeFinisherCallback);
                         function selectFinisherCallback(event, ui)
@@ -16,49 +61,7 @@
                             $('input#finisher_id').val(ui.item.finisher_id);
                             $('div#podetails_holder').slideDown();
                             //Create DatePickers
-                            $("span#date_calendar").css('cursor', 'pointer').click(function(e){
-                                $('#date').focus();
-                            })
-                            if( !$('#date').hasClass("hasDatepicker") )
-                            {
-                                $('#date').datepicker({
-                                    changeMonth: true,
-                                    changeYear: true,
-                                    dateFormat: "dd/mm/yy",
-                                    onClose: function(selectedDate){
-                                        //console.log('selecteddate: '+ selectedDate);
-                                        if(selectedDate == "")
-                                        {
-                                            $('input#date_value').val('');
-                                            $('input#date').val('');
-                                        }
-                                        else
-                                        {
-                                            var d = new Date( selectedDate.replace( /(\d{2})[-/](\d{2})[-/](\d{4})/, "$2\/$1\/$3") );
-                                            s = d.valueOf()/1000;
-                                            $('input#date_value').val(s);
-                                        }
-                                    }
-                                });
-                            }
-                            $("span#required_date_calendar").css('cursor', 'pointer').click(function(e){
-                                $('#required_date').focus();
-                            })
-                            if( !$('#required_date').hasClass("hasDatepicker") )
-                            {
-                                $('#required_date').datepicker({
-                                    changeMonth: true,
-                                    changeYear: true,
-                                    dateFormat: "dd/mm/yy",
-                                    constrainInput: false,
-                                    onSelect: function(selectedDate){
-                                        //console.log('selecteddate: '+ selectedDate);
-                                        var d = new Date( selectedDate.replace( /(\d{2})[-/](\d{2})[-/](\d{4})/, "$2\/$1\/$3") );
-                                        s = d.valueOf()/1000;
-                                        $('input#required_date_value').val(s);
-                                    }
-                                });
-                            }
+                            actions.common.doPODates();
                             return false;
                         }
                         function changeFinisherCallback(event, ui)
@@ -70,6 +73,7 @@
                                 $('input#finisher_id').val("0");
                                 $('div#podetails_holder').hide();
                                 $('input#date_value').val("0");
+                                $('input#required_date').val("");
                                 return false;
                             }
                         }
@@ -190,6 +194,7 @@
                     init: function(){
                         $("button#submitter").prop("disabled", $("div#poitems_holder div.apoitem").length == 0);
                         actions.common.finisherAutocomplete();
+                        actions.common.doPODates();
                         $("a.add-poitem").click(function(e){
                             e.preventDefault();
                             var item_count = $("div#poitems_holder div.apoitem").length;
