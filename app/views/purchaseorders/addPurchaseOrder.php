@@ -1,4 +1,5 @@
 <?php
+$finisher_id = (empty(Form::value('finisher_id')))? 0 : Form::value('finisher_id');
 $date = (empty(Form::value('date_value')))? time() : Form::value('date_value');
 if( empty(Form::value('required_date')) )
 {
@@ -106,7 +107,7 @@ $dd = ( empty(Form::value('finisher_id')) )? "none":"block";
 <!-------------------------------------------------     Form Submission     ---------------------------------------------------------------->
 <!------------------------------------------------------------------------------------------------------------------------------------------->
                 <input type="hidden" name="csrf_token" value="<?php echo Session::generateCsrfToken(); ?>" />
-                <input type="hidden" name="finisher_id" id="finisher_id" value="0" />
+                <input type="hidden" name="finisher_id" id="finisher_id" value="<?php echo $finisher_id;?>" />
                 <div class="col-md-4 offset-6 offset-md-8">
                     <button type="submit" class="btn btn-lg btn-outline-secondary" id="submitter">Add This Purchase Order</button>
                 </div>
