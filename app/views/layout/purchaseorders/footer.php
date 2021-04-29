@@ -45,11 +45,18 @@
                                 changeYear: true,
                                 dateFormat: "dd/mm/yy",
                                 constrainInput: false,
-                                onSelect: function(selectedDate){
-                                    //console.log('selecteddate: '+ selectedDate);
-                                    var d = new Date( selectedDate.replace( /(\d{2})[-/](\d{2})[-/](\d{4})/, "$2\/$1\/$3") );
-                                    s = d.valueOf()/1000;
-                                    $('input#required_date_value').val(s);
+                                onClose: function(selectedDate){
+                                    if( Number.isInteger(selectedDate) )
+                                    {
+                                        //console.log('selecteddate: '+ selectedDate);
+                                        var d = new Date( selectedDate.replace( /(\d{2})[-/](\d{2})[-/](\d{4})/, "$2\/$1\/$3") );
+                                        s = d.valueOf()/1000;
+                                        $('input#required_date_value').val(s);
+                                    }
+                                    else
+                                    {
+                                        $('input#required_date_value').val('');
+                                    }
                                 }
                             });
                         }
