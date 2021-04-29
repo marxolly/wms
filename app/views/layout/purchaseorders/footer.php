@@ -15,6 +15,32 @@
                         {
                             $('input#finisher_id').val(ui.item.finisher_id);
                             $('div#podetails_holder').slideDown();
+                            //Create DatePickers
+                            $("span#date_calendar").css('cursor', 'pointer').click(function(e){
+                                $('#date').focus();
+                            })
+                            if( !$('#date').hasClass("hasDatepicker") )
+                            {
+                                $('#date').datepicker({
+                                    changeMonth: true,
+                                    changeYear: true,
+                                    dateFormat: "dd/mm/yy",
+                                    onClose: function(selectedDate){
+                                        //console.log('selecteddate: '+ selectedDate);
+                                        if(selectedDate == "")
+                                        {
+                                            $('input#date_value').val('');
+                                            $('input#date').val('');
+                                        }
+                                        else
+                                        {
+                                            var d = new Date( selectedDate.replace( /(\d{2})[-/](\d{2})[-/](\d{4})/, "$2\/$1\/$3") );
+                                            s = d.valueOf()/1000;
+                                            $('input#date_value').val(s);
+                                        }
+                                    }
+                                });
+                            }
                             return false;
                         }
                         function changeFinisherCallback(event, ui)
@@ -25,6 +51,7 @@
                                 $target.val("");
                                 $('input#finisher_id').val("0");
                                 $('div#podetails_holder').hide();
+                                $('input#date_value').val("0");
                                 return false;
                             }
                         }
