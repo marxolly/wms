@@ -50,7 +50,7 @@
                                     changeMonth: true,
                                     changeYear: true,
                                     dateFormat: "dd/mm/yy",
-                                    constrainInput: false
+                                    constrainInput: false,
                                     onClose: function(selectedDate){
                                         //console.log('selecteddate: '+ selectedDate);
                                         if(selectedDate == "")
