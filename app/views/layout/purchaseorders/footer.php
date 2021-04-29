@@ -87,6 +87,7 @@
                     },
                     validateTextField: function(textfield_id)
                     {
+                        console.log("Validating #"+ textfield_id);
                         $("#"+textfield_id).valid();
                     },
                     createCKEditors: function(){
@@ -154,7 +155,7 @@
                                     }
                                     var this_editor = document.getElementById(this_id);
                                     editor.model.document.on( 'change', () => {
-                                        console.log( 'The Document has changed!' );
+                                        //console.log( 'The Document has changed!' );
                                         editor.updateSourceElement();
                                         actions.common.validateTextField(this_id);
                                     } );
