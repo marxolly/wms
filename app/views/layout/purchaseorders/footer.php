@@ -212,7 +212,8 @@
                             $('div#poitems_holder').block();
                             $.post('/ajaxfunctions/addPOItem', data, function(d){
                                 $('div#poitems_holder').append(d.html);
-
+                                actions.common.createCKEditors();
+                                actions.common.removeCKEditor();
                                 $('div#poitems_holder').unblock();
                                 $([document.documentElement, document.body]).animate({
                                     scrollTop: $("#poitem_" + item_count).offset().top
