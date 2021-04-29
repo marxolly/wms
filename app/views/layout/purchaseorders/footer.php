@@ -24,7 +24,7 @@
                                 var $target = $(event.target);
                                 $target.val("");
                                 $('input#finisher_id').val("0");
-                                ('div#podetails_holder').hide(); 
+                                $('div#podetails_holder').hide();
                                 return false;
                             }
                         }
