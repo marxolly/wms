@@ -51,7 +51,7 @@
                                     changeYear: true,
                                     dateFormat: "dd/mm/yy",
                                     constrainInput: false,
-                                    onClose: function(selectedDate){
+                                    onSelect: function(selectedDate){
                                         console.log('selecteddate: '+ selectedDate);
                                         if(selectedDate == "")
                                         {
