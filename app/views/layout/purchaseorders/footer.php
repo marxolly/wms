@@ -14,7 +14,7 @@
                         function selectFinisherCallback(event, ui)
                         {
                             $('input#finisher_id').val(ui.item.finisher_id);
-
+                            $('div#podetails_holder').slideDown();
                             return false;
                         }
                         function changeFinisherCallback(event, ui)
@@ -24,6 +24,7 @@
                                 var $target = $(event.target);
                                 $target.val("");
                                 $('input#finisher_id').val("0");
+                                ('div#podetails_holder').hide(); 
                                 return false;
                             }
                         }
