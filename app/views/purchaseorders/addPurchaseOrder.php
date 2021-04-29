@@ -13,7 +13,7 @@ else
     }
     else
     {
-        $required_date_value = $required_date = Form::value('required_date_value');
+        $required_date_value = $required_date = Form::value('required_date');
     }
 }
 $dd = ( empty(Form::value('finisher_id')) )? "none":"block";
