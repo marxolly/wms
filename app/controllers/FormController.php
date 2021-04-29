@@ -166,7 +166,10 @@ class FormController extends Controller {
                 }
             }
         }
-        echo "<pre>",print_r($post_data),"</pre>"; die();
+        //echo "<pre>",print_r($post_data),"</pre>"; die();
+        Session::set('value_array', $_POST);
+        Session::set('error_array', Form::getErrorArray());
+        return $this->redirector->to(PUBLIC_ROOT."purchase-orders/add-purchase-order");
     }
 
     public function procAddMiscTask()
