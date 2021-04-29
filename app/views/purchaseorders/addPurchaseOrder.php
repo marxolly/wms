@@ -16,7 +16,7 @@ else
         $required_date_value = $required_date = Form::value('required_date_value');
     }
 }
-
+$dd = ( empty(Form::value('finisher_id')) )? "none":"block";
 ?>
 <div id="page-wrapper">
     <div id="page_container" class="container-xl">
@@ -46,7 +46,7 @@ else
                                     <?php echo Form::displayError('finisher_name');?>
                                 </div>
                             </div>
-                            <div id="podetails_holder" style="display:none">
+                            <div id="podetails_holder" style="display:<?php echo $dd;?>">
                                 <div class="form-group row">
                                     <label class="col-md-12">Purchase Order Date</label>
                                     <div class="col-md-12 input-group">
