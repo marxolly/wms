@@ -52,7 +52,7 @@
                                     dateFormat: "dd/mm/yy",
                                     constrainInput: false,
                                     onClose: function(selectedDate){
-                                        //console.log('selecteddate: '+ selectedDate);
+                                        console.log('selecteddate: '+ selectedDate);
                                         if(selectedDate == "")
                                         {
                                             $('input#required_date_value').val('');
