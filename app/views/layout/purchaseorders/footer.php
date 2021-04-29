@@ -154,7 +154,7 @@
                                     }
                                     var this_editor = document.getElementById(this_id);
                                     editor.model.document.on( 'change', () => {
-                                        //console.log( 'The Document has changed!' );
+                                        console.log( 'The Document has changed!' );
                                         editor.updateSourceElement();
                                         actions.common.validateTextField(this_id);
                                     } );
