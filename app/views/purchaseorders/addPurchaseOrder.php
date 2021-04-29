@@ -16,18 +16,17 @@
                             Purchase Order Details
                         </div>
                         <div class="card-body">
-                            The Details Go Here
-                        </div>
-                        <div class="form-group row">
-                            <label class="col-md-4"><sup><small><i class="fas fa-asterisk text-danger"></i></small></sup> Finisher/Supplier Name</label>
-                            <div class="col-md-8">
-                                <input type="text" class="form-control finisher_name" name="finisher_name" value="<?php echo Form::value('finisher_name');?>">
-                                <span class="inst">
-                                    Start typing a name and choose a finisher/supplier from the list<br>
-                                    Only finishers/suppliers already in the system can be chosen here<br>
-                                    <a href="/finishers/add-finisher" target="_blank" title="opens in new window">Click here to add a new finisher/supplier <i class="fal fa-external-link"></i></a>
-                                </span>
-                                <?php echo Form::displayError('finisher_name');?>
+                            <div class="form-group row">
+                                <label class="col-md-4"><sup><small><i class="fas fa-asterisk text-danger"></i></small></sup> Finisher/Supplier Name</label>
+                                <div class="col-md-8">
+                                    <input type="text" class="form-control finisher_name" name="finisher_name" value="<?php echo Form::value('finisher_name');?>">
+                                    <span class="inst">
+                                        Start typing a name and choose a finisher/supplier from the list<br>
+                                        Only finishers/suppliers already in the system can be chosen here<br>
+                                        <a href="/finishers/add-finisher" target="_blank" title="opens in new window">Click here to add a new finisher/supplier <i class="fal fa-external-link"></i></a>
+                                    </span>
+                                    <?php echo Form::displayError('finisher_name');?>
+                                </div>
                             </div>
                         </div>
                     </div>
