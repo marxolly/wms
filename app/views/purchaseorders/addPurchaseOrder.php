@@ -1,5 +1,5 @@
 <?php
-
+$date = (empty(Form::value('date_value')))? time() : Form::value('date_value');
 ?>
 <div id="page-wrapper">
     <div id="page_container" class="container-xl">
@@ -32,12 +32,13 @@
                                 <div class="form-group row">
                                     <label class="col-md-12">Purchase Order Date</label>
                                     <div class="col-md-12 input-group">
-                                        <input type="text" class="required form-control" name="date" id="date" value="<?php echo date('d/m/Y');?>" />
+                                        <input type="text" class="required form-control" name="date" id="date" value="<?php echo date('d/m/Y', $date);?>" />
                                         <div class="input-group-append">
                                             <span id="date_calendar" class="input-group-text"><i class="fad fa-calendar-alt"></i></span>
                                         </div>
                                         <?php echo Form::displayError('date');?>
                                     </div>
+                                    <input type="hidden" name="date_value" id="date_value" value="<?php echo $date;?>" />
                                 </div>
                             </div>
                         </div>
