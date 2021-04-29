@@ -1,6 +1,6 @@
 <?php
 $date = (empty(Form::value('date_value')))? time() : Form::value('date_value');
-if( empty(Form::value('required_date_value')) )
+if( empty(Form::value('required_date')) )
 {
     $required_date_value = $required_date = "";
 }
