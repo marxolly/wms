@@ -17,8 +17,8 @@
                         </div>
                         <div class="card-body">
                             <div class="form-group row">
-                                <label class="col-md-4"><sup><small><i class="fas fa-asterisk text-danger"></i></small></sup> Finisher/Supplier Name</label>
-                                <div class="col-md-8">
+                                <label class="col-md-12"><sup><small><i class="fas fa-asterisk text-danger"></i></small></sup> Finisher/Supplier Name</label>
+                                <div class="col-md-12">
                                     <input type="text" class="form-control finisher_name" name="finisher_name" value="<?php echo Form::value('finisher_name');?>">
                                     <span class="inst">
                                         Start typing a name and choose a finisher/supplier from the list<br>
