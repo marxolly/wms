@@ -167,6 +167,7 @@
                                 } );
                         }
                         $('[id^=poitem_description_]').each(function(e) {
+                            $(this).rules('remove');
                             $(this).rules('add', {
                                 required: true,
                                 messages:{
