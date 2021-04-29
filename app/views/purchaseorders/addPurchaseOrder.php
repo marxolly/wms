@@ -1,5 +1,22 @@
 <?php
 $date = (empty(Form::value('date_value')))? time() : Form::value('date_value');
+if( empty(Form::value('required_date_value')) )
+{
+    $required_date_value = $required_date = "";
+}
+else
+{
+    if (filter_var(Form::value('required_date_value'), FILTER_VALIDATE_INT))
+    {
+        $required_date_value = Form::value('required_date_value');
+        $required_date = date('d/m/Y', $required_date_value);
+    }
+    else
+    {
+        $required_date_value = $required_date = Form::value('required_date_value');
+    }
+}
+
 ?>
 <div id="page-wrapper">
     <div id="page_container" class="container-xl">
@@ -39,6 +56,17 @@ $date = (empty(Form::value('date_value')))? time() : Form::value('date_value');
                                         <?php echo Form::displayError('date');?>
                                     </div>
                                     <input type="hidden" name="date_value" id="date_value" value="<?php echo $date;?>" />
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-md-12"><sup><small><i class="fas fa-asterisk text-danger"></i></small></sup> Required</label>
+                                    <div class="col-md-12 input-group">
+                                        <input type="text" class="required form-control" name="required_date" id="required_date" value="<?php echo $required_date;?>" />
+                                        <div class="input-group-append">
+                                            <span id="required_date_calendar" class="input-group-text"><i class="fad fa-calendar-alt"></i></span>
+                                        </div>
+                                        <?php echo Form::displayError('required_date');?>
+                                    </div>
+                                    <input type="hidden" name="required_date_value" id="required_date_value" value="<?php echo $required_date_value;?>" />
                                 </div>
                             </div>
                         </div>
