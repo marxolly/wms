@@ -143,6 +143,7 @@
                 'add-purchase-order':{
                     init: function(){
                         $("button#submitter").prop("disabled", $("div#poitems_holder div.apoitem").length == 0);
+                        actions.common.finisherAutocomplete();
                         $("a.add-poitem").click(function(e){
                             e.preventDefault();
                             var item_count = $("div#poitems_holder div.apoitem").length;
