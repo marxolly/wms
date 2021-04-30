@@ -153,6 +153,8 @@
                                         window.editor = {};
                                         window.editor[this_id] = editor;
                                     }
+                                    console.dir(editor);
+                                    console.log(editor);
                                     var this_editor = document.getElementById(this_id);
                                     editor.model.document.on( 'change', () => {
                                         //console.log( 'The Document has changed!' );
