@@ -87,8 +87,8 @@
                     },
                     validateTextField: function(textfield_id)
                     {
-                        console.log("Validating #"+ textfield_id);
-                        $("#"+textfield_id).valid();
+                        console.log(textfield_id);
+                        $(textfield_id).valid();
                     },
                     createCKEditors: function(){
                         //.ckeditorInstance.destroy()
@@ -153,13 +153,13 @@
                                         window.editor = {};
                                         window.editor[this_id] = editor;
                                     }
-                                    console.dir(editor);
+                                    //console.dir(editor);
                                     console.log(editor);
                                     var this_editor = document.getElementById(this_id);
                                     editor.model.document.on( 'change', () => {
                                         //console.log( 'The Document has changed!' );
                                         editor.updateSourceElement();
-                                        actions.common.validateTextField(this_id);
+                                        actions.common.validateTextField(editor.sourceElement);
                                     } );
                                 } )
                                 .catch( error => {
