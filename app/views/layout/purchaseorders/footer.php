@@ -169,8 +169,8 @@
                         $('[id^=poitem_description_]').each(function(e) {
                             var thisid = $(this).attr('id');
                             console.log("thisid: " + thisid);
-                            $(this).rules('remove');
-                            $(this).rules('add', {
+                            $("#"+thisid).rules('remove');
+                            $("#"+thisid).rules('add', {
                                 required: true,
                                 messages:{
                                     required: "Please give the item a description"
