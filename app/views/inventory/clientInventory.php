@@ -22,6 +22,7 @@
                             <th data-priority="1">Name</th>
                             <th>SKU</th>
                             <th>Client Product Id</th>
+                            <th>Barcode</th>
                             <th>Details</th>
                             <th data-priority="2">On Hand</th>
                             <th data-priority="2">Allocated</th>
