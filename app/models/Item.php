@@ -73,23 +73,25 @@ class Item extends Model{
         $this->getPackagingTypes();
     }
 
-    public function getSolarConsumablesReordering()
+    public function clientEditItem($data)
     {
-        $db = Database::openConnection();
-        $reorder_items = array();
-        $items = $db->queryData("SELECT * FROM {$this->table} WHERE client_id = 67 AND active = 1");
-        $order = new Order();
-        foreach($items as $item)
+        //echo "Edit Item<pre>",print_r($data),"</pre>";die();
+        foreach($data as $field => $value)
         {
-            $available = $this->getAvailableStock($item['id'], $order->fulfilled_id);
-            if( $available < $item['low_stock_warning'])
+            if(!is_array($value))
             {
-                $item['currently_available'] = $available;
-                $item['minimum_reorder_amount'] = $item['low_stock_warning'] - $available;
-                $reorder_items[] = $item;
+                ${$field} = $value;
             }
         }
-        return $reorder_items;
+        $db = Database::openConnection();
+        $item_values = array(
+        	'name'	=>	$name,
+            'image' =>  NULL
+        );
+        if(!empty($client_product_id)) $item_values['client_product_id'] = $client_product_id;
+        if(!empty($image)) $item_values['image'] = $image;
+        $db->updateDatabaseFields('items', $item_values, $item_id);
+        return true;
     }
 
     public function recordData($data)
@@ -723,10 +725,11 @@ class Item extends Model{
         $return_array = array();
         $q = $data["item"];
         $client_id = $data['clientid'];
-        $query = "SELECT * FROM items WHERE active = 1 AND (name LIKE :term1 OR sku LIKE :term2) AND client_id = $client_id ORDER BY name";
+        $query = "SELECT * FROM items WHERE active = 1 AND (name LIKE :term1 OR sku LIKE :term2  OR client_product_id LIKE :term3) AND client_id = $client_id ORDER BY name";
         $array = array(
             'term1' =>  '%'.$q.'%',
-            'term2' =>  '%'.$q.'%'
+            'term2' =>  '%'.$q.'%',
+            'term3' =>  '%'.$q.'%'
         );
         //echo $query;die();
         $rows = $db->queryData($query, $array);
