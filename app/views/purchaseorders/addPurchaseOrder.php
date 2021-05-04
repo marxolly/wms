@@ -56,8 +56,8 @@ $dd = ( empty(Form::value('finisher_id')) )? "none":"block";
                                         <div class="input-group-append">
                                             <span id="date_calendar" class="input-group-text"><i class="fad fa-calendar-alt"></i></span>
                                         </div>
-                                        <?php echo Form::displayError('date');?>
                                     </div>
+                                        <?php echo Form::displayError('date');?>
                                     <input type="hidden" name="date_value" id="date_value" value="<?php echo $date;?>" />
                                 </div>
                                 <div class="form-group row">
