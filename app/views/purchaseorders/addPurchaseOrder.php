@@ -50,7 +50,7 @@ $dd = ( empty(Form::value('finisher_id')) )? "none":"block";
                             </div>
                             <div id="podetails_holder" style="display:<?php echo $dd;?>">
                                 <div class="form-group row">
-                                    <label class="col-md-12">Purchase Order Date</label>
+                                    <label class="col-md-12"><sup><small><i class="fas fa-asterisk text-danger"></i></small></sup> Purchase Order Date</label>
                                     <div class="col-md-12 input-group">
                                         <input type="text" class="required form-control" name="date" id="date" value="<?php echo date('d/m/Y', $date);?>" />
                                         <div class="input-group-append">
@@ -74,13 +74,13 @@ $dd = ( empty(Form::value('finisher_id')) )? "none":"block";
                                 <div class="form-group row">
                                     <label class="col-12">FSG Job No</label>
                                     <div class="col-12">
-                                        <input type="text" id="fsg_job_no" name="fsg_job_no" value="<?php echo Form::value('fsg_job_no');?>">
+                                        <input type="text" class="form-control" id="fsg_job_no" name="fsg_job_no" value="<?php echo Form::value('fsg_job_no');?>">
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label class="col-12">FSG Quote No</label>
                                     <div class="col-12">
-                                        <input type="text" id="fsg_quote_no" name="fsg_quote_no" value="<?php echo Form::value('fsg_quote_no');?>">
+                                        <input type="text" class="form-control" id="fsg_quote_no" name="fsg_quote_no" value="<?php echo Form::value('fsg_quote_no');?>">
                                     </div>
                                 </div>
                             </div>
