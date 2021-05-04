@@ -216,7 +216,7 @@
                             $('div#poitems_holder').css('min-height','250px').block({
                                 message: '<h2>Hang on...getting a coffee</h2>',
                                 css: {
-                                    padding:        0,
+                                    padding:        '20px',
                                     margin:         0,
                                     width:          '80%',
                                     top:            '40%',
