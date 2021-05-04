@@ -24,7 +24,7 @@ class Purchaseorder extends Model{
         if(empty($data['required_date_value']))
             $vals['due_date'] = $data['required_date'];
         else
-            $vals['due_date'] = $data['required_date_vale'];
+            $vals['due_date'] = $data['required_date_value'];
         if(!empty($data['fsg_job_no']))
             $vals['fsg_job_no'] = $data['fsg_job_no'];
         if(!empty($data['fsg_quote_no']))
