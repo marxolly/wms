@@ -1,3 +1,23 @@
+        <!-- Assign CSRF Token to JS variable -->
+        <?php Config::setJsConfig('csrfToken', Session::generateCsrfToken()); ?>
+        <!-- Assign pages for menu highlighting -->
+        <?php
+        if(Session::getIsLoggedIn()):
+            $user_role = (Session::isAdminUser())? 'admin' : Session::getUserRole();
+            $user_role = str_replace(" ","_", $user_role);
+            $pages = Config::getPages(strtoupper($user_role."_PAGES"));
+            Config::setJsConfig('allPages', $pages);
+        else:
+            Config::setJsConfig('allPages', '');
+        endif;
+        //Assign courier ids to javascript
+        Config::setJsConfig('eParcelId', $this->controller->courier->eParcelId);
+        Config::setJsConfig('eParcelExpressId', $this->controller->courier->eParcelExpressId);
+        Config::setJsConfig('localId', $this->controller->courier->localId);
+        Config::setJsConfig('directFreightId', $this->controller->courier->directFreightId);
+        ?>
+        <!-- Assign all configuration variables -->
+        <script>config = <?php echo json_encode(Config::getJsConfig()); ?>;</script>
         <!-- Jquery JavaScript -->
         <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
         <!--script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script-->
@@ -46,23 +66,3 @@
         <script src="https://kit.fontawesome.com/cc79da085a.js" crossorigin="anonymous"></script>
         <!-- Bootstrap Colour Picker -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-colorpicker/3.2.0/js/bootstrap-colorpicker.min.js" integrity="sha512-INXxqXxcP6zawSei7i47Xmu+6ZIBRbsYN1LHAy5H1gzl1XIfTbI/OLjUcvBnDD8F3ZSVB6mf8asEPTMxz4VNjw==" crossorigin="anonymous"></script>
-        <!-- Assign CSRF Token to JS variable -->
-        <?php Config::setJsConfig('csrfToken', Session::generateCsrfToken()); ?>
-        <!-- Assign pages for menu highlighting -->
-        <?php
-        if(Session::getIsLoggedIn()):
-            $user_role = (Session::isAdminUser())? 'admin' : Session::getUserRole();
-            $user_role = str_replace(" ","_", $user_role);
-            $pages = Config::getPages(strtoupper($user_role."_PAGES"));
-            Config::setJsConfig('allPages', $pages);
-        else:
-            Config::setJsConfig('allPages', '');
-        endif;
-        //Assign courier ids to javascript
-        Config::setJsConfig('eParcelId', $this->controller->courier->eParcelId);
-        Config::setJsConfig('eParcelExpressId', $this->controller->courier->eParcelExpressId);
-        Config::setJsConfig('localId', $this->controller->courier->localId);
-        Config::setJsConfig('directFreightId', $this->controller->courier->directFreightId);
-        ?>
-        <!-- Assign all configuration variables -->
-        <script>config = <?php echo json_encode(Config::getJsConfig()); ?>;</script>
