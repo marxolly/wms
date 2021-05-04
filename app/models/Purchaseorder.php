@@ -19,7 +19,7 @@ class Purchaseorder extends Model{
         $items = $data['poitems'];
         $vals = array(
             'finisher_id'   => $data['finisher_id'],
-            'date'          => $date['date_value']
+            'date'          => $data['date_value']
         );
         if(empty($data['required_date_value']))
             $vals['due_date'] = $data['required_date'];
