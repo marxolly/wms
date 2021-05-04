@@ -14,6 +14,7 @@ class Purchaseorder extends Model{
 
     public function addPurchaseOrder($data)
     {
+        echo "<pre>",print_r($data),"</pre>"; die();
         $db = Database::openConnection();
         $items = $data['items'];
         unset($data['items']);
