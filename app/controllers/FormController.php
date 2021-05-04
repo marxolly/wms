@@ -176,9 +176,20 @@ class FormController extends Controller {
         {
             Form::setError('date', 'The date for this purchase order is required');
         }
-        if($this->dataSubbed($required_date))
+        if(!$this->dataSubbed($required_date))
         {
             Form::setError('required_date', 'Please indicate when this is required');
+        }
+        foreach($poitems as $i => $array)
+        {
+            if($this->dataSubbed($array['qty']))
+            {
+                Form::setError('poitem_qty_'.$i, 'The quantity of each item is required');
+            }
+            if($this->dataSubbed($array['description']))
+            {
+                Form::setError('poitem_description_'.$i, 'Please enter a description for this item');
+            }
         }
 
         Session::set('value_array', $_POST);
