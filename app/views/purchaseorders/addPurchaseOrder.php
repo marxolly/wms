@@ -71,6 +71,18 @@ $dd = ( empty(Form::value('finisher_id')) )? "none":"block";
                                     </div>
                                     <input type="hidden" name="required_date_value" id="required_date_value" value="<?php echo $required_date_value;?>" />
                                 </div>
+                                <div class="form-group row">
+                                    <label class="col-12">FSG Job No</label>
+                                    <div class="col-12">
+                                        <input type="text" id="fsg_job_no" name="fsg_job_no" value="<?php echo Form::value('fsg_job_no');?>">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-12">FSG Quote No</label>
+                                    <div class="col-12">
+                                        <input type="text" id="fsg_quote_no" name="fsg_quote_no" value="<?php echo Form::value('fsg_quote_no');?>">
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
