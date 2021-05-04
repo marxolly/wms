@@ -172,9 +172,13 @@ class FormController extends Controller {
         {
             Form::setError('finisher_name', 'The Supplier Name is required');
         }
-        if($this->dataSubbed($date))
+        if(!$this->dataSubbed($date))
         {
             Form::setError('date', 'The date for this purchase order is required');
+        }
+        if($this->dataSubbed($required_date))
+        {
+            Form::setError('required_date', 'Please indicate when this is required');
         }
 
         Session::set('value_array', $_POST);
