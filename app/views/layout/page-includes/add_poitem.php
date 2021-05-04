@@ -18,12 +18,14 @@ $poitem_id = isset($d['item_id'])? $d['item_id']:"";
         <label class="col-md-4"><sup><small><i class="fas fa-asterisk text-danger"></i></small></sup> Quantity</label>
         <div class="col-md-8">
             <input type="text" class="form-control poitem_qty required" name="poitems[<?php echo $i;?>][qty]" value="<?php echo $poiqty;?>">
+            <?php echo Form::displayError('poitem_qty_'.$i);?>
         </div>
     </div>
     <div class="form-group row">
         <label class="col-md-12"><sup><small><i class="fas fa-asterisk text-danger"></i></small></sup> Description</label>
         <div class="col-md-12">
             <textarea class="ckeditor poitem_description required" id="poitem_description_<?php echo $i;?>" name="poitems[<?php echo $i;?>][description]" placeholder="Enter the item description"><?php echo $poidescription;?></textarea>
+            <?php echo Form::displayError('poitem_description_'.$i);?>
         </div>
     </div>
     <div class="this_poitem_hidden_details">
