@@ -200,7 +200,7 @@ class FormController extends Controller {
         else
         {
             //all good add the purchase order
-            $this->purchaseorder->addPurchaseOrder($data);
+            $this->purchaseorder->addPurchaseOrder($post_data);
         }
         return $this->redirector->to(PUBLIC_ROOT."purchase-orders/add-purchase-order");
     }
