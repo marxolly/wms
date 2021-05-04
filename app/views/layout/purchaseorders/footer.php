@@ -88,6 +88,17 @@
                     validateTextField: function(textfield_id)
                     {
                         //console.log(textfield_id);
+                        $('[id^=poitem_description_]').each(function(e) {
+                            var thisid = $(this).attr('id');
+                            console.log("thisid: " + thisid);
+                            $("#"+thisid).rules('remove');
+                            $("#"+thisid).rules('add', {
+                                required: true,
+                                messages:{
+                                    required: "Please give the item a description"
+                                }
+                            });
+                        });
                         $(textfield_id).valid();
                     },
                     createCKEditors: function(){
@@ -166,17 +177,6 @@
                                     console.error( error );
                                 } );
                         }
-                        $('[id^=poitem_description_]').each(function(e) {
-                            var thisid = $(this).attr('id');
-                            console.log("thisid: " + thisid);
-                            $("#"+thisid).rules('remove');
-                            $("#"+thisid).rules('add', {
-                                required: true,
-                                messages:{
-                                    required: "Please give the item a description"
-                                }
-                            });
-                        });
                     },
                     removeCKEditor: function(){
                         $("a.remove-poitem").off('click').click(function(e){
