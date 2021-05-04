@@ -55,7 +55,7 @@ endif;
                 <strong><?php echo Session::getUsersName(); ?></strong>
             </a>
             <?php if(Config::get('curPage') == "dashboard"):?>
-                <div id="countdown" class="text-white">Page will refresh in<span></span></div>
+                <div id="countdown" class="text-white">Page will refresh in <span></span></div>
             <?php else:?>
                 <div id="countdown" class="text-white">This page does not refresh<span></span></div>
             <?php endif;?>
