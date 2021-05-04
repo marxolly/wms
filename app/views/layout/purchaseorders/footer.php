@@ -213,7 +213,7 @@
                                 i: item_count
                             }
                             //$.blockUI({ message: '<div style="height:160px; padding-top:20px;"><h2>Contacted Couriers and Getting Prices...</h2></div>' });
-                            $('div#poitems_holder').css('min-height','250px').block({ message: '<div style="height:160px; padding-top:20px;"><h2>Hang on...getting a coffee</h2></div>' });
+                            $('div#poitems_holder').css('min-height','250px').block({ message: '<div style="width:90%;height:160px; padding-top:20px;"><h2>Hang on...getting a coffee</h2></div>' });
                             $.post('/ajaxfunctions/addPOItem', data, function(d){
                                 $('div#poitems_holder').append(d.html);
                                 actions.common.createCKEditors();
