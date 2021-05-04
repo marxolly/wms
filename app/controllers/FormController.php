@@ -166,7 +166,13 @@ class FormController extends Controller {
                 }
             }
         }
-        echo "<pre>",print_r($post_data),"</pre>"; die();
+        //echo "<pre>",print_r($post_data),"</pre>"; die();
+        //required fields
+        if($finisher_id != 0)
+        {
+            Form::setError('finisher_name', 'The Supplier Name is required');
+        }
+
         Session::set('value_array', $_POST);
         Session::set('error_array', Form::getErrorArray());
         return $this->redirector->to(PUBLIC_ROOT."purchase-orders/add-purchase-order");
