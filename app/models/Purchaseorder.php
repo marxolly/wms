@@ -14,16 +14,28 @@ class Purchaseorder extends Model{
 
     public function addPurchaseOrder($data)
     {
-        echo "<pre>",print_r($data),"</pre>"; die();
+        //echo "<pre>",print_r($data),"</pre>"; die();
         $db = Database::openConnection();
-        $items = $data['items'];
-        unset($data['items']);
+        $items = $data['poitems'];
+        $vals = array(
+            'finisher_id'   => $data['finisher_id'],
+            'date'          => $date['date_value']
+        );
+        if(empty($data['required_date_value']))
+            $vals['due_date'] = $data['required_date'];
+        else
+            $vals['due_date'] = $data['required_date_vale'];
+        if(!empty($data['fsg_job_no']))
+            $vals['fsg_job_no'] = $data['fsg_job_no'];
+        if(!empty($data['fsg_quote_no']))
+            $vals['fsg_quote_no'] = $data['fsg_quote_no'];
         $po_id = $db->insertQuery($this->table, $data);
         $po_no = $this->generatePONumber($po_id);
         $db->updateDatabaseField($this->table, "po_no", $po_no, $po_id);
-        foreach($items as $item)
+        foreach($items as $i => $item)
         {
             $item['po_id'] = $po_id;
+            unset($item['item_id']);
             $db->insertQuery($this->items_table, $item);
         }
         return $po_id;
