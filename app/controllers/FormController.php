@@ -192,8 +192,16 @@ class FormController extends Controller {
             }
         }
 
-        Session::set('value_array', $_POST);
-        Session::set('error_array', Form::getErrorArray());
+        if(Form::$num_errors > 0)		/* Errors exist, have user correct them */
+        {
+            Session::set('value_array', $_POST);
+            Session::set('error_array', Form::getErrorArray());
+        }
+        else
+        {
+            //all good add the purchase order
+            $this->purchaseorder->addPurchaseOrder($data);
+        }
         return $this->redirector->to(PUBLIC_ROOT."purchase-orders/add-purchase-order");
     }
 
