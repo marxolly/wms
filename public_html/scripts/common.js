@@ -4,7 +4,7 @@ Refresh Page if no activity and show a countdown
 var time = new Date().getTime();
 var refresh_rate = 300000; //milliseconds
 $('form').attr('autocomplete','off');
-console.log("Current Page: "+config.curPage);
+//console.log("Current Page: "+config.curPage);
 if( config.curPage == "dashboard" )
 {
     refresh();
