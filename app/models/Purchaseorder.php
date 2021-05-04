@@ -29,7 +29,7 @@ class Purchaseorder extends Model{
             $vals['fsg_job_no'] = $data['fsg_job_no'];
         if(!empty($data['fsg_quote_no']))
             $vals['fsg_quote_no'] = $data['fsg_quote_no'];
-        $po_id = $db->insertQuery($this->table, $data);
+        $po_id = $db->insertQuery($this->table, $vals);
         $po_no = $this->generatePONumber($po_id);
         $db->updateDatabaseField($this->table, "po_no", $po_no, $po_id);
         foreach($items as $i => $item)
