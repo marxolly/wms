@@ -90,7 +90,7 @@
                         //console.log(textfield_id);
                         $('[id^=poitem_description_]').each(function(e) {
                             var thisid = $(this).attr('id');
-                            console.log("thisid: " + thisid);
+                            //console.log("thisid: " + thisid);
                             $("#"+thisid).rules('remove');
                             $("#"+thisid).rules('add', {
                                 required: true,
