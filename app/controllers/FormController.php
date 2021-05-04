@@ -182,11 +182,11 @@ class FormController extends Controller {
         }
         foreach($poitems as $i => $array)
         {
-            if($this->dataSubbed($array['qty']))
+            if(!$this->dataSubbed($array['qty']))
             {
                 Form::setError('poitem_qty_'.$i, 'The quantity of each item is required');
             }
-            if($this->dataSubbed($array['description']))
+            if(!$this->dataSubbed($array['description']))
             {
                 Form::setError('poitem_description_'.$i, 'Please enter a description for this item');
             }
