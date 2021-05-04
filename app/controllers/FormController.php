@@ -168,9 +168,13 @@ class FormController extends Controller {
         }
         //echo "<pre>",print_r($post_data),"</pre>"; die();
         //required fields
-        if($finisher_id != 0)
+        if($finisher_id == 0)
         {
             Form::setError('finisher_name', 'The Supplier Name is required');
+        }
+        if(!$this->dataSubbed($date))
+        {
+            Form::setError('date', 'The date for this purchase order is required');
         }
 
         Session::set('value_array', $_POST);
