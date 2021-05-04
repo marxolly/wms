@@ -244,6 +244,12 @@
                         });
                         actions.common.createCKEditors();
                         actions.common.removeCKEditor();
+                        $("form#add_purchase_order").submit(function(e){
+                            if($(this).valid())
+                            {
+                                $.blockUI({ message: '<div style="height:160px; padding-top:20px;"><h2>Adding the Purchase Order...</h2></div>' });
+                            }
+                        });
                     }
                 }
             }
