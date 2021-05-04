@@ -200,7 +200,8 @@ class FormController extends Controller {
         else
         {
             //all good add the purchase order
-            $this->purchaseorder->addPurchaseOrder($post_data);
+            $po_id = $this->purchaseorder->addPurchaseOrder($post_data);
+            Session::set('feedback', "That Purcase Order has been added to the system.<br/>It can be viewd/edited <a href='/purchase-orders/view-update-po/po=".$po_id."'>HERE</a>");
         }
         return $this->redirector->to(PUBLIC_ROOT."purchase-orders/add-purchase-order");
     }
