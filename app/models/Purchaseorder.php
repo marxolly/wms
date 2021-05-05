@@ -46,10 +46,10 @@ class Purchaseorder extends Model{
         $db = Database::openConnection();
         $q = $this->getPOQuery();
         $q .= "
-            HAVING po.id = $id
+            HAVING po.id = :id
         ";
-        $a = array($id);
-        return $db->queryData($q);
+        $a = array('id' => $id);
+        return $db->queryData($q, $a);
     }
 
     private function getPOQuery()
