@@ -44,12 +44,30 @@ class Purchaseorder extends Model{
     public function getPoById($id)
     {
         $db = Database::openConnection();
+        $q = $this->getPOQuery();
+        $q .= "
+            HAVING po.id = ?
+        ";
+        $a = array($id);
+        return $db->queryData($q, $a);
     }
 
     private function getPOQuery()
     {
         return "
-
+            SELECT
+                po.*,
+                GROUP_CONCAT(
+                    IFNULL(poi.id,''),',',
+                    IFNULL(poi.qty,''),',',
+                    IFNULL(poi.description,'')
+                    SEPARATOR '|'
+                ) AS `items`
+            FROM
+                `purchase_orders` po LEFT JOIN
+                `purchase_order_items` poi ON po.id = poi.po_id
+            GROUP BY
+                po.id
         ";
     }
 
