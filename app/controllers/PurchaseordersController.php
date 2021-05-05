@@ -37,7 +37,30 @@ class PurchaseOrdersController extends Controller
 
     public function viewUpdatePurchaseOrder()
     {
-        
+        $error = false;
+        $po_info = array();
+        if(!isset($this->request->params['args']['po']))
+        {
+            //no purchase order id to update
+            $error = "no_po_id";
+        }
+        $po_id = $this->request->params['args']['po'];
+        $po_info = $this->purchaseorder->getPoById($po_id);
+        if(empty($po_info))
+        {
+            //no purchase order data found
+            $error = "no_po";
+        }
+        //render the page
+        Config::setJsConfig('curPage', "view-update-purchase-order");
+        Config::set('curPage', "view-update-purchase-order");
+        $this->view->renderWithLayouts(Config::get('VIEWS_PATH') . "layout/purchaseorders/", Config::get('VIEWS_PATH') . 'purchaseorders/viewUpdatePO.php',
+        [
+            'po'            => $po_info,
+            'page_title'    => "View Update Purchase Order",
+            'pht'           => ": View Update Purchase Order",
+            'error'         => $error
+        ]);
     }
 
 
