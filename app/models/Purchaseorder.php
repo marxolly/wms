@@ -41,6 +41,18 @@ class Purchaseorder extends Model{
         return $po_id;
     }
 
+    public function getPoById($id)
+    {
+        $db = Database::openConnection();
+    }
+
+    private function getPOQuery()
+    {
+        return "
+
+        ";
+    }
+
     private function generatePONumber($po_id)
     {
         return  "0".date('y')."-".str_pad($po_id,5,"0",STR_PAD_LEFT);
