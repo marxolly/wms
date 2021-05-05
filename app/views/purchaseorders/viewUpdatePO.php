@@ -13,7 +13,7 @@
         <?php else:?>
             <?php include(Config::get('VIEWS_PATH')."layout/page-includes/form-top.php");?>
             <?php echo "<pre>FORM VALUES",print_r(Form::$values),"</pre>"; ?>
-            <?php echo "<pre>PO VALUE",print_r($po_info),"</pre>"; ?> 
+            <?php echo "<pre>PO VALUE",print_r($po),"</pre>"; ?> 
         <?php endif;?>
     </div>
 </div>
