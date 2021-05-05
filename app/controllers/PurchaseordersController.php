@@ -35,6 +35,11 @@ class PurchaseOrdersController extends Controller
         ]);
     }
 
+    public function viewUpdatePurchaseOrder()
+    {
+        
+    }
+
 
     public function isAuthorized()
     {
