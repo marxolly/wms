@@ -1,5 +1,5 @@
 <?php
-$contact_id = (isset($fcontact_id))? $fcontact_id : 0;
+$contact_id = (empty(Form::value('finisher_contact_id')))? 0 : Form::value('finisher_contact_id');
 ?>
 <label class="col-md-4">Contact</label>
 <div class="col-md-8">
