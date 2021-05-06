@@ -29,7 +29,7 @@ class PurchaseOrdersController extends Controller
         $finishers = array();
         if(isset($this->request->params['args']['job']))
         {
-            $finishers = $this->productiojob->getFinishersForJob($this->request->params['args']['job']);
+            $finishers = $this->productionjob->getFinishersForJob($this->request->params['args']['job']);
         }
         //render the page
         Config::setJsConfig('curPage', "add-purchase-order");
@@ -48,7 +48,7 @@ class PurchaseOrdersController extends Controller
         if(!isset($this->request->params['args']['po']))
         {
             //no purchase order id to update
-            $error = "no_po_id"; 
+            $error = "no_po_id";
         }
         else
         {
