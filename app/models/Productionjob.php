@@ -28,6 +28,12 @@ class Productionjob extends Model{
         return true;
     }
 
+    public function getFinishersForJob($job_id)
+    {
+        $db = Database::openConnection();
+        
+    }
+
     public function updateJobAddress($data)
     {
         //echo "<pre>",print_r($data),"</pre>";die();
