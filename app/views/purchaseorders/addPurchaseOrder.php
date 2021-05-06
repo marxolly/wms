@@ -49,6 +49,12 @@ $dd = ( empty(Form::value('finisher_id')) )? "none":"block";
                                 </div>
                             </div>
                             <div id="podetails_holder" style="display:<?php echo $dd;?>">
+                                <div id="contact_selector" class="form-group row contact_selector">
+                                    <?php if($finisher_id > 0)
+                                    {
+                                        include(Config::get('VIEWS_PATH')."layout/page-includes/finisher_contact_selector.php");
+                                    }?>
+                                </div>
                                 <div class="form-group row">
                                     <label class="col-md-12"><sup><small><i class="fas fa-asterisk text-danger"></i></small></sup> Purchase Order Date</label>
                                     <div class="col-md-12 input-group">

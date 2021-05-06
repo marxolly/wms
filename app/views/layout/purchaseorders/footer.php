@@ -72,6 +72,10 @@
                             $('div#podetails_holder').slideDown();
                             //Create DatePickers
                             actions.common.doPODates();
+                            $.post('/ajaxfunctions/makeFinisherContactSelect', data, function(d){
+                                $('div#contact_selector').html(d.html);
+                                $('.selectpicker').selectpicker();
+                            });
                             return false;
                         }
                         function changeFinisherCallback(event, ui)
