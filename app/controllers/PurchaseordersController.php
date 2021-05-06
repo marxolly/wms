@@ -26,12 +26,18 @@ class PurchaseOrdersController extends Controller
 
     public function addPurchaseOrder()
     {
+        $finishers = array();
+        if(isset($this->request->params['args']['job']))
+        {
+            $finishers = $this->productiojob->getFinishersForJob($this->request->params['args']['job']);
+        }
         //render the page
         Config::setJsConfig('curPage', "add-purchase-order");
         Config::set('curPage', "add-purchase-order");
         $this->view->renderWithLayouts(Config::get('VIEWS_PATH') . "layout/purchaseorders/", Config::get('VIEWS_PATH') . 'purchaseorders/addPurchaseOrder.php', [
             'page_title'    =>  "Add Purchase Order",
-            'pht'           =>  ": Add Purchase Order"
+            'pht'           =>  ": Add Purchase Order",
+            'finishers'     =>  $finishers
         ]);
     }
 
