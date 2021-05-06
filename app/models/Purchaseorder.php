@@ -14,11 +14,12 @@ class Purchaseorder extends Model{
 
     public function addPurchaseOrder($data)
     {
-        echo "<pre>",print_r($data),"</pre>"; die();
+        //echo "<pre>",print_r($data),"</pre>"; die();
         $db = Database::openConnection();
         $items = $data['poitems'];
         $vals = array(
             'finisher_id'   => $data['finisher_id'],
+            'contact_id'    => $data['finisher_contact_id'],
             'date'          => $data['date_value']
         );
         if(empty($data['required_date_value']))
