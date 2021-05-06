@@ -75,7 +75,7 @@
                             var data = {
                                 finisher_id : ui.item.finisher_id
                             }
-                            $.post('/ajaxfunctions/makeFinisherContactSelect', data, function(d){
+                            $.post('/ajaxfunctions/makePOFinisherContactSelect', data, function(d){
                                 $('div#contact_selector').html(d.html);
                                 $('.selectpicker').selectpicker();
                             });
