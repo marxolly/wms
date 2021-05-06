@@ -67,6 +67,7 @@
                         </p>
                     <?php endif;?>
                     <?php echo "<p>Created: ".date("d/m/Y", $job['created_date'])."</p>"; ?>
+                    <p><a href="/purchase-orders/job=<?php echo $job['id'];?>" class="btn btn-sm btn-outline-fsg">Create Purchase Order</a></p>
                 </td>
                 <td data-label="Client">
                     <span style="font-size: larger">
