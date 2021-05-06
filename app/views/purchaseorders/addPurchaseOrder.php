@@ -52,7 +52,7 @@ $dd = ( empty(Form::value('finisher_id')) )? "none":"block";
                                 <div id="contact_selector" class="form-group row contact_selector">
                                     <?php if($finisher_id > 0)
                                     {
-                                        include(Config::get('VIEWS_PATH')."layout/page-includes/finisher_contact_selector.php");
+                                        include(Config::get('VIEWS_PATH')."layout/page-includes/po_finisher_contact_selector.php");
                                     }?>
                                 </div>
                                 <div class="form-group row">
