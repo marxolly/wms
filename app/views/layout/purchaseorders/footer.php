@@ -72,6 +72,9 @@
                             $('div#podetails_holder').slideDown();
                             //Create DatePickers
                             actions.common.doPODates();
+                            var data = {
+                                finisher_id : ui.item.finisher_id
+                            }
                             $.post('/ajaxfunctions/makeFinisherContactSelect', data, function(d){
                                 $('div#contact_selector').html(d.html);
                                 $('.selectpicker').selectpicker();
