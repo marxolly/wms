@@ -39,6 +39,8 @@ class Productionjob extends Model{
                 {$this->finishers_table} pjf JOIN
                 `production_finishers` pf ON pjf.finisher_id = pf.id
             WHERE pjf.job_id = $job_id
+            ORDER BY
+                pf.name
         ");
     }
 
