@@ -31,7 +31,9 @@ class Productionjob extends Model{
     public function getFinishersForJob($job_id)
     {
         $db = Database::openConnection();
-        
+        return $db->queryData("
+            SELECT * FROM {$this->finishers_table} WHERE job_id = $job_id 
+        ");
     }
 
     public function updateJobAddress($data)
