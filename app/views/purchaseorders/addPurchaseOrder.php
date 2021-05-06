@@ -18,6 +18,7 @@ else
         $required_date = Form::value('required_date');
     }
 }
+
 $dd = ( empty(Form::value('finisher_id')) )? "none":"block";
 ?>
 <div id="page-wrapper">
