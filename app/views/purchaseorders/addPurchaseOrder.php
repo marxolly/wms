@@ -25,6 +25,7 @@ $dd = ( empty(Form::value('finisher_id')) )? "none":"block";
         <?php include(Config::get('VIEWS_PATH')."layout/page-includes/page_top.php");?>
         <?php include(Config::get('VIEWS_PATH')."layout/page-includes/form-top.php");?>
         <?php echo "<pre>FORM VALUES",print_r(Form::$values),"</pre>"; ?>
+        <?php echo "<pre>FINISHERS",print_r($finishers),"</pre>"; ?>
         <form id="add_purchase_order" method="post" action="/form/procAddPurchaseOrder">
             <div class="row">
 <!------------------------------------------------------------------------------------------------------------------------------------------->
