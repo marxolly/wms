@@ -32,7 +32,13 @@ class Productionjob extends Model{
     {
         $db = Database::openConnection();
         return $db->queryData("
-            SELECT * FROM {$this->finishers_table} WHERE job_id = $job_id 
+            SELECT
+                pjf.*,
+                pf.name AS finisher_name
+            FROM
+                {$this->finishers_table} pjf JOIN
+                `production_finishers` pf ON pjf.finisher_id = pf.id
+            WHERE pjf.job_id = $job_id
         ");
     }
 
