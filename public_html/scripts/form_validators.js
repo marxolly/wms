@@ -105,10 +105,7 @@ $(document).ready(function() {
         	error.addClass( "text-danger" );
             //error.addClass("font-italic");
         	if ( (element.prop( "type" ) === "checkbox")  ) {
-                if ( element.hasClass('send_to_address'))
-                    error.insertBefore( element.parent() );
-                else
-        		    error.insertAfter( element.parent().find( "label" ) );
+        		error.insertAfter( element.parent().find( "label" ) );
         	}
             else if( (element.prop( "type" ) === "radio") ) {
                 error.insertAfter( element.parent().parent().parent() );
@@ -188,7 +185,7 @@ $(document).ready(function() {
             },
             date_due:{
                 required:"#strict_dd:checked"
-            }
+            },
     	},
 		messages:{
 			status_id:{

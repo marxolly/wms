@@ -265,15 +265,30 @@ var barcodeScanner = {
 ************/
 var jobDeliveryDestinations = {
     updateEvents: function(){
+        var $checkboxes = $("input.send_to_address");
+        $checkboxes.off('click').click(function(){
+            //console.log('click');
+            $checkboxes.not(this).prop('checked', false).change();
+        });
         $('input#held_in_store').off('change').change(function(e){
             if($('input#held_in_store').prop('checked'))
             {
-                $('#add_delivery_address_button_holder').hide();
-                $('div#delivery_address_holder').empty();
+                //console.log('will disable everything');
+                $("div#delivery_address_holder input").each(function(i,e){
+                    if(!(this.id == "csrf_token" || this.id == "job_id"))
+                    {
+                        $( this ).prop( "disabled", true );
+                        $( this ).val( "" );
+                    }
+                });
             }
             else
             {
-                $('#add_delivery_address_button_holder').show();
+                //console.log('will enable everything');
+                $("div#delivery_address_holder input").each(function(i,e){
+                    if(!(this.id == "csrf_token" || this.id == "job_id"))
+                        $( this ).prop( "disabled", false );
+                });
             }
         });
         $('input#send_to_customer').off('change').change(function(e){
@@ -719,7 +734,7 @@ var autoCompleter = {
                 var data = {
                     streetAddress: req.term,
                     formatCase: true,
-                    apiKey: "b445fee0-4ffa-4ad4-84f3-050d0a170d10"
+                    apiKey: "6a910634-a492-4d51-bf32-0eb2bbecf1b9"
                 }
                 $.ajax({
                     url: "https://mappify.io/api/rpc/address/autocomplete",

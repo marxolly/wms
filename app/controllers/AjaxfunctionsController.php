@@ -79,6 +79,13 @@ class ajaxfunctionsController extends Controller
         $this->view->renderJson($data);
     }
 
+    public function dataTablesViewProductionJobs()
+    {
+        $data = ViewProductionJobs::collectData($_GET );
+        //echo json_encode($data);
+        $this->view->renderJson($data);
+    }
+
     public function dataTablesViewProducts()
     {
         $data = ViewProducts::collectData($_GET );
@@ -175,21 +182,6 @@ class ajaxfunctionsController extends Controller
             'html'      =>  ''
         );
         $html = $this->view->render(Config::get('VIEWS_PATH') . 'layout/page-includes/add_job_finisher.php', [
-            'i'     =>  $i
-        ]);
-        $data['html'] = $html;
-        $this->view->renderJson($data);
-    }
-
-    public function addJobDeliveryAddress()
-    {
-        $i = $this->request->data['i'];
-        $data = array(
-            'error'     =>  false,
-            'feedback'  =>  '',
-            'html'      =>  ''
-        );
-        $html = $this->view->render(Config::get('VIEWS_PATH') . 'layout/page-includes/add_job_delivery_address.php', [
             'i'     =>  $i
         ]);
         $data['html'] = $html;

@@ -24,95 +24,6 @@
                             });
                         });
                     },
-                    addDeliveryAddress: function(){
-                        $('input#held_in_store').off('change').change(function(e){
-                            if($('input#held_in_store').prop('checked'))
-                            {
-                                $('#add_delivery_address_button_holder').hide();
-                                $('div#delivery_address_holder').empty();
-                            }
-                            else
-                            {
-                                $('#add_delivery_address_button_holder').show();
-                            }
-                        });
-                        $("a.add-delivery-address").click(function(e){
-                            e.preventDefault();
-                            $('input#held_in_store').removeAttr('required').valid();
-                            var address_count = $("div#delivery_address_holder div.anaddress").length;
-                            //console.log('packages: '+contact_count);
-                            var data = {
-                                i: address_count
-                            }
-                            $.post('/ajaxfunctions/addJobDeliveryAddress', data, function(d){
-                                $('div#delivery_address_holder').append(d.html);
-                                actions.common.createDeliverToCheckboxes();
-                                actions.common.removeAddress();
-                                actions.common.deliverToAutoComplete();
-                                $([document.documentElement, document.body]).animate({
-                                    scrollTop: $("#address_"+address_count).offset().top
-                                }, 1000);
-                            });
-                        });
-                    },
-                    createDeliverToCheckboxes: function(){
-                        var numberWords = ['One ','Two ','Three ','Four ', 'Five ','Six ','Seven ','Eight ','Nine ','Ten '];
-                        var html;
-                        //console.log('There are '+$("div#finishers_holder div.afinisher").length+' finshers now');
-                        var c = 0;
-                        $("div#delivery_address_holder div.anaddress").each(function(i,v){
-                            $('div#deliver_to_finisher_checkbox_holder_'+i).empty();
-                            $("div#finishers_holder div.afinisher").each(function(ind,val){
-                                html = "<div class='form-group row custom-control custom-checkbox custom-control-right'><input class='custom-control-input send_to_address send_to_finisher' data-finisher='"+ind+"' data-address='"+i+"' type='checkbox' id='send_to_finisher_"+c+"' name='send_to_finisher_"+c+"' /><label class='custom-control-label col-md-7 send_to_finisher' for='send_to_finisher_"+c+"'>Use Finisher " + numberWords[ind] + "'s Address</label></div>";
-                                $('div#deliver_to_finisher_checkbox_holder_'+i).append(html);
-                                c = c + 1;
-                            });
-                        });
-                        actions.common.deliveryCheckboxActions();
-                    },
-                    deliveryCheckboxActions: function(){
-                        $("input.send_to_address").each(function(i,v){
-                            $(this).off('click').on('click', function(e){
-                                if($(this).prop('checked'))
-                                {
-                                    var address_ind = $(this).data("address");
-                                    $('div#address_'+address_ind+' input.send_to_address').not(this).prop('checked', false);
-
-                                    if($(this).hasClass('send_to_finisher'))
-                                    {
-                                        var this_finisher_ind = $(this).data("finisher");
-                                        //console.log("this_finisher_ind: "+this_finisher_ind+" address_ind: "+address_ind);
-                                        $('#d_'+address_ind+'_shipto').val($('input[name="finishers['+this_finisher_ind+'][name]"]').val()).valid();
-                                        $('#d_'+address_ind+'_attention').val($('select[name="finishers['+this_finisher_ind+'][contact_id]"]').find('option:selected[value!=0]').text());
-                                        //console.log("Gonna put "+$('input[name="finishers['+this_finisher_ind+'][address]"]').val()+" into #address_"+address_ind);
-                                        $('#d_'+address_ind+'_address').val($('input[name="finishers['+this_finisher_ind+'][address]"]').val()).valid();
-                                        $('#d_'+address_ind+'_address2').val($('input[name="finishers['+this_finisher_ind+'][address2]"]').val());
-                                        $('#d_'+address_ind+'_suburb').val($('input[name="finishers['+this_finisher_ind+'][suburb]"]').val()).valid();
-                                        $('#d_'+address_ind+'_state').val($('input[name="finishers['+this_finisher_ind+'][state]"]').val()).valid();
-                                        $('#d_'+address_ind+'_postcode').val($('input[name="finishers['+this_finisher_ind+'][postcode]"]').val()).valid();
-                                        $('#d_'+address_ind+'_country').val($('input[name="finishers['+this_finisher_ind+'][country]"]').val()).valid();
-
-
-                                    }
-                                    else if($(this).hasClass('send_to_customer'))
-                                    {
-                                        //console.log("will send to customer for address "+address_ind)
-
-                                        $('#d_'+address_ind+'_shipto').val($('#customer_name').val()).valid();
-                                        $('#d_'+address_ind+'_attention').val($('#customer_contact_name').val()).valid();
-                                        $('#d_'+address_ind+'_address').val($('#customer_address').val()).valid();
-                                        $('#d_'+address_ind+'_address2').val($('#customer_address2').val());
-                                        $('#d_'+address_ind+'_suburb').val($('#customer_suburb').val()).valid();
-                                        $('#d_'+address_ind+'_state').val($('#customer_state').val()).valid();
-                                        $('#d_'+address_ind+'_postcode').val($('#customer_postcode').val()).valid();
-                                        $('#d_'+address_ind+'_country').val($('#customer_country').val()).valid();
-                                        //$('#ignore_address_error').prop('checked', $('#ignore_customer_address_error').prop('checked' )).change();
-                                    }
-                                }
-
-                            });
-                        })
-                    },
                     customerContactChange: function(){
                         $('select#customer_contact_id').change(function(e){
                             if($(this).val() != 0)
@@ -135,15 +46,27 @@
                             }
                         });
                     },
-                    deliverToAutoComplete: function(){
-                        $("div#delivery_address_holder div.anaddress").each(function(i,v){
-                            if($('#d_'+i+"_address").data('ui-autocomplete') != undefined)
+                    deliverToAutoCompleteCustomer: function(){
+                        autoCompleter.productionJobCustomerAutoComplete($('input#ship_to'), selectDeliveryCallback, changeDeliveryCallback);
+                        function selectDeliveryCallback(event, ui)
+                        {
+                            $('input#ship_to').val(ui.item.value).valid();
+                            $('input#address').val(ui.item.address).valid();
+                            $('input#address2').val(ui.item.address_2);
+                            $('input#suburb').val(ui.item.suburb).valid();
+                            $('input#state').val(ui.item.state).valid();
+                            $('input#postcode').val(ui.item.postcode).valid();
+                            if(ui.item.contacts)
                             {
-                                $('#d_'+i+"_address").autocomplete("destroy" );
+                                var contacts =  (ui.item.contacts).split('|');
+                                var contact = contacts[0].split(',');
+                                $('input#attention').val(contact[1]);
                             }
-                            autoCompleter.addressAutoComplete($('#d_'+i+"_address"), 'd_'+i+"_");
-                            autoCompleter.suburbAutoComplete($('#d_'+i+'_suburb'), '#d_'+i+'customer_');
-                        });
+                        }
+                        function changeDeliveryCallback(event, ui)
+                        {
+                            return false;
+                        }
                     },
                     customerAutoComplete: function(){
                         autoCompleter.addressAutoComplete($('#customer_address'), 'customer_');
@@ -161,6 +84,16 @@
                             $('input#customer_country').val(ui.item.country);
                             $('input#customer_postcode').val(ui.item.postcode);
                             $('input#customer_website').val(ui.item.website);
+                            if($('#send_to_customer').prop('checked'))
+                            {
+                                $('input#ship_to').val(ui.item.value).valid();
+                                $('input#address').val(ui.item.address).valid();
+                                $('input#address2').val(ui.item.address_2);
+                                $('input#suburb').val(ui.item.suburb).valid();
+                                $('input#state').val(ui.item.state).valid();
+                                $('input#country').val(ui.item.country).valid();
+                                $('input#postcode').val(ui.item.postcode).valid();
+                            }
                             //contacts
                             if(ui.item.contacts)
                             {
@@ -243,7 +176,6 @@
                                 $('div#contact_selector_'+this_finisher_ind).html(d.html);
                                 $('.selectpicker').selectpicker();
                             });
-                            actions.common.createDeliverToCheckboxes();
                             return false;
                         }
                         function changeFinisherCallback(event, ui)
@@ -295,51 +227,6 @@
                             }
                         });
                     },
-                    removeAddress: function(){
-                        $('a.remove-address').off('click').click(function(e){
-                            e.preventDefault();
-                            var $this = $(this);
-                            swal({
-                                title: "Really Remove This Address?",
-                                text: "It cannot be undone and can only be re-added manually",
-                                icon: "warning",
-                                buttons: true,
-                                dangerMode: true
-                            }).then( function(removeAddress) {
-                                if(removeAddress)
-                                {
-                                    var this_address = $this.data('address');
-                                    $("div#address_"+this_address).remove();
-                                    //any addresses left?  Make the hold in store box required
-                                    if(!$("div#delivery_address_holder div.anaddress").length)
-                                    {
-                                        $('input#held_in_store').attr('required', 'required').valid();
-                                    }
-                                    else
-                                    {
-                                       //redo indexing of addresses
-                                       $("div#delivery_address_holder div.anaddress").each(function(i,e){
-                                            $(this).attr("id", "address_"+i);
-                                            var plusi = i + 1;
-                                            var new_num = toWords(plusi);
-                                            var uc_new_num = new_num.charAt(0).toUpperCase() + new_num.slice(1)
-                                            $(this).find("h4.address_title").text("Delivery Address "+uc_new_num+"'s Details");
-                                            $(this).find("a.remove-address").data("address", i);
-                                            $(this).find("input.send_to_customer").attr("id", "send_to_customer_"+i).data("address", i);
-                                            $(this).find("label.send_to_customer").attr("for", "send_to_customer_"+i);
-                                            $(this).find("div.deliver_to_finisher_checkbox_holder").attr("id", "deliver_to_finisher_checkbox_holder_"+i);
-                                            $(this).find("input.hasgroup").each(function(ind, elem){
-                                                var input_name = $(this).data("group");
-                                                $(this).attr("name", "addresses["+i+"]["+input_name+"]");
-                                                $(this).attr("id", "d_"+i+"_"+input_name);
-                                            });
-                                       });
-                                       actions.common.createDeliverToCheckboxes();
-                                    }
-                                }
-                            });
-                        });
-                    },
                     removeFinisher: function(){
                         $("a.remove-finisher").off('click').click(function(e){
                             e.preventDefault();
@@ -363,6 +250,7 @@
                                         var uc_new_num = new_num.charAt(0).toUpperCase() + new_num.slice(1)
                                         $(this).find("h4.finisher_title").text("Finisher "+uc_new_num+"'s Details");
                                         $(this).find("a.remove-finisher").data("finisher", i);
+                                        $(this).find("input.send_to_finisher").data("finisher", i);
                                         $(this).find("input.finisher_name").data("finisher", i);
                                         $(this).find("input.finisher_name").attr("name", "finishers["+i+"][name]");
                                         $(this).find("input.finisher_po").attr("name", "finishers["+i+"][purchase_order]");
@@ -370,7 +258,10 @@
                                         $(this).find("select.finisher_contact_id").attr("name", "finishers["+i+"][contact_id]");
                                         $(this).find("input.finisher_ed_date").attr("name", "finishers["+i+"][ed_date]");
                                         $(this).find("input.finisher_ed_date_value").attr("name", "finishers["+i+"][ed_date_value]");
+                                        $(this).find("input.send_to_finisher").attr("name", "send_to_finisher_"+i);
+                                        $(this).find("input.send_to_finisher").attr("id", "send_to_finisher_"+i);
                                         $(this).find("div.contact_selector").attr("id", "contact_selector_"+i);
+                                        $(this).find("label.send_to_finisher").attr("for", "send_to_finisher_"+i);
                                         var $this_finisher_details = $(this).find("div.this_finisher_hidden_details");
                                         //$this_finisher_details.find('input.finisher_id').val(ui.item.finisher_id);
                                         $this_finisher_details.find("input").each(function(element, index){
@@ -378,7 +269,6 @@
                                             $(this).attr("name", "finishers["+i+"]["+fclass+"]");
                                         });
                                     });
-                                    actions.common.createDeliverToCheckboxes();
                                 }
                             });
                         });
@@ -407,31 +297,67 @@
                             } );
                         }
                         var paging = $('input#completed').val() == 1;
-                        var table = dataTable.init($('table#production_jobs_table'), {
-                            //No pagination for this table
+                        var options = {
+                            "processing": true,
+                            "mark": true,
+                            "language": {
+                                processing: 'Fetching results and updating the display.....'
+                            },
+                            "serverSide": true,
+                            "deferRender": true,
                             "paging":   paging,
-                            //No initial sort,
-                            "order": [],
-                            //search highlighting
-                            mark: true,
-                            //but blanks on the bottom when sorting
-                            columnDefs: [
-                                {
-                                    type: 'non-empty-string',
-                                    targets: 0 //priority is the second column
+                            "columnDefs": [
+                                { "type": 'non-empty-string', "targets": [0]},
+                                { "orderDataType": "dom-select", "targets": [0]},
+                                { "orderable": false, "targets": [3,4,8,9] },
+                                { "createdCell": function(td, cellData, rowData, row, col){
+                                        //console.log("rowData.DT_StatusColour: " + rowData.DT_StatusColour);
+                                        if(rowData.DT_StatusColour)
+                                        {
+                                                $(td).css('backgroundColor', rowData.DT_StatusColour);
+                                        }
+                                        if(rowData.DT_StatusTextColour)
+                                        {
+                                                $(td).css('color', rowData.DT_StatusTextColour);
+                                        }
+                                    },
+                                    "targets": [6]
                                 },
-                                {
-                                    orderDataType: "dom-select",
-                                    targets: 0
-                                },
-                                {
-                                    orderable: false,
-                                    targets: "no-sort"
+                                { "createdCell": function(td, cellData, rowData, row, col){
+                                        //console.log("cellData: "+cellData);
+                                        if(rowData.DT_DueDateColour > 0)
+                                        {
+                                                var d = new Date();
+                                                var n = d.getTime()/1000;
+                                                //console.log("n: "+n);
+                                                if( (rowData.DT_DueDateColour < n) )
+                                                        $(td).css({'backgroundColor':'#222', 'color':'#fff'});
+                                                else if( ( (rowData.DT_DueDateColour - n) < (24 * 60 * 60) ) )
+                                                        $(td).css({'backgroundColor':'#FF0000', 'color':'#fff'});
+                                                else if( ( (rowData.DT_DueDateColour - n) < (2 * 24 * 60 * 60) ) )
+                                                        $(td).css({'backgroundColor':'#e6e600'});
+                                                else
+                                                        $(td).css({'backgroundColor':'#66ff66'});
+                                        }
+                                    },
+                                    "targets": [7]
                                 }
                             ],
-                            "dom" : '<<"row"<"col-lg-4"i><"col-lg-6"l>><"row">tp>',
-
-                        });
+                            "ajax": {
+                                "url": "/ajaxfunctions/dataTablesViewProductionJobs",
+                                "data": function( d ){
+                                    d.userRole = $("#user_role").val();
+                                    d.customerIds = $("#customer_ids").val();
+                                    d.finisherIds = $("#finisher_ids").val();
+                                    d.salesrepIds = $("#salesrep_ids").val();
+                                    d.statusIds = $("#status_ids").val();
+                                    d.completed = $("#completed").val();
+                                    d.cancelled = $("#cancelled").val();
+                                }
+                            },
+                            "dom" : '<<"row"<"col-lg-4"i><"col-lg-6"l>><"row">rptp>'
+                        };
+                        var table = dataTable.init($('table#production_jobs_table'), options );
                         table.on( 'draw', function () {
                             //console.log( 'Redraw occurred at: '+new Date().getTime() );
                             $('.selectpicker').selectpicker();
@@ -523,10 +449,11 @@
                 'add-job':{
                     init: function(){
                         actions.common.autoComplete();
+                        actions.common.deliverToAutoCompleteCustomer();
                         actions.common.customerAutoComplete();
                         actions.common.doDates();
                         actions.common.addFinisher();
-                        actions.common.addDeliveryAddress();
+                        jobDeliveryDestinations.updateEvents();
                         $("form#add_production_job").submit(function(e){
                             if($(this).valid())
                             {
