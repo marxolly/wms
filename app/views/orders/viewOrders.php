@@ -127,23 +127,22 @@
                 <table class="table-striped table-hover" id="client_orders_table">
                     <thead>
             	    	<tr>
-                            <th></th>
-            	        	<th>Order No</th>
+                            <th data-priority="10002"></th>
+            	        	<th data-priority="1">Order No</th>
                             <th>Client Order<br/>Number</th>
-            				<th>Client</th>
-            				<th>Deliver To</th>
-            				<th>Delivery<br/>Address</th>
+            				<th data-priority="10001">Client</th>
+            				<th data-priority="3">Deliver To</th>
             				<th>Items</th>
             				<th>Date<br/>Ordered</th>
             				<th>Slip<br/>Printed</th>
                             <th>Packages<br/>Entered</th>
                             <?php if($user_role == "admin" || $user_role == "super admin"):?>
-            				    <th nowrap>Courier<br /><select id="courier_all" class="selectpicker" data-style="btn-outline-secondary btn-sm" data-width="fit"><option value="-1">--Select One--</option><option value="0">Auto</option><?php echo $this->controller->courier->getSelectCouriers(false, false, false);?></select>&nbsp;<em><small>(all)</small></em></th>
+            				    <th data-priority="1" nowrap>Courier<br /><select id="courier_all" class="selectpicker" data-style="btn-outline-secondary btn-sm" data-width="fit"><option value="-1">--Select One--</option><option value="0">Auto</option><?php echo $this->controller->courier->getSelectCouriers(false, false, false);?></select>&nbsp;<em><small>(all)</small></em></th>
                             <?php elseif($user_role == "warehouse"):?>
-                                <th>Courier</th>
+                                <th data-priority="1">Courier</th>
                             <?php endif;?>
-                            <th></th>
-                            <th nowrap>
+                            <th data-priority="2"></th>
+                            <th nowrap data-priority="1">
                                 Select
                                 <div class="checkbox checkbox-default">
                                     <input id="select_all" class="styled" type="checkbox">
@@ -229,9 +228,9 @@
                                 </td>
                                 <td class="filterable number" data-label="Client Order Number"><?php echo $co['client_order_id'];?></td>
             					<td data-label="Client Name"><?php echo $client_name;?></td>
-            	                <td class="filterable" data-label="Ship To"><?php echo $ship_to;?></td>
-            					<td data-label="Delivery Address" class="filterable"><?php echo $address;?></td>
-            					<!--td data-label="Items" class="number"><?php //echo $item_count;?></td-->
+            	                <td class="filterable" data-label="Ship To">
+            	                    <p class='font-weight-bold'><?php echo $ship_to;?></p>
+                                    <p><?php echo $address;?></p></td>
                                 <td data-label="Items">
                                     <div class="item_list border-bottom border-secondary border-bottom-dashed mb-3 ">
                                         <?php foreach($ifo as $i):?>
@@ -281,8 +280,7 @@
                                     <td class="d-none"><?php echo $co['order_number'];?></td>
                                     <td class="d-none"><?php echo $co['client_order_id'];?></td>
                                     <td class="d-none"></td>
-                                    <td class="d-none"><?php echo $ship_to;?></td>
-                                    <td class="d-none"><?php echo $address;?></td>
+                                    <td class="d-none"><p><?php echo $ship_to;?></p><p><?php echo $address;?></p></td>
                                     <td class="d-none">
                                         <div class="item_list border-bottom border-secondary border-bottom-dashed mb-3 ">
                                             <?php foreach($ifo as $i):?>
@@ -296,7 +294,7 @@
                                     <td class="d-none"><?php echo date('d-m-Y', $co['date_ordered']);?></td>
                 					<td class="d-none"><?php echo $slip_printed; ?></td>
                                     <td class="d-none"><?php echo $package_count;?></td>
-                                    <td colspan="13">
+                                    <td colspan="12">
                                         <?php echo $co['error_string'];?>
                                         <p><a class="btn btn-outline-fsg" href="/orders/address-update/order=<?php echo $co['id'];?>">Fix this Address</a></p>
                                     </td>
@@ -311,8 +309,7 @@
                                     <td class="d-none"><?php echo $co['order_number'];?></td>
                                     <td class="d-none"><?php echo $co['client_order_id'];?></td>
                                     <td class="d-none"></td>
-                                    <td class="d-none"><?php echo $ship_to;?></td>
-                                    <td class="d-none"><?php echo $address;?></td>
+                                    <td class="d-none"><p><?php echo $ship_to;?></p><p><?php echo $address;?></p></td>
                                     <td class="d-none">
                                         <div class="item_list border-bottom border-secondary border-bottom-dashed mb-3 ">
                                             <?php foreach($ifo as $i):?>
@@ -326,7 +323,7 @@
                                     <td class="d-none"><?php echo date('d-m-Y', $co['date_ordered']);?></td>
                 					<td class="d-none"><?php echo $slip_printed; ?></td>
                                     <td class="d-none"><?php echo $package_count;?></td>
-                                    <td colspan="13"><?php echo $co['3pl_comments'];?></td>
+                                    <td colspan="12"><?php echo $co['3pl_comments'];?></td>
                                     <?php for($i=1; $i<3; ++$i):?>
                                         <td class="d-none"></td>
                                     <?php endfor;?>
@@ -338,8 +335,7 @@
                                     <td class="filterable d-none"><?php echo $co['order_number'];?></td>
                                     <td class="filterable d-none"><?php echo $co['client_order_id'];?></td>
                                     <td class="d-none"></td>
-                                    <td class="d-none"><?php echo $ship_to;?></td>
-                                    <td class="d-none"><?php echo $address;?></td>
+                                    <td class="d-none"><p><?php echo $ship_to;?></p><p><?php echo $address;?></p></td>
                                     <td class="d-none">
                                         <div class="item_list border-bottom border-secondary border-bottom-dashed mb-3 ">
                                             <?php foreach($ifo as $i):?>
@@ -353,7 +349,7 @@
                                     <td class="d-none"><?php echo date('d-m-Y', $co['date_ordered']);?></td>
                 					<td class="d-none"><?php echo $slip_printed; ?></td>
                                     <td class="d-none"><?php echo $package_count;?></td>
-                                    <td colspan="13"><?php echo $co['pick_notices'];?></td>
+                                    <td colspan="12"><?php echo $co['pick_notices'];?></td>
                                     <?php for($i=1; $i<3; ++$i):?>
                                         <td class="d-none"></td>
                                     <?php endfor;?>

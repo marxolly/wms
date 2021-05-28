@@ -1019,8 +1019,9 @@
                         /* */
                         var dt_options = {
                             "columnDefs": [
-                                { "orderable": false, "targets": [3,6,10,11,12] },
-                                { "searchable": false, "targets": [3,10,11,12]}
+                                { "orderable": false, "targets": [3,5,9,10,11] },
+                                { "searchable": false, "targets": [3,9,10,11]},
+                                { "type": 'extract-date', "targets" : [6]}
                             ],
                             "paging": false,
                             "order": [],
@@ -2121,11 +2122,21 @@
                                 }
                             });
                         });
-                        $('table#back_orders_table').filterTable({
-                            inputSelector: '#table_searcher',
-                            minRows: 2,
-                            ignoreColumns: [6]
-                        });
+                        var dt_options = {
+                            "columnDefs": [
+                                { "orderable": false, "targets": [1,5,6] },
+                                { "searchable": false, "targets": [1,6]},
+                                { "type": 'extract-date', "targets" : [3]}
+                            ],
+                            "paging": false,
+                            "order": [],
+                            "dom" : '<<"row"<"col-lg-4"><"col-lg-6">><"row">t>',
+                            "mark": true
+                        }
+                        var table = dataTable.init($('table#back_orders_table'), dt_options );
+                        $('#table_searcher').on( 'keyup', function () {
+                            table.search( this.value ).draw();
+                        } );
                     }
                 }
             }

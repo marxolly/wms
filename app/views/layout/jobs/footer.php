@@ -403,9 +403,13 @@
                                 }
                             }
                         });
+                        $('#strict_dd').click(function(e){
+                            $('#rdd').toggle();
+                            $('#date_due').valid();
+                        })
                         $('#date_due_calendar').css('cursor', 'pointer').click(function(e){
                             $('input#date_due').focus();
-                        });
+                        }); 
                     },
                     autoComplete: function(){
                         autoCompleter.addressAutoComplete($('#address'));
