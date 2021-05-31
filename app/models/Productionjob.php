@@ -668,6 +668,7 @@ class Productionjob extends Model{
                     ORDER BY pjf.finisher_order, pjf.id DESC
                     SEPARATOR '~'
                 ) AS finishers,
+
                 js.name AS `status`, js.colour AS status_colour, js.text_colour AS status_text_colour, js.ranking,
                 IFNULL(rs.id, 0) AS runsheet_id, IFNULL(rs.printed, 0) AS printed, rs.runsheet_day, IFNULL(rs.runsheet_completed, 0) AS runsheet_completed, rs.driver_id
             FROM
