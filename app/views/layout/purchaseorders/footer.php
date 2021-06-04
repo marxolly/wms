@@ -11,7 +11,7 @@
                     },
                     jobAutoComplete: function(){
                         autoCompleter.productionJobAutocomplete($('input#fasg_job_no'), selectJobCallback, changeJobCallback);
-                        function selectCJobCallback(event, ui)
+                        function selectJobCallback(event, ui)
                         {
                             $('input#fsg_job_id').val(ui.item.job_id);
                             return false;
