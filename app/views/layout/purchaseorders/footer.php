@@ -20,7 +20,7 @@
                         {
                             if (!ui.item)
                 	        {
-                                $('input#fsg_job_id').val.val(0);
+                                $('input#fsg_job_id').val(0);
                             }
                             return false;
                         }
