@@ -469,7 +469,7 @@ class Productionjob extends Model{
         {
             $row_array                  = array();
             $row_array['value']         = $row['job_id'];
-            $row_array['id']            = $row['id'];
+            $row_array['job_id']        = $row['id'];
 
             array_push($return_array,$row_array);
         }
