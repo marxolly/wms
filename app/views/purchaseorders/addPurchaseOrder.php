@@ -1,5 +1,6 @@
 <?php
 $finisher_id = (empty(Form::value('finisher_id')))? 0 : Form::value('finisher_id');
+$fsg_job_id = (empty(Form::value('fsg_job_id')))? 0 : Form::value('fsg_job_id');
 $date = (empty(Form::value('date_value')))? time() : Form::value('date_value');
 if( empty(Form::value('required_date')) )
 {
@@ -81,6 +82,7 @@ $dd = ( empty(Form::value('finisher_id')) )? "none":"block";
                                     <div class="col-12">
                                         <input type="text" class="form-control" id="fsg_job_no" name="fsg_job_no" value="<?php echo Form::value('fsg_job_no');?>">
                                     </div>
+                                    <input type="hidden" id="fsg_job_id" name="fsg_job_id" value="<?php echo $fsg_job_id;?>">
                                 </div>
                                 <div class="form-group row">
                                     <label class="col-12">FSG Quote No</label>
