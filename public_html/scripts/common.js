@@ -590,7 +590,7 @@ var autoCompleter = {
             },
             minLength: 2
         });
-    }
+    },
     customerAutoComplete: function(element, selectCallback, changeCallback)
     {
         element.autocomplete({
