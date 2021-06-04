@@ -9,7 +9,7 @@
                     init: function(){
 
                     },
-                    autoCompleters: function(){
+                    jobAutoComplete: function(){
                         autoCompleter.productionJobAutocomplete($('input#fasg_job_no'), selectJobCallback, changeJobCallback);
                         function selectCJobCallback(event, ui)
                         {
@@ -230,6 +230,7 @@
                     init: function(){
                         $("button#submitter").prop("disabled", $("div#poitems_holder div.apoitem").length == 0);
                         actions.common.finisherAutocomplete();
+                        actions.common.jobAutoComplete();
                         actions.common.doPODates();
                         $("a.add-poitem").click(function(e){
                             e.preventDefault();
