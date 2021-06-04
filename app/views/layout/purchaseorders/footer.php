@@ -9,6 +9,22 @@
                     init: function(){
 
                     },
+                    autoCompleters: function(){
+                        autoCompleter.productionJobAutocomplete($('input#fasg_job_no'), selectJobCallback, changeJobCallback);
+                        function selectCJobCallback(event, ui)
+                        {
+                            $('input#fsg_job_id').val(ui.item.job_id);
+                            return false;
+                        }
+                        function changeJobCallback(event, ui)
+                        {
+                            if (!ui.item)
+                	        {
+                                $('input#fsg_job_id').val.val(0);
+                            }
+                            return false;
+                        }
+                    },
                     doPODates: function(){
                         $("span#date_calendar").css('cursor', 'pointer').click(function(e){
                             $('#date').focus();

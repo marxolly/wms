@@ -1618,6 +1618,14 @@ class ajaxfunctionsController extends Controller
         $this->view->renderJson($data);
     }
 
+    public function getProductionJobs()
+    {
+        //echo "<pre>",print_r($this->request),"</pre>";die();
+        $data = $this->customer->getAutocompleteCustomers($this->request->query['term']);
+        //echo "<pre>",print_r($data),"</pre>";//die();
+        $this->view->renderJson($data);
+    }
+
     public function getUnfulfilledAdmin()
     {
         //echo "<pre>",print_r($this->request),"</pre>";

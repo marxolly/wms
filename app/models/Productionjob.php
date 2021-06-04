@@ -449,6 +449,33 @@ class Productionjob extends Model{
         return true;
     }
 
+    public function getAutocompleteJobs($term)
+    {
+        $db = Database::openConnection();
+        $q = strtoupper($term);
+        if (!$q) return;
+
+        $rows = $db->queryData("
+            SELECT * FROM {$this->table} WHERE (`job_id` LIKE :term)
+            ",
+            array(
+                'term' => '%'.$q.'%'
+            )
+        );
+        //echo "SELECT * FROM {$this->table} WHERE ((`name` LIKE :term1) OR (`company` LIKE :term2)) AND `client_id` = $client_id";
+        //print_r($rows);die();
+        $return_array = array();
+        foreach($rows as $row)
+        {
+            $row_array                  = array();
+            $row_array['value']         = $row['job_id'];
+            $row_array['id']            = $row['id'];
+
+            array_push($return_array,$row_array);
+        }
+        return $return_array;
+    }
+
     public function getSearchResults($args)
     {
         extract($args);
