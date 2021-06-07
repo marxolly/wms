@@ -28,7 +28,7 @@ class Displaystyle extends Model{
     {
         $db = Database::openConnection();
         $query = "SELECT * FROM {$this->table} WHERE `client_id` = $client_id";
-        die($query);
+        //die($query);
         return $db->queryRow($query);
     }
 
