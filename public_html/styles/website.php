@@ -11,12 +11,16 @@
     if(!isset($client_id))
         $client_id = 0;
 
-    echo "client id is: ".$client_id;
+   // echo "client id is: ".$client_id;
 ?>
 
 /*****
 Startup and Standard
 ******/
+div#client_<?php echo $client_id;?>{
+    color:red;
+}
+
 @font-face {
   font-family: 'fontawesome';
   src: url('fonts/fontawesome-webfont.woff') format('woff'),
