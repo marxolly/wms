@@ -4,17 +4,6 @@ if(!isset($pht))
 
 if(!isset($client_id))
     $client_id = 0;
-
-$style_defaults = array(
-    'logo'                      => '<img width="130" src="/images/FSG_logo@130px.png" class="custom-logo" alt="FSG" style="display:none;" title="WMS Home" /><img width="130" src="/images/FSG_logo_white@130px.png" class="custom-logo-transparent" alt="FSG logo" title="WMS Home" />',
-    'card_border_colour'        => '#545380',
-    'card_header_colour'        => '#4183C2',
-    'card_header_background'    => 'rgba(180,195,220,0.1)',
-    'card_header_border_colour' => '#545380'
-);
-$client_styles = $this->controller->displaystyle->getClientStyles($client_id);
-$styles = (empty($client_styles))? $style_defaults: array_merge($style_defaults, $client_styles);
-$styles = urlencode(serialize($styles));
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -44,7 +33,7 @@ $styles = urlencode(serialize($styles));
         <!--link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
         <link rel="stylesheet" href="/styles/wms-style.css?t=<?php echo time();?>"-->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-colorpicker/3.2.0/css/bootstrap-colorpicker.min.css" integrity="sha512-wuFRnk4KiQftPmBWRd5TmmgnuMEMVSySF4EsQJ50FemRIHIF5JkwD57UdcWqtGwamThUWHgXf8tSiiJitWnD0w==" crossorigin="anonymous" />
-        <link rel="stylesheet" href="/styles/website.php?t=<?php echo time();?>&styles=<?php echo $styles;?>">
+        <link rel="stylesheet" href="/styles/website.php?t=<?php echo time();?>&client_id=<?php echo $client_id;?>">
 </head>
 
 <body>

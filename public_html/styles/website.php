@@ -7,8 +7,17 @@
     gmdate("D, d M Y H:i:s",
     time() + $offset) . " GMT";
     header($ExpStr);
-
-$styles = unserialize($_GET['styles']);
+$client_id = $_GET['client_id'];
+$display_style = new Displaystyle();
+$style_defaults = array(
+    'logo'                      => '<img width="130" src="/images/FSG_logo@130px.png" class="custom-logo" alt="FSG" style="display:none;" title="WMS Home" /><img width="130" src="/images/FSG_logo_white@130px.png" class="custom-logo-transparent" alt="FSG logo" title="WMS Home" />',
+    'card_border_colour'        => '#545380',
+    'card_header_colour'        => '#4183C2',
+    'card_header_background'    => 'rgba(180,195,220,0.1)',
+    'card_header_border_colour' => '#545380'
+);
+$client_styles = $display_style->getClientStyles($client_id);
+$styles = (empty($client_styles))? $style_defaults: array_merge($style_defaults, $client_styles);
 ?>
 
 /*****
