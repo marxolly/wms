@@ -8,19 +8,12 @@
     time() + $offset) . " GMT";
     header($ExpStr);
 
-    if(!isset($client_id))
-        $client_id = 0;
-
-   // echo "client id is: ".$client_id;
+$styles = $_GET['styles'];
 ?>
 
 /*****
 Startup and Standard
 ******/
-div#client_<?php echo $client_id;?>{
-    color:red;
-}
-
 @font-face {
   font-family: 'fontawesome';
   src: url('fonts/fontawesome-webfont.woff') format('woff'),
@@ -153,7 +146,7 @@ div#order_activity_chart{
 
 .homepagecard{
     margin: 5px 1% !important;
-    border: thin solid #030c57;
+    border: thin solid <?php echo $styles['card_border_colour'];?>;
     opacity: 0.1;
     transform: scale(0.9);
 }
