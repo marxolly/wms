@@ -5,8 +5,8 @@ if(!isset($pht))
 if(!isset($client_id))
     $client_id = 0;
 
-$db = Database::openConnection();
-
+//$db = Database::openConnection();
+$client_info = $this->controller->client->getClientInfo($client_id);
 ?>
 <!DOCTYPE html>
 <html lang="en">
