@@ -1,7 +1,6 @@
 <?php
 
 ?>
-
 /*****
 Startup and Standard
 ******/
