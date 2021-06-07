@@ -89,6 +89,26 @@ class View {
     }
 
     /**
+     * Renders css styles for inclusion in the haeder
+     *
+     * @param  array   $data
+     * @return string  Rendered output
+     */
+    public function renderStyleSheet($filePath, $data = null)
+    {
+        if(!empty($data)) {
+            extract($data);
+        }
+
+        ob_start();
+        include $filePath . "" ;
+        $renderedFile = ob_get_clean();
+
+        $this->controller->response->type("text/css")->setContent($renderedFile);
+        return $renderedFile;
+    }
+
+    /**
      * Render a JSON view.
      *
      * @param  array   $data
