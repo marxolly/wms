@@ -23,8 +23,10 @@ endif;
 <!-- Navigation -->
 <nav class="navbar navbar-expand-lg fixed-top navbar-dark" style="background-color: transparent; height:100px;">
     <a href="/" class="navbar-brand" rel="home" itemprop="url">
-        <img width="130" src="/images/FSG_logo@130px.png" class="custom-logo" alt="FSG" style="display:none;" title="WMS Home" />
-        <img width="130" src="/images/FSG_logo_white@130px.png" class="custom-logo-transparent" alt="FSG logo" title="WMS Home" />
+        <span id="logo_holder">
+            <img width="130" src="/images/FSG_logo@130px.png" class="custom-logo" alt="FSG" style="display:none;" title="WMS Home" />
+            <img width="130" src="/images/FSG_logo_white@130px.png" class="custom-logo-transparent" alt="FSG logo" title="WMS Home" />
+        </span>
     </a>
     <button id="navbar_toggler" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
