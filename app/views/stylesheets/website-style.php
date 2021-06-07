@@ -137,7 +137,7 @@ div#order_activity_chart{
 
 .homepagecard{
     margin: 5px 1% !important;
-    border: thin solid <?php echo $styles['card_border_colour'];?>;
+    border: thin solid <?php echo $card_border_colour;?>;
     opacity: 0.1;
     transform: scale(0.9);
 }
