@@ -162,7 +162,7 @@ div#order_activity_chart{
 }
 
 .homepagecard .card-header{
-    background-color: rgba(3,12,87,0.08);
+    background-color: <?php echo $card_header_background;?>;
     border-bottom: 1px solid rgba(3,12,87,.35);
 }
 
