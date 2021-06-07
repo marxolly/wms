@@ -1,6 +1,8 @@
 <?php
 if(!isset($pht))
     $pht = "";
+
+echo $client_id;
 ?>
 <!DOCTYPE html>
 <html lang="en">
