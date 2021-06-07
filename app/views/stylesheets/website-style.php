@@ -154,7 +154,7 @@ div#order_activity_chart{
 
 .homepagecard .card-header,
 .homepagecard .card-body{
-    color: #052f95;
+    color: <?php echo $card_header_colour;?>;
 }
 .backordercard .card-header,
 .backordercard .card-body{
@@ -163,7 +163,7 @@ div#order_activity_chart{
 
 .homepagecard .card-header{
     background-color: <?php echo $card_header_background;?>;
-    border-bottom: 1px solid rgba(3,12,87,.35);
+    border-bottom: 1px solid <?php echo $card_header_border_colour;?>;
 }
 
 .backordercard .card-header{
