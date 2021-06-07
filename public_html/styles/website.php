@@ -8,7 +8,7 @@
     time() + $offset) . " GMT";
     header($ExpStr);
 
-$styles = $_GET['styles'];
+$styles = unserialize($_GET['styles']);
 ?>
 
 /*****
