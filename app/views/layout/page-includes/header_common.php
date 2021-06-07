@@ -10,7 +10,7 @@ $style_defaults = array(
     'card_border_colour'        => '#545380',
     'card_header_colour'        => '#4183C2',
     'card_header_background'    => 'rgba(180,195,220,0.1)',
-    'card-header_border_colour' => '#545380'
+    'card_header_border_colour' => '#545380'
 );
 $client_styles = $this->controller->displaystyle->getClientStyles($client_id);
 $styles = (empty($client_styles))? $style_defaults: array_merge($style_defaults, $client_styles);
