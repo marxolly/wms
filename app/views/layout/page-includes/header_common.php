@@ -2,7 +2,11 @@
 if(!isset($pht))
     $pht = "";
 
-echo $client_id;
+if(!isset($client_id))
+    $client_id = 0;
+
+$db = Database::openConnection();
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
