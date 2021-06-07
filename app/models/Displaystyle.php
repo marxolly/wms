@@ -27,11 +27,9 @@ class Displaystyle extends Model{
     public function getClientStyles($client_id = 0)
     {
         $db = Database::openConnection();
-        $query = "SELECT * FROM {$this->table} WHERE `client_id` = :client_id";
-        $params = array(
-            "client_id" => $client_id
-        );
-        return $db->queryRow($query, $params);
+        $query = "SELECT * FROM {$this->table} WHERE `client_id` = $client_id";
+        die($query);
+        return $db->queryRow($query);
     }
 
 }
