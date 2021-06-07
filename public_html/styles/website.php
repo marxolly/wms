@@ -1,4 +1,5 @@
 <?php
+session_start();
     ob_start ("ob_gzhandler");
     header("Content-type: text/css; charset: UTF-8");
     header("Cache-Control: must-revalidate");
