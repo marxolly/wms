@@ -16,7 +16,7 @@ $style_defaults = array(
 $client_styles = $this->controller->displaystyle->getClientStyles($client_id);
 print_r($client_styles); die();
 
-$styles = array_merge($style_defaults, $client_styles);
+$styles = (empty($client_styles))? $style_defaults: array_merge($style_defaults, $client_styles);
 print_r($styles);
 ?>
 <!DOCTYPE html>
