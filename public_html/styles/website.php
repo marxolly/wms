@@ -7,6 +7,11 @@
     gmdate("D, d M Y H:i:s",
     time() + $offset) . " GMT";
     header($ExpStr);
+
+    if(!isset($client_id))
+        $client_id = 0;
+
+    echo "client id is: ".$client_id;
 ?>
 
 /*****
