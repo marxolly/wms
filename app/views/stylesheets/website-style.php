@@ -893,14 +893,14 @@ bootstrap adjustments
 
     /** FSG button type - outline only */
     .btn-outline-fsg {
-        color: #030c57;
-        border-color: #030c57;
+        color: <?php echo $fsg_button_colour;?>;
+        border-color: <?php echo $fsg_button_colour;?>;
     }
 
     .btn-outline-fsg:hover {
         color: #fff !important;
-        background-color: #030c57;
-        border-color: #030c57;
+        background-color: <?php echo $fsg_button_colour;?>;
+        border-color: <?php echo $fsg_button_colour;?>;
     }
 
     .btn-outline-fsg:focus, .btn-outline-fsg.focus {
@@ -908,15 +908,15 @@ bootstrap adjustments
     }
 
     .btn-outline-fsg.disabled, .btn-outline-fsg:disabled {
-        color: #030c57;
+        color: <?php echo $fsg_button_colour;?>;
         background-color: transparent;
     }
 
     .btn-outline-fsg:not(:disabled):not(.disabled):active, .btn-outline-fsg:not(:disabled):not(.disabled).active,
     .show > .btn-outline-fsg.dropdown-toggle {
         color: #fff;
-        background-color: #030c57;
-        border-color: #030c57;
+        background-color: <?php echo $fsg_button_colour;?>;
+        border-color: <?php echo $fsg_button_colour;?>;
     }
 
     .btn-outline-fsg:not(:disabled):not(.disabled):active:focus, .btn-outline-fsg:not(:disabled):not(.disabled).active:focus,
