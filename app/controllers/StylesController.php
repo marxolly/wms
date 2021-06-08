@@ -27,7 +27,16 @@ class stylesController extends Controller
             'quicklinks_header_colour'  => '#17142c'
         );
         $client_styles = $this->displaystyle->getClientStyles($client_id);
-        $styles = (empty($client_styles))? $style_defaults: array_merge($style_defaults, $client_styles);
+        if(!empty($client_styles))
+        {
+            $client_styles = array_filter($client_styles);
+            $styles = array_merge($style_defaults, $client_styles);
+        }
+        else
+        {
+            $styles = $style_defaults;
+        }
+        //$styles = (empty($client_styles))? $style_defaults: array_merge($style_defaults, $client_styles);
         //render the page
         Config::setJsConfig('curPage', "shipto-reps");
         $this->view->renderStyleSheet(Config::get('VIEWS_PATH') . "stylesheets/website-style.php",$styles);
