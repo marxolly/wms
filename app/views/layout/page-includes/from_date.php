@@ -10,7 +10,7 @@
         </div>
     </div>
     <div class="col-md-3">
-        <button id="change_date" class="btn btn-small btn-outline-secondary">Change Date</button>
+        <button id="change_date" class="btn btn-small btn-outline-fsg">Change Date</button>
     </div>
     <input type="hidden" name="date_value" id="date_value" value="<?php echo $date;?>" />
 </div>
