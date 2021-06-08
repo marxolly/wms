@@ -44,6 +44,7 @@ class stylesController extends Controller
         $styles['page_background_colour'] = "rgba($r,$g,$b,0.1)";
         //calculate button hover text colour
         $styles['fsg_button_hover_text_colour'] = Utility::getContrastColor($styles['fsg_button_colour_hover']);
+        $styles['fsg_button_hover_border_colour'] = ($styles['fsg_button_hover_text_colour'] == "#000000")? "#000000" : $styles['fsg_button_colour_hover'];
         //$styles = (empty($client_styles))? $style_defaults: array_merge($style_defaults, $client_styles);
         //render the page
         Config::setJsConfig('curPage', "shipto-reps");
