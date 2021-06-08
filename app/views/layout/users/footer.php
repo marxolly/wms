@@ -56,7 +56,16 @@
                 },
                 'edit-user-profile':{
                     init: function(){
-
+                        $('form#profile_update').submit(function(){
+                            if($(this).valid())
+                            {
+                                $.blockUI({ message: '<div style="height:140px; padding-top:20px;"><h2>Updating the profile...</h2></div>' });
+                            }
+                            else
+                            {
+                                return false;
+                            }
+                        });
                     }
                 }
             }
