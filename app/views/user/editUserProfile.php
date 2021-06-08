@@ -6,7 +6,7 @@ $name = (empty(Form::value('name')))? $info['name'] : Form::value('name');
         <?php include(Config::get('VIEWS_PATH')."layout/page-includes/page_top.php");?>
         <div class="row">
             <div class="col-lg-12">
-                <h2>Update your profile</h2>
+                <h2>Update A User profile</h2>
             </div>
         </div>
         <?php include(Config::get('VIEWS_PATH')."layout/page-includes/form-top.php");?>
@@ -67,7 +67,7 @@ $name = (empty(Form::value('name')))? $info['name'] : Form::value('name');
             <div class="form-group row">
                 <label class="col-md-3 col-form-label">&nbsp;</label>
                 <div class="col-md-4">
-                    <button type="submit" class="btn btn-outline-secondary">Update Profile</button>
+                    <button type="submit" class="btn btn-outline-fsg">Update Profile</button>
                 </div>
             </div>
         </form>

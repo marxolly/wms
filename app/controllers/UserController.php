@@ -53,20 +53,22 @@ class UserController extends Controller{
         ]);
     }
 
-    /**
-     * users can report bugs, features, or enhancement
-     * - Bug is an error you encountered
-     * - Feature is a new functionality you suggest to add
-     * - Enhancement is an existing feature, but you want to improve
-     *
-     */
-    public function bugs(){
-        Config::setJsConfig('curPage', "bugs");
-        $this->view->renderWithLayouts(Config::get('VIEWS_PATH') . "layout/default/", Config::get('VIEWS_PATH') . 'bugs/index.php');
-    }
-
-
     public function isAuthorized(){
         return true;
+        $role = Session::getUserRole();
+        $action = $this->request->param('action');
+        $resource = "user";
+        // allow for admins
+        Permission::allow(['super admin', 'admin'], $resource, ['*']);
+        // remove other admins from users profile editing
+        Permission::deny('admin', $resource, [
+            'editUserProfile'
+        ]);
+        // allow everyone to edit their own profile
+        Permission::allowAllRoles($resource,[
+            'profile'
+        ]);
+
+        return Permission::check($role, $resource, $action);
     }
 }
