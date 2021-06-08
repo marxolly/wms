@@ -40,7 +40,6 @@ class Permission {
         $db = Database::openConnection();
         $roles = $db->queryData("SELECT `name` FROM user_roles WHERE active = 1");
         $actions = array_map("strtolower", (array)$actions);
-        $roles = (array)$role;
         foreach($roles as $r)
         {
             $role = $r['name'];
