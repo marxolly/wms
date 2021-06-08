@@ -54,6 +54,12 @@ class User extends Model{
         return ($user['active'] > 0);
     }
 
+    public function isClientAdmin($userId)
+    {
+        $user = $this->getProfileInfo($userId);
+        return ($user['client_admin'] > 0);
+    }
+
     public function deactivateUser($userId)
     {
         $db = Database::openConnection();
