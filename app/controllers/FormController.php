@@ -5580,10 +5580,18 @@ class FormController extends Controller {
                 }
             }
         }
-        echo "<pre>",print_r($post_data),"</pre>"; die();
+        //echo "<pre>",print_r($post_data),"</pre>"; die();
         if( !$this->dataSubbed($name) )
         {
-            Form::setError('name', 'Your name is required');
+            Form::setError('name', 'The user\'s name is required');
+        }
+        if( !$this->dataSubbed($email) )
+        {
+            Form::setError('email', 'An email is required');
+        }
+        elseif(!$this->emailValid($email))
+        {
+            Form::setError('email', 'The email is not valid');
         }
         //image uploads
         $field = "image";
@@ -5610,46 +5618,17 @@ class FormController extends Controller {
             $error_message = $this->file_upload_error_message($_FILES[$field]['error']);
             Form::setError($field, $error_message);
         }
-        if($this->dataSubbed($new_password))
-        {
-            if(!$this->dataSubbed($conf_new_password))
-            {
-                Form::setError('conf_new_password', 'Please retype new password for confirmation');
-            }
-            elseif($conf_new_password !== $new_password)
-            {
-                Form::setError('conf_new_password', 'Passwords do not match');
-            }
-            else
-            {
-                $post_data['hashed_password'] = password_hash($new_password, PASSWORD_DEFAULT, array('cost' => Config::get('HASH_COST_FACTOR')));
-            }
-        }
         if(Form::$num_errors > 0)		/* Errors exist, have user correct them */
         {
             Session::set('value_array', $_POST);
             Session::set('error_array', Form::getErrorArray());
-            return $this->redirector->to(PUBLIC_ROOT . "login/resetPassword", ['id' => $this->request->data("id"), 'token' => $this->request->data("token")]);
         }
         else
         {
-            $this->user->updateProfileInfo($post_data, Session::getUserId());
-            //reset some session data
-            Session::reset([
-                "user_id"       => Session::getUserId(),
-                "role"          => $this->user->getUserRoleName($role_id),
-                "ip"            => $this->request->clientIp(),
-                "user_agent"    => $this->request->userAgent(),
-                "users_name"    => $name,
-                "client_id"     => $client_id,
-                "is_admin_user" => $this->user->isAdminUser(),
-                "is_production_user"    => $this->user->isProductionUser(),
-                "is_warehouse_user"     => $this->user->isWarehouseUser()
-            ]);
-            //set the cookie to remember the user
-            Cookie::reset(Session::getUserId());
+            $this->user->updateProfileInfo($post_data, $user_id);
+            Session::set('feedback', "Those details have been updated");
         }
-        return $this->redirector->to(PUBLIC_ROOT."user/profile");
+        return $this->redirector->to(PUBLIC_ROOT."user/edit-user-profile/user=".$user_id);
     }
 
     public function procUserRoleEdit()
