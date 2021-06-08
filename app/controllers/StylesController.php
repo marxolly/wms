@@ -24,6 +24,7 @@ class stylesController extends Controller
             'card_header_colour'        => '#242359',
             'card_header_background'    => '#b4c3dc',
             'card_header_border_colour' => '#545380',
+            'page_header_colour'        => '#242359',
             'quicklinks_header_colour'  => '#17142c'
         );
         $client_styles = $this->displaystyle->getClientStyles($client_id);
