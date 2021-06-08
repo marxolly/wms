@@ -76,13 +76,14 @@ class User extends Model{
 
     public function updateProfileInfo($data, $userId)
     {
-        echo "<pre>",print_r($data),"</pre>"; die();
+        //echo "<pre>",print_r($data),"</pre>"; die();
         $db = Database::openConnection();
         $vals = array(
             'name'  =>  $data['name']
         );
         if(isset($data['image_name'])) $vals['profile_picture'] = $data['image_name'].".jpg";
         elseif(isset($data['delete_image'])) $vals['profile_picture'] = 'default.png';
+        $vals['client_admin'] = (isset($data['client_admin']))? 1 : 0;
         if(isset($data['hashed_password']))
         {
             $vals['hashed_password'] = $data['hashed_password'];
