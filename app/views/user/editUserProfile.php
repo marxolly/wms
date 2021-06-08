@@ -45,20 +45,6 @@ $email = (empty(Form::value('email')))? $info['email'] : Form::value('email');
                     </div>
                 </div>
             </div>
-            <div class="form-group row">
-                <label class="col-md-3 col-form-label">New Password</label>
-                <div class="col-md-4">
-                    <input type="password" class="form-control" name="new_password" id="new_password" value="" autocomplete="false" />
-                </div>
-            </div>
-            <div class="form-group row">
-                <label class="col-md-3 col-form-label">Confirm New Password</label>
-                <div class="col-md-4">
-                    <input type="password" class="form-control" name="conf_new_password" id="conf_new_password" value="" />
-                    <span class="inst">If you wish to change your password, please retype your new password here</span>
-                    <?php echo Form::displayError('conf_new_password');?>
-                </div>
-            </div>
             <!-- Hidden Inputs -->
             <input type="hidden" name="csrf_token" id="csrf_token" value="<?php echo Session::generateCsrfToken(); ?>" />
             <input type="hidden" name="client_id" value="<?php echo $info['client_id'];?>" />
