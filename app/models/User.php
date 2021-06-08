@@ -76,6 +76,7 @@ class User extends Model{
 
     public function updateProfileInfo($data, $userId)
     {
+        echo "<pre>",print_r($data),"</pre>"; die();
         $db = Database::openConnection();
         $vals = array(
             'name'  =>  $data['name']
