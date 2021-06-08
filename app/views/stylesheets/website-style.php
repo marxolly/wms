@@ -1,6 +1,3 @@
-<?php
-
-?>
 /*****
 Startup and Standard
 ******/
@@ -21,7 +18,7 @@ body{
 
 #page-wrapper {
     padding: 5px 10px;
-    background-color: #f8f8f9;
+    background-color: <?php echo $page_background_colour;?>;
 }
 
 div#page_container{
