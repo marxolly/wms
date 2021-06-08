@@ -4,7 +4,6 @@ $name = (empty(Form::value('name')))? $info['name'] : Form::value('name');
 <div id="page-wrapper">
     <div id="page_container" class="container-xl">
         <?php include(Config::get('VIEWS_PATH')."layout/page-includes/page_top.php");?>
-        <?php echo "PERMS<pre>",print_r(Permission::$perms),"</pre>";?>
         <div class="row">
             <div class="col-lg-12">
                 <h2>Update A User profile</h2>
