@@ -126,6 +126,10 @@ div#order_activity_chart{
     margin:1rem 0;
 }
 
+h2.quick_links{
+    color: <?php echo $quicklinks_header_colour;?>
+}
+
 .homepagedeck,
 .backorderdeck {
     display: flex;
