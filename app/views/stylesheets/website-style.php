@@ -58,7 +58,7 @@ h2.page-header{
     text-transform: uppercase;
     text-align: center;
     margin-top: 25px;
-    color: #282c69;
+    color: <?php echo $page_header_colour;?>;
 }
 
 h2.page-header i{
