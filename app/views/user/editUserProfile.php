@@ -26,6 +26,10 @@ $email = (empty(Form::value('email')))? $info['email'] : Form::value('email');
                     <input type="text" class="form-control required email" name="email" id="email" value="<?php echo $email;?>" />
                 </div>
             </div>
+            <div class="form-group row custom-control custom-checkbox custom-control-right">
+                <input class="custom-control-input" type="checkbox" id="client_admin" name="client_admin" <?php if($info['client_admin'] > 0) echo "checked";?> />
+                <label class="custom-control-label col-md-3" for="client_admin">Client Administrator</label>
+            </div>
             <div class="form-group row">
                 <label class="col-md-3 col-form-label">Profile Image</label>
                 <div class="col-md-4">
