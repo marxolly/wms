@@ -50,6 +50,12 @@ class Client extends Model{
         return $db->queryData("SELECT client_name, id, eparcel_location FROM clients WHERE api_key IS NOT NULL AND `active` = 1");
     }
 
+    public function getClientLogo($client_id)
+    {
+        $client = $this->getClientInfo($client_id);
+        return $client['logo_image'];
+    }
+
     public function addClient($data)
     {
         //echo "The request<pre>",print_r($data),"</pre>";die();

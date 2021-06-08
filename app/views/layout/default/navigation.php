@@ -1,10 +1,8 @@
 <?php
 $icons = Config::get("MENU_ICONS");
 $app_type = "Warehouse";
-$logo_images = '
-    <img width="130" src="/images/FSG_logo@130px.png" class="custom-logo" alt="FSG" style="display:none;" title="WMS Home" />
-    <img width="130" src="/images/FSG_logo_white@130px.png" class="custom-logo-transparent" alt="FSG logo" title="WMS Home" />
-';
+$scrolled_logo_src = "/images/FSG_logo@130px.png";
+$top_logo_src = "/images/FSG_logo_white@130px.png";
 if(Session::getIsLoggedIn()):
     //echo "<pre>",print_r($_SESSION),"</pre>";
     $user_role = (Session::isAdminUser())? 'admin' : Session::getUserRole();
@@ -28,9 +26,8 @@ endif;
 <nav class="navbar navbar-expand-lg fixed-top navbar-dark" style="background-color: transparent; height:100px;">
     <a href="/" class="navbar-brand" rel="home" itemprop="url">
         <span id="logo_holder">
-            <?php echo $logo_images;?>
-            <!--img width="130" src="/images/FSG_logo@130px.png" class="custom-logo" alt="FSG" style="display:none;" title="WMS Home" />
-            <img width="130" src="/images/FSG_logo_white@130px.png" class="custom-logo-transparent" alt="FSG logo" title="WMS Home" /-->
+            <img width="130" src="<?php echo $scrolled_logo_src;?>" class="custom-logo" alt="FSG" style="display:none;" title="WMS Home" />
+            <img width="130" src="<?php echo $top_logo_src;?>" class="custom-logo-transparent" alt="FSG logo" title="WMS Home" />
         </span>
     </a>
     <button id="navbar_toggler" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
