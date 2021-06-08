@@ -182,7 +182,7 @@ $customer_id = (!empty(Form::value('customer_id')))? (int)Form::value('customer_
             <div class="form-group row">
                 <label class="col-md-3 col-form-label">&nbsp;</label>
                 <div class="col-md-4">
-                    <button type="submit" class="btn btn-outline-secondary" id="submitter" <?php if($form_disabled) echo "disabled";?>>Add This Order</button>
+                    <button type="submit" class="btn btn-outline-fsg" id="submitter" <?php if($form_disabled) echo "disabled";?>>Add This Order</button>
                 </div>
             </div>
         </form>
