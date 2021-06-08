@@ -54,7 +54,7 @@ class UserController extends Controller{
     }
 
     public function isAuthorized(){
-        return true;
+        //return true;
         $role = Session::getUserRole();
         $action = $this->request->param('action');
         $resource = "user";
@@ -68,7 +68,7 @@ class UserController extends Controller{
         Permission::allowAllRoles($resource,[
             'profile'
         ]);
-        echo "PERMS IN THE CONTROLLER<pre>",print_r(Permission::$perms),"</pre>";die();
+        //echo "PERMS IN THE CONTROLLER<pre>",print_r(Permission::$perms),"</pre>";die();
         return Permission::check($role, $resource, $action);
     }
 }
