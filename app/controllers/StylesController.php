@@ -24,7 +24,8 @@ class stylesController extends Controller
             'card_header_colour'        => '#242359',
             'card_header_background'    => '#b4c3dc',
             'card_header_border_colour' => '#545380',
-            'fsg_button_colour'         => '#17142c',
+            'fsg_button_colour'         => '#4183c2',
+            'fsg_button_colour_hover'   => '#242359',
             'page_header_colour'        => '#242359',
             'quicklinks_header_colour'  => '#17142c'
         );
