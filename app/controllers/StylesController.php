@@ -41,9 +41,9 @@ class stylesController extends Controller
         }
         //calculate page background colour
         list($r, $g, $b) = sscanf($styles['card_header_background'], "#%02x%02x%02x");
+        $styles['page_background_colour'] = "rgba($r,$g,$b,0.1)";
         //calculate button hover text colour
         $styles['fsg_button_hover_text_colour'] = Utility::getContrastColor($styles['fsg_button_colour_hover']);
-        $styles['page_background_colour'] = "rgba($r,$g,$b,0.1)";
         //$styles = (empty($client_styles))? $style_defaults: array_merge($style_defaults, $client_styles);
         //render the page
         Config::setJsConfig('curPage', "shipto-reps");
