@@ -21,9 +21,9 @@ $email = (empty(Form::value('email')))? $info['email'] : Form::value('email');
                 </div>
             </div>
             <div class="form-group row">
-                <label class="col-md-3 col-form-label">Email</label>
+                <label class="col-md-3 col-form-label"><sup><small><i class="fas fa-asterisk text-danger"></i></small></sup> Email</label>
                 <div class="col-md-4">
-                    <input type="text" class="form-control" name="email" id="email" value="<?php echo $email;?>" />
+                    <input type="text" class="form-control required email" name="email" id="email" value="<?php echo $email;?>" />
                 </div>
             </div>
             <div class="form-group row">
@@ -54,7 +54,7 @@ $email = (empty(Form::value('email')))? $info['email'] : Form::value('email');
             <div class="form-group row">
                 <label class="col-md-3 col-form-label">&nbsp;</label>
                 <div class="col-md-4">
-                    <button type="submit" class="btn btn-outline-fsg">Update Profile</button>
+                    <button type="submit" class="btn btn-outline-fsg">Save Changes</button>
                 </div>
             </div>
         </form>
