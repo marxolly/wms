@@ -1,5 +1,6 @@
 <?php
 $name = (empty(Form::value('name')))? $info['name'] : Form::value('name');
+$email = (empty(Form::value('email')))? $info['email'] : Form::value('email');
 ?>
 <div id="page-wrapper">
     <div id="page_container" class="container-xl">
@@ -22,8 +23,7 @@ $name = (empty(Form::value('name')))? $info['name'] : Form::value('name');
             <div class="form-group row">
                 <label class="col-md-3 col-form-label">Email</label>
                 <div class="col-md-4">
-                    <input type="text" class="form-control disabled" name="email" id="email" value="<?php echo $info['email'];?>" disabled />
-                    <span class="inst">Email addresses cannot be changed. If you need to update yours, please contact us</span>
+                    <input type="text" class="form-control" name="email" id="email" value="<?php echo $email;?>" />
                 </div>
             </div>
             <div class="form-group row">
@@ -63,6 +63,7 @@ $name = (empty(Form::value('name')))? $info['name'] : Form::value('name');
             <input type="hidden" name="csrf_token" id="csrf_token" value="<?php echo Session::generateCsrfToken(); ?>" />
             <input type="hidden" name="client_id" value="<?php echo $info['client_id'];?>" />
             <input type="hidden" name="role_id" value="<?php echo $info['role_id'];?>" />
+            <input type="hidden" name="user_id" value="<?php echo $info['id'];?>" />
             <!-- Hidden Inputs -->
             <div class="form-group row">
                 <label class="col-md-3 col-form-label">&nbsp;</label>
