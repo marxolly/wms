@@ -24,7 +24,7 @@
         </div>
     </div>
     <div class="col-md-3">
-        <button id="change_dates" class="btn btn-small btn-outline-secondary">Change Dates</button>
+        <button id="change_dates" class="btn btn-small btn-outline-fsg">Change Dates</button>
     </div>
     <input type="hidden" id="date_from_value" name="date_from_value" value="<?php echo $from;?>" />
     <input type="hidden" id="date_to_value" name="date_to_value" value="<?php echo $to;?>" />
