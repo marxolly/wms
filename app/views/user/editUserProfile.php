@@ -12,7 +12,7 @@ $email = (empty(Form::value('email')))? $info['email'] : Form::value('email');
         </div>
         <?php include(Config::get('VIEWS_PATH')."layout/page-includes/form-top.php");?>
         <?php echo Form::displayError('general');?>
-        <form id="profile_update" method="post" enctype="multipart/form-data" action="/form/procProfileUpdate">
+        <form id="profile_update" method="post" enctype="multipart/form-data" action="/form/procAdminProfileUpdate">
             <div class="form-group row">
                 <label class="col-md-3 col-form-label"><sup><small><i class="fas fa-asterisk text-danger"></i></small></sup> Name</label>
                 <div class="col-md-4">
