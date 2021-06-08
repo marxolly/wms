@@ -68,7 +68,7 @@ class UserController extends Controller{
         Permission::allowAllRoles($resource,[
             'profile'
         ]);
-
+        echo "PERMS IN THE CONTROLLER<pre>",print_r(Permission::$perms),"</pre>";die();
         return Permission::check($role, $resource, $action);
     }
 }
