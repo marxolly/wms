@@ -898,7 +898,7 @@ bootstrap adjustments
     }
 
     .btn-outline-fsg:hover {
-        color: #fff !important;
+        color: <?php echo $fsg_button_hover_text_colour;?> !important;
         background-color: <?php echo $fsg_button_colour_hover;?>;
         border-color: <?php echo $fsg_button_colour_hover;?>;
     }
