@@ -58,17 +58,12 @@ class UserController extends Controller{
         $role = Session::getUserRole();
         $action = $this->request->param('action');
         $resource = "user";
-        // allow for admins
-        Permission::allow(['super admin', 'admin'], $resource, ['*']);
-        // remove other admins from users profile editing
-        Permission::deny('admin', $resource, [
-            'editUserProfile'
-        ]);
+        // super admins only
+        Permission::allow(['super admin'], $resource, ['*']);
         // allow everyone to edit their own profile
         Permission::allowAllRoles($resource,[
             'profile'
         ]);
-        //echo "PERMS IN THE CONTROLLER<pre>",print_r(Permission::$perms),"</pre>";die();
         return Permission::check($role, $resource, $action);
     }
 }
