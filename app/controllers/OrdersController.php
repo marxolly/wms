@@ -904,7 +904,7 @@ class OrdersController extends Controller
             "orderTracking",
             "orderDetail",
         );
-        Permission::allow('client', $resource, $allowed_resources);
+        Permission::allow(['client admin','client'], $resource, $allowed_resources);
         return Permission::check($role, $resource, $action);
     }
 }
