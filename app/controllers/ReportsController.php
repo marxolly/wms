@@ -451,7 +451,7 @@ class ReportsController extends Controller
         ));
 
         //client users
-        Permission::allow('client', $resource, array(
+        Permission::allow(['client admin','client'], $resource, array(
             'index',
             "dispatchReport",
             "returnsReport",
