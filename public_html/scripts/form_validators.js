@@ -651,7 +651,7 @@ $(document).ready(function() {
                 notNone: true
             },
             client_id:{
-                notNone: function(){ return (  $("#role_id").val() == $("#client_admin_role_id") || $("#role_id").val() == $("#client_role_id") ); }
+                notNone: function(){ return (  $("#role_id").val() == $("#client_admin_role_id") || $("#role_id").val() == $("#client_role_id").val() ); }
             }
     	},
 		messages:{
