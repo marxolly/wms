@@ -649,6 +649,9 @@ $(document).ready(function() {
             },
             role_id:{
                 notNone: true
+            },
+            client_id:{
+                notNone: function(){ return (  $("#role_id").val() == $("#client_admin_role_id") || $("#role_id").val() == $("#client_role_id") ); }
             }
     	},
 		messages:{
@@ -660,6 +663,9 @@ $(document).ready(function() {
             },
             role_id:{
                 notNone: "Please select a role"
+            }
+            client_id:{
+                notNone: "Please select a client"
             }
 		}
     });
