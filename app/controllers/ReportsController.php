@@ -263,7 +263,7 @@ class ReportsController extends Controller
 
     public function stockMovementSummary()
     {
-        if(Session::getUserRole() == "client")
+        if(Session::getUserRole() == "client" || Session::getUserRole() == "client admin")
         {
             return $this->clientStockMovementSummary();
         }
