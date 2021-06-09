@@ -56,6 +56,19 @@
                 },
                 'edit-user-profile':{
                     init: function(){
+                        $('select#role_id').change(function(e){
+                            if( $(this).val() == $('#client_role_id').val() || $(this).val() == $('#client_admin_role_id').val() )
+                            {
+                                $('#client_holder').slideDown();
+                                $('#client_id').rules('add', 'notNone');
+                            }
+                            else
+                            {
+                                $('#client_holder').slideUp();
+                                $('#client_id').rules('remove');
+                            }
+                            $(this).valid();
+                        });
                         $('select#role_id, select#client_id').change(function(e){
                             $(this).valid();
                         });
