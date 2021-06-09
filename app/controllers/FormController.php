@@ -5580,7 +5580,7 @@ class FormController extends Controller {
                 }
             }
         }
-        //echo "<pre>",print_r($post_data),"</pre>"; die();
+        echo "<pre>",print_r($post_data),"</pre>"; die();
         if( !$this->dataSubbed($name) )
         {
             Form::setError('name', 'The user\'s name is required');
@@ -5645,7 +5645,7 @@ class FormController extends Controller {
                 $post_data[$field] = $value;
             }
         }
-        echo "<pre>",print_r($post_data),"</pre>"; die();
+        //echo "<pre>",print_r($post_data),"</pre>"; die();
         $name = strtolower($name);
         $currentname = strtolower($currentname);
         if( !$this->dataSubbed($name) )
