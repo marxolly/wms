@@ -12,7 +12,7 @@ $c = 1;
 ?>
 <div id="page-wrapper">
     <div id="page_container" class="container-xl">
-        <?php //echo $user_role;
+        <?php echo $user_role;
         if($user_role == "admin" || $user_role == "warehouse"):
             //---------------------------------------------------------------------------------------------------------
             //---------------------------------------     Warehouse Users     -----------------------------------------
