@@ -5593,6 +5593,17 @@ class FormController extends Controller {
         {
             Form::setError('email', 'The email is not valid');
         }
+        if($role_id == 0)
+        {
+            Form::setError('role_id', 'Please select a role');
+        }
+        elseif( $role_id == $client_role_id || $role_id == $client_admin_role_id )
+        {
+            if( $client_id == 0 )
+            {
+                Form::setError('client_id', 'Please select a client');
+            }
+        }
         //image uploads
         $field = "image";
         if($_FILES[$field]["size"] > 0)
