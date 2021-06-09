@@ -110,7 +110,7 @@ class ReportsController extends Controller
 
     public function dispatchReport()
     {
-        if(Session::getUserRole() == "client")
+        if(Session::getUserRole() == "client" || Session::getUserRole() == "client admin")
         {
             return $this->clientDispatchReport();
         }
