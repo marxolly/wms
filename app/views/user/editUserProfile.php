@@ -68,7 +68,7 @@ $display = (  ( $role_id == $client_role_id || $role_id == $client_admin_role_id
             <!-- Hidden Inputs -->
             <input type="hidden" name="csrf_token" id="csrf_token" value="<?php echo Session::generateCsrfToken(); ?>" />
             <input type="hidden" name="client_role_id" id="client_role_id" value="<?php echo $client_role_id;?>" />
-            <input type="hidden" name="client_admin_role_id" id="client_role_id" value="<?php echo $client_admin_role_id;?>" /> 
+            <input type="hidden" name="client_admin_role_id" id="clientadmin_role_id" value="<?php echo $client_admin_role_id;?>" />
             <input type="hidden" name="user_id" value="<?php echo $info['id'];?>" />
             <!-- Hidden Inputs -->
             <div class="form-group row">

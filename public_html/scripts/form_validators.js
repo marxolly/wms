@@ -646,6 +646,9 @@ $(document).ready(function() {
     		},
             conf_new_password:{
                 equalTo: "#new_password"
+            },
+            role_id:{
+                notNone: true
             }
     	},
 		messages:{
@@ -654,6 +657,9 @@ $(document).ready(function() {
 			},
             conf_new_password:{
                 equalTo: "This does not match. Please check"
+            },
+            role_id:{
+                notNone: "Please select a role"
             }
 		}
     });
