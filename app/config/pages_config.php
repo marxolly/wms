@@ -933,6 +933,18 @@ $client = array(
             'display'   => false,
             'icon'      => ''
         )
+    ),
+    'display-settings'    => array(
+        'display-settings-index'  => true,
+        'client_admin_only'  => true,
+        'default-icon'  => array(
+            'display'   => false,
+            'icon'      => '<i class="fad fa-lock-alt fa-2x"></i>'
+        ),
+        'adjust-colours'    => array(
+            'display'   => true,
+            'icon'      => '<i class="fad fa-palette fa-2x"></i>' 
+        )
     )
 );
 
