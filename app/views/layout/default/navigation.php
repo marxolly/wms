@@ -44,6 +44,11 @@ endif;
                         if(Session::getUserRole() != "super admin")
                             continue;
                     }
+                    if( (isset($pages[$section]['client_admin_only']) && $pages[$section]['client_admin_only'] == true) )
+                    {
+                        if(Session::getUserRole() != "client admin")
+                            continue;
+                    }
                     if($pages[$section][$section."-index"]):
                         $Section = ucwords(str_replace("-", " ", $section));?>
                         <li id="<?php echo $section;?>" class="nav-item">
