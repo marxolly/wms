@@ -1,6 +1,5 @@
 <?php
-$display = (!empty(Form::value('role_id')) && Form::value('role_id') == $client_role_id)? "block" : "none";
-$sdisplay = (!empty(Form::value('client_id')) && Form::value('client_id') == 67)? "block" : "none";
+$display = ( !empty(Form::value('role_id')) && ( Form::value('role_id') == $client_role_id || Form::value('role_id') == $client_admin_role_id )  )? "block" : "none";
 ?>
 <div id="page-wrapper">
     <div id="page_container" class="container-xl">

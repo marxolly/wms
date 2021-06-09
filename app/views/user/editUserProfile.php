@@ -1,6 +1,8 @@
 <?php
 $name = (empty(Form::value('name')))? $info['name'] : Form::value('name');
 $email = (empty(Form::value('email')))? $info['email'] : Form::value('email');
+
+$display = ( !empty(Form::value('role_id')) && ( Form::value('role_id') == $client_role_id || Form::value('role_id') == $client_admin_role_id )  )? "block" : "none"; 
 ?>
 <div id="page-wrapper">
     <div id="page_container" class="container-xl">
@@ -26,9 +28,21 @@ $email = (empty(Form::value('email')))? $info['email'] : Form::value('email');
                     <input type="text" class="form-control required email" name="email" id="email" value="<?php echo $email;?>" />
                 </div>
             </div>
-            <div class="form-group row custom-control custom-checkbox custom-control-right">
-                <input class="custom-control-input" type="checkbox" id="client_admin" name="client_admin" <?php if($info['client_admin'] > 0) echo "checked";?> />
-                <label class="custom-control-label col-md-3" for="client_admin">Client Administrator</label>
+            <div class="form-group row">
+                <label class="col-md-3 col-form-label"><sup><small><i class="fas fa-asterisk text-danger"></i></small></sup> Role</label>
+                <div class="col-md-4">
+                    <select id="role_id" name="role_id" class="form-control selectpicker" data-style="btn-outline-secondary"><option value="0">--Select One--</option><?php echo $this->controller->user->getSelectUserRoles(Form::value('role_id'));?></select>
+                    <?php echo Form::displayError('role_id');?>
+                </div>
+            </div>
+            <div id="client_holder" style="display: <?php echo $display;?>">
+                <div class="form-group row">
+                    <label class="col-md-3 col-form-label"><sup><small><i class="fas fa-asterisk text-danger"></i></small></sup> Client</label>
+                    <div class="col-md-4">
+                        <select id="client_id" name="client_id" class="form-control selectpicker" data-style="btn-outline-secondary"><option value="0">--Select One--</option><?php echo $this->controller->client->getSelectClients(Form::value('client_id'));?></select>
+                        <?php echo Form::displayError('client_id');?>
+                    </div>
+                </div>
             </div>
             <div class="form-group row">
                 <label class="col-md-3 col-form-label">Profile Image</label>

@@ -16,12 +16,14 @@ class UserController extends Controller{
     public function addUser()
     {
         $client_role_id = $this->user->getClientRoleId();
+        $client_admin_role_id = $this->user->getClientAdminRoleId();
         //render the page
         Config::setJsConfig('curPage', "add-user");
         $this->view->renderWithLayouts(Config::get('VIEWS_PATH') . "layout/users/", Config::get('VIEWS_PATH') . 'user/addUser.php',
         [
-            'page_title'        =>  'Add New User',
-            'client_role_id'    =>  $client_role_id
+            'page_title'            => 'Add New User',
+            'client_role_id'        => $client_role_id,
+            'client_admin_role_id'  => $client_admin_role_id
         ]);
     }
 
@@ -44,12 +46,16 @@ class UserController extends Controller{
         }
         //data
         $info = $this->user->getProfileInfo($this->request->params['args']['user']);
+        $client_admin_role_id = $this->user->getClientAdminRoleId();
+        $client_role_id = $this->user->getClientRoleId();
 
         //render the page
         Config::setJsConfig('curPage', "edit-user-profile");
         $this->view->renderWithLayouts(Config::get('VIEWS_PATH') . "layout/users/", Config::get('VIEWS_PATH') . 'user/editUserProfile.php',[
-            'page_title'    =>  "Edit User Profile",
-            'info'          =>  $info
+            'page_title'            =>  "Edit User Profile",
+            'info'                  =>  $info,
+            'client_role_id'        => $client_role_id,
+            'client_admin_role_id'  => $client_admin_role_id
         ]);
     }
 
