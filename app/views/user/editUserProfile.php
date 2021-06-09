@@ -1,8 +1,9 @@
 <?php
 $name = (empty(Form::value('name')))? $info['name'] : Form::value('name');
 $email = (empty(Form::value('email')))? $info['email'] : Form::value('email');
+$role_id = (empty(Form::value('role_id')))? $info['role_id'] : Form::value('role_id');
 
-$display = ( !empty(Form::value('role_id')) && ( Form::value('role_id') == $client_role_id || Form::value('role_id') == $client_admin_role_id )  )? "block" : "none"; 
+$display = (  ( $role_id == $client_role_id || $role_id == $client_admin_role_id )  )? "block" : "none";
 ?>
 <div id="page-wrapper">
     <div id="page_container" class="container-xl">
@@ -31,7 +32,7 @@ $display = ( !empty(Form::value('role_id')) && ( Form::value('role_id') == $clie
             <div class="form-group row">
                 <label class="col-md-3 col-form-label"><sup><small><i class="fas fa-asterisk text-danger"></i></small></sup> Role</label>
                 <div class="col-md-4">
-                    <select id="role_id" name="role_id" class="form-control selectpicker" data-style="btn-outline-secondary"><option value="0">--Select One--</option><?php echo $this->controller->user->getSelectUserRoles(Form::value('role_id'));?></select>
+                    <select id="role_id" name="role_id" class="form-control selectpicker" data-style="btn-outline-secondary"><option value="0">--Select One--</option><?php echo $this->controller->user->getSelectUserRoles($role_id);?></select>
                     <?php echo Form::displayError('role_id');?>
                 </div>
             </div>
