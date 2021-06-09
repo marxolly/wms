@@ -6,6 +6,7 @@ $top_logo_src = "/images/FSG_logo_white@130px.png";
 if(Session::getIsLoggedIn()):
     //echo "<pre>",print_r($_SESSION),"</pre>";
     $user_role = (Session::isAdminUser())? 'admin' : Session::getUserRole();
+    $user_role = ( $user_role == "client_admin" )? 'client' : $user_role;
     if(empty($user_role))
         return;
     if( Session::isProductionUser() )
