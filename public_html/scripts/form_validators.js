@@ -663,7 +663,7 @@ $(document).ready(function() {
             },
             role_id:{
                 notNone: "Please select a role"
-            }
+            },
             client_id:{
                 notNone: "Please select a client"
             }
