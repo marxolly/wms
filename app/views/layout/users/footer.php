@@ -39,7 +39,7 @@
                             }
                             $(this).valid();
                         });
-                        $('select#role_id, select#client_id, select#solar_team_id').change(function(e){
+                        $('select#role_id, select#client_id').change(function(e){
                             $(this).valid();
                         });
                         $('form#add_user').submit(function(){
@@ -56,6 +56,9 @@
                 },
                 'edit-user-profile':{
                     init: function(){
+                        $('select#role_id, select#client_id').change(function(e){
+                            $(this).valid();
+                        });
                         $('form#profile_update').submit(function(){
                             if($(this).valid())
                             {
