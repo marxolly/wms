@@ -4,8 +4,6 @@
 <style>
 div#page_header_preview{
     background: <?php echo $top_banner_background;?>;
-    width:75%;
-    margin: 1em auto;
     color: <?php echo $site_title_colour;?>;
     text-align:center
 }
@@ -22,7 +20,7 @@ h2.page-header_preview {
 }
 
 </style>
-<div id="page_header_preview" class="row">
+<div id="page_header_preview">
     <div class="col-lg-12">
         <h1>Website Header Colour</h1>
         <p>The background is the Top Banner Background</p>
