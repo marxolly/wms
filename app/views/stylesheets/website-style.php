@@ -87,6 +87,10 @@ div#countdown{
 }
 
 /*****
+Style Previews 
+******/
+
+/*****
 The Section Cards
 ******/
 a.index-link{
