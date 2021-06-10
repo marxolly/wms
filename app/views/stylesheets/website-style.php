@@ -58,7 +58,7 @@ h2.page-header{
     text-transform: uppercase;
     text-align: center;
     margin-top: 25px;
-    color: <?php echo $page_header_colour;?>;
+    color: <?php echo $page_title_colour;?>;
 }
 
 h2.page-header i{
@@ -415,7 +415,7 @@ div#page_header{
     text-align: center;
     color: #fbfbfb;
     padding-top: 100px;
-    background: <?php echo $top_banner_background;?>;
+    background: <?php echo $site_title_background;?>;
     box-shadow: 0 5px 10px 0 rgba(50, 50, 50, 0.3);
     transition:all 600ms linear;
 }
