@@ -6,7 +6,7 @@ div#page_header_preview{
     background: <?php echo $top_banner_background;?>;
     width:75%;
     margin: 1em auto;
-    color: <?php echo $page_header_colour;?>;
+    color: <?php echo $site_title_colour;?>;
     text-align:center
 }
 div#page_header_preview h1{
