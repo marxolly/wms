@@ -89,8 +89,9 @@ div#countdown{
 Style Previews
 ******/
 div#style_preview{
-    width:75%;
+    width:100%;
     margin: 1em auto;
+    text-align:center;
 }
 
 /*****
