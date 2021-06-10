@@ -20,7 +20,6 @@
     * style settings defaullts
     **********************************************************************/
     define('STYLE_DEFAULTS', array(
-        'logo'                      => '<img width="130" src="/images/FSG_logo@130px.png" class="custom-logo" alt="FSG" style="display:none;" title="WMS Home" /><img width="130" src="/images/FSG_logo_white@130px.png" class="custom-logo-transparent" alt="FSG logo" title="WMS Home" />',
         'card_border_colour'        => '#545380',
         'card_header_colour'        => '#242359',
         'card_header_background'    => '#b4c3dc',
