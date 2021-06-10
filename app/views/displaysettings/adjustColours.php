@@ -5,7 +5,7 @@
     <div id="page_container" class="container-xl">
         <input type="hidden" id="client_id" value="<?php echo $client_id;?>">
         <?php include(Config::get('VIEWS_PATH')."layout/page-includes/page_top.php");?>
-        <div id="style_preview" class="row">
+        <div id="style_preview">
             <p><img class='loading' src='/images/preloader.gif' alt='loading...' /><br />Generating Preview...</p>
         </div>
         <?php include(Config::get('VIEWS_PATH')."layout/page-includes/form-top.php");?>
