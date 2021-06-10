@@ -81,7 +81,6 @@ website colours
 /*****
 Page Refresh Countdown
 ******/
-
 div#countdown{
     font-size: smaller;
 }
@@ -89,7 +88,6 @@ div#countdown{
 /*****
 Style Previews
 ******/
-
 div#style_preview{
     width:75%;
     margin: 1em auto;
