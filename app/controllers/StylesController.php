@@ -17,7 +17,7 @@ class stylesController extends Controller
     public function clientStyling()
     {
         $user_role = (Session::isAdminUser())? 'admin' : Session::getUserRole();
-        $client_id = ($user_role == 'client' || $user_role == "client_admin")? $this->user->getUserClientId( Session::getUserId() ) : 0;
+        $client_id = ($user_role == 'client' || $user_role == "client admin")? $this->user->getUserClientId( Session::getUserId() ) : 0;
         $style_defaults = array(
             'logo'                      => '<img width="130" src="/images/FSG_logo@130px.png" class="custom-logo" alt="FSG" style="display:none;" title="WMS Home" /><img width="130" src="/images/FSG_logo_white@130px.png" class="custom-logo-transparent" alt="FSG logo" title="WMS Home" />',
             'card_border_colour'        => '#545380',
