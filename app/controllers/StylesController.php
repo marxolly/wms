@@ -17,7 +17,7 @@ class stylesController extends Controller
     public function clientStyling()
     {
         $user_role = (Session::isAdminUser())? 'admin' : Session::getUserRole();
-        $client_id = ($user_role == 'client')? $this->user->getUserClientId( Session::getUserId() ) : 0;
+        $client_id = ($user_role == 'client' || $user_role == "client_admin")? $this->user->getUserClientId( Session::getUserId() ) : 0;
         $style_defaults = array(
             'logo'                      => '<img width="130" src="/images/FSG_logo@130px.png" class="custom-logo" alt="FSG" style="display:none;" title="WMS Home" /><img width="130" src="/images/FSG_logo_white@130px.png" class="custom-logo-transparent" alt="FSG logo" title="WMS Home" />',
             'card_border_colour'        => '#545380',
@@ -47,7 +47,7 @@ class stylesController extends Controller
         //adjust button border to suit
         $styles['fsg_button_hover_border_colour'] = ($styles['fsg_button_hover_text_colour'] == "#000000")? "#000000" : $styles['fsg_button_colour_hover'];
 
-        //render the page 
+        //render the page
         $this->view->renderStyleSheet(Config::get('VIEWS_PATH') . "stylesheets/website-style.php",$styles);
     }
 
