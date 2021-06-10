@@ -6,6 +6,7 @@
         <?php include(Config::get('VIEWS_PATH')."layout/page-includes/page_top.php");?>
         <?php include(Config::get('VIEWS_PATH')."layout/page-includes/form-top.php");?>
         <?php echo Form::displayError('general');?>
+        <?php echo "<pre>",print_r($styles),"</pre>";?>;?>
         <form id="adjust_colours"  method="post" enctype="multipart/form-data" action="/form/procAdjustColours">
             <input type="hidden" name="csrf_token" value="<?php echo Session::generateCsrfToken(); ?>" />
             <div class="form-group row">
