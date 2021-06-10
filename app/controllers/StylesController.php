@@ -27,7 +27,8 @@ class stylesController extends Controller
             'fsg_button_colour'         => '#4183c2',
             'fsg_button_colour_hover'   => '#242359',
             'page_header_colour'        => '#242359',
-            'quicklinks_header_colour'  => '#17142c'
+            'quicklinks_header_colour'  => '#17142c',
+            'top_banner_background'     => 'linear-gradient(90deg, rgba(138,105,140,1) 0%, rgba(115,99,139,1) 15%, rgba(84,83,128,1) 50%, rgba(65,131,194,1) 85%, rgba(130,165,208,1) 100%)'
         );
         $client_styles = $this->displaystyle->getClientStyles($client_id);
         if(!empty($client_styles))
