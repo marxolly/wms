@@ -94,9 +94,7 @@ class ajaxfunctionsController extends Controller
         $styles['fsg_button_hover_text_colour'] = Utility::getContrastColor($styles['fsg_button_colour_hover']);
         //adjust button border to suit
         $styles['fsg_button_hover_border_colour'] = ($styles['fsg_button_hover_text_colour'] == "#000000")? "#000000" : $styles['fsg_button_colour_hover'];
-        $this->view->render(Config::get('VIEWS_PATH') . 'stylesheets/style-preview.php', [
-            'styles'     =>  $styles
-        ]);
+        $this->view->render(Config::get('VIEWS_PATH') . 'stylesheets/style-preview.php', $styles);
     }
 
     public function receivePodItems()
