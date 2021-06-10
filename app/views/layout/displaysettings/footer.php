@@ -12,7 +12,17 @@
                 },
                 'adjust-colours': {
                     init: function(){
+                        $('#style_preview').load('/ajaxfunctions/loadStylePreview',{client_id: $("#client_id").val()},
+                            function(responseText, textStatus, XMLHttpRequest){
+                                if(textStatus == 'error') {
+                                    $(this).html('<div class=\'errorbox\'><h2>There has been an error</h2></div>');
+                                }
+                                else
+                                {
 
+                                }
+                            }
+                        );
                     }
                 }
             }
