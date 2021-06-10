@@ -535,6 +535,11 @@
                         actions.common.loadWarehouseCharts();
                     }
                 },
+                client_admin: {
+                    init: function(){
+                        actions.client.init();
+                    }
+                },
                 production_admin: {
                     init: function(){
                         actions.common.init();
