@@ -22,6 +22,23 @@ class DisplaySettingsController extends Controller
         parent::displayIndex(get_class());
     }
 
+    public function adjustColours()
+    {
+        if( !Session::getUserRole() == "client admin" )
+        {
+            return $this->error(403);
+        }
+        $client_id = Session::getUserClientId();
+        $client_name = $this->client->getClientName($client_id);
+        Config::setJsConfig('curPage', "adjust-colours");
+        Config::set('curPage', "adjust-colours");
+        $this->view->renderWithLayouts(Config::get('VIEWS_PATH') . "layout/displaysettings/", Config::get('VIEWS_PATH') . 'displaysettings/adjustColours.php',[
+            'page_title'        =>  ucwords(strtolower($client_name)).' Colour Settings',
+            'client_id'         =>  $client_id,
+            'client_name'       =>  $client_name
+        ]);
+    }
+
     public function isAuthorized(){
         $role = Session::getUserRole();
         $action = $this->request->param('action');
