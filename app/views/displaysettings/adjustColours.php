@@ -9,7 +9,7 @@
         <form id="adjust_colours"  method="post" enctype="multipart/form-data" action="/form/procAdjustColours">
             <input type="hidden" name="csrf_token" value="<?php echo Session::generateCsrfToken(); ?>" />
             <div class="form-group row">
-                <div class="col-md-4 offset-col-md-3">
+                <div class="col-md-4 offset-md-3">
                     <button type="submit" class="btn btn-outline-fsg">Save Changes</button>
                 </div>
             </div>
