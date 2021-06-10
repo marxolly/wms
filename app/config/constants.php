@@ -10,11 +10,27 @@
     define('UPLOADS',  DOC_ROOT. "/client_uploads/");
 
     /*********************************************************************
-    * Encrption Keys
+    * Encryption Keys
     **********************************************************************/
     define('ENCRYPTION_KEY', "f@!$251Êìcef08%&3¥‹a0e");
     define('HMAC_SALT', "0%8Qfd9K4m6d$8a8C7n7^Ed6Dab");
     define('HASH_KEY', "9Mp7Lf2cHz5F");
+
+    /*********************************************************************
+    * style settings defaullts
+    **********************************************************************/
+    define('STYLE_DEFAULTS', array(
+        'logo'                      => '<img width="130" src="/images/FSG_logo@130px.png" class="custom-logo" alt="FSG" style="display:none;" title="WMS Home" /><img width="130" src="/images/FSG_logo_white@130px.png" class="custom-logo-transparent" alt="FSG logo" title="WMS Home" />',
+        'card_border_colour'        => '#545380',
+        'card_header_colour'        => '#242359',
+        'card_header_background'    => '#b4c3dc',
+        'card_header_border_colour' => '#545380',
+        'fsg_button_colour'         => '#4183c2',
+        'fsg_button_colour_hover'   => '#242359',
+        'page_header_colour'        => '#242359',
+        'quicklinks_header_colour'  => '#17142c',
+        'top_banner_background'     => 'linear-gradient(161deg, rgba(138,105,140,1) 0%, rgba(36,35,89,1) 25%, rgba(23,20,44,1) 40%, rgba(23,20,44,1) 70%, rgba(65,131,194,1) 90%, rgba(130,165,208,1) 100%)'
+    ));
 
 /*************************************************************************
 * Is Site Live?
