@@ -6,7 +6,7 @@
             //the actions for each page
             var actions = {
                 common: {
-                    init: funtion(){
+                    init: function(){
 
                     }
                 },
