@@ -90,7 +90,7 @@ Style Previews
 ******/
 div#style_preview{
     width:75%;
-    margin: 1em auto;
+    margin: 0 auto 1em;
     padding: 2px;
     border: thin solid #eaeaea;
 }
