@@ -31,15 +31,7 @@ class DisplaySettingsController extends Controller
         $client_id = Session::getUserClientId();
         $client_name = $this->client->getClientName($client_id);
         $client_styles = $this->displaystyle->getClientStyles($client_id);
-        if(!empty($client_styles))
-        {
-            $client_styles = array_filter($client_styles);
-            $styles = array_merge(STYLE_DEFAULTS, $client_styles);
-        }
-        else
-        {
-            $styles = STYLE_DEFAULTS;
-        }
+        $styles = Utility::createClientStyles($client_styles);
         Config::setJsConfig('curPage', "adjust-colours");
         Config::set('curPage', "adjust-colours");
         $this->view->renderWithLayouts(Config::get('VIEWS_PATH') . "layout/displaysettings/", Config::get('VIEWS_PATH') . 'displaysettings/adjustColours.php',[
