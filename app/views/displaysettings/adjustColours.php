@@ -7,7 +7,7 @@
         <?php include(Config::get('VIEWS_PATH')."layout/page-includes/page_top.php");?>
         <div class="row">
             <div class="col">
-                <p class="inst text-center">Current Colour Selection</p>
+                <h4 class="text-center">Current Colour Selection</h4>
             </div>
         </div>
         <div id="style_preview">
