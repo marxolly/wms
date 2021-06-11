@@ -2,6 +2,14 @@
 
 ?>
 <style>
+div#page-wrapper_preview{
+    padding: 5px 10px;
+    background-color: <?php echo $page_background_colour;?>
+}
+div#page_container_preview{
+    background-color: #fdfdfd;
+    padding-top: 1rem;
+}
 div#page_header_preview{
     background: <?php echo $top_banner_background;?>;
     color: <?php echo $site_title_colour;?>;
@@ -26,8 +34,12 @@ h2.page-header_preview {
         <p class="text-center">The background is the Top Banner Background</p>
     </div>
 </div>
-<div class="row">
-    <div class="col-lg-12">
-        <h2 class="page-header_preview">page title colour</h2>
+<div id="page-wrapper_preview">
+    <div id="page_container_preview" class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h2 class="page-header_preview">page title colour</h2>
+            </div>
+        </div>
     </div>
 </div>
