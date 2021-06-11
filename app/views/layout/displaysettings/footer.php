@@ -12,7 +12,7 @@
                 },
                 'adjust-colours': {
                     init: function(){
-                        /*
+                        /* */
                         $('#style_preview').load('/ajaxfunctions/loadStylePreview',{client_id: $("#client_id").val()},
                             function(responseText, textStatus, XMLHttpRequest){
                                 if(textStatus == 'error') {
@@ -24,7 +24,7 @@
                                 }
                             }
                         );
-                        */
+
                     }
                 }
             }
