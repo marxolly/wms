@@ -5,6 +5,11 @@
     <div id="page_container" class="container-xl">
         <input type="hidden" id="client_id" value="<?php echo $client_id;?>">
         <?php include(Config::get('VIEWS_PATH')."layout/page-includes/page_top.php");?>
+        <div class="row">
+            <div class="col">
+                <p class="inst text-center">Current Colour Selection</p>
+            </div>
+        </div>
         <div id="style_preview">
             <p class="text-center"><img class='loading' src='/images/preloader.gif' alt='loading...' /><br />Generating Preview...</p>
         </div>
