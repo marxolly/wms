@@ -23,7 +23,7 @@ h2.page-header_preview {
 <div id="page_header_preview">
     <div class="col-lg-12">
         <h1>Website Header Colour</h1>
-        <p>The background is the Top Banner Background</p>
+        <p class="text-center">The background is the Top Banner Background</p>
     </div>
 </div>
 <div class="row">
