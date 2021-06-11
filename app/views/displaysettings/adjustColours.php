@@ -6,7 +6,7 @@
         <input type="hidden" id="client_id" value="<?php echo $client_id;?>">
         <?php include(Config::get('VIEWS_PATH')."layout/page-includes/page_top.php");?>
         <div id="style_preview">
-            <p><img class='loading' src='/images/preloader.gif' alt='loading...' /><br />Generating Preview...</p>
+            <p class="text-center"><img class='loading' src='/images/preloader.gif' alt='loading...' /><br />Generating Preview...</p>
         </div>
         <?php include(Config::get('VIEWS_PATH')."layout/page-includes/form-top.php");?>
         <?php echo Form::displayError('general');?>
