@@ -9,6 +9,7 @@ div#page-wrapper_preview{
 div#page_container_preview{
     background-color: #fdfdfd;
     padding-top: 1rem;
+    max-width: 80%;
 }
 div#page_header_preview{
     background: <?php echo $top_banner_background;?>;
