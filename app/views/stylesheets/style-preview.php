@@ -31,7 +31,7 @@ h2.page-header_preview {
 </style>
 <div id="page_header_preview">
     <div class="col-lg-12">
-        <h1>Website Header Colour</h1>
+        <h1>Site Title Colour</h1>
         <p class="text-center">The background is the Top Banner Background</p>
     </div>
 </div>
