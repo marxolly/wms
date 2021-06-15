@@ -50,7 +50,7 @@
                                 ]
                             })
                             .on('colorpickerChange', function(e){
-                                $(this).valid();
+                                e.colorpicker.picker.valid();
                             });
 
                         $('button.preview').click(function(e){
