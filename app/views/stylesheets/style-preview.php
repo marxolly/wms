@@ -44,7 +44,7 @@ h2.page-header_preview {
         </div>
     </div>
     <div id="page_container_preview" class="container">
-        <div class="card-deck homepagedeck">
+        <div class="card-deck homepagedeck-preview">
             <div class="card homepagecard-preview">
                 <div class="card-header">
                     <h4>Card Header</h4>
