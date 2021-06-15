@@ -38,10 +38,22 @@ h2.page-header_preview {
     </div>
 </div>
 <div id="page-wrapper_preview">
+    <div class="row">
+        <div class="col-lg-12">
+            <h2 class="page-header_preview">page title colour</h2>
+        </div>
+    </div>
     <div id="page_container_preview" class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <h2 class="page-header_preview">page title colour</h2>
+        <div class="card-deck homepagedeck">
+            <div class="card homepagecard">
+                <div class="card-header">
+                    <h4>Card Header</h4>
+                </div>
+                <div class="card-body text-center">
+                    <a class="btn btn-lg btn-outline-fsg" href="">
+                        <i class="fab fa-jedi-order"></i>    
+                    </a>
+                </div>
             </div>
         </div>
     </div>
