@@ -50,7 +50,7 @@
                                 ]
                             })
                             .on('colorpickerChange', function(e){
-                                console.log("e is "+e);
+                                console.dir(e);
                                 //e.colorpicker.picker.valid();
                             });
 
