@@ -35,13 +35,14 @@
                                             'black': '#000000',
                                             'gray': '#888888',
                                             'white': '#ffffff',
-                                            'red': 'red',
+                                            'red': '#ff0000',
                                             'default': '#777777',
                                             'primary': '#337ab7',
                                             'success': '#5cb85c',
                                             'info': '#5bc0de',
                                             'warning': '#f0ad4e',
-                                            'danger': '#d9534f'
+                                            'danger': '#d9534f',
+                                            'fsg': '#4183c2'
                                         }
                                     }
                                 }
