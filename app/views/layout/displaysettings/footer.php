@@ -13,8 +13,7 @@
                         if(data === undefined) {
                             data = {};
                         }
-                        data['client_id'] = $("#client_id").val()
-                        }
+                        data['client_id'] = $("#client_id").val();
                         $('#style_preview').load('/ajaxfunctions/loadStylePreview',data,
                             function(responseText, textStatus, XMLHttpRequest){
                                 if(textStatus == 'error') {
