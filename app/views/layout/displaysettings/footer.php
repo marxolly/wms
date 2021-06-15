@@ -51,7 +51,8 @@
                             })
                             .on('colorpickerChange', function(e){
                                 console.dir(e);
-                                $(e.currentTarget).valid();
+                                console.log('target id '+ $(e.currentTarget).attr('id'));
+                                //$(e.currentTarget).valid();
                             });
 
                         $('button.preview').click(function(e){
