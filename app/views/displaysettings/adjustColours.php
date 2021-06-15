@@ -15,7 +15,7 @@
         </div>
         <form class="adjust-style-colours mb-3 p-3 border rounded" action="/form/procAdjustColours" method="post">
             <div class="form-group row">
-                <div class="col-md-3 vertical-middle">
+                <div class="col-md-3" style="align: auto">
                     <h4>Card Border Colour</h4>
                 </div>
                 <div class="col-md-5">
