@@ -20,6 +20,14 @@
                 <?php endif; ?>
             </div>
         </div>
+        <div class="row">
+            <div class="col mb-3 p-3 border-rounded bg-info">
+                <p class="inst">
+                    Choose a colour by clicking on the coloured square and selecting the required colour<br>
+                    Any CSS3 colour code can be manually e
+                </p>
+            </div>
+        </div>
         <form class="adjust-style-colours mb-3 p-3 border rounded" action="/form/procAdjustColours" method="post">
             <div class="form-group row">
                 <div class="col-md-3" style="margin: auto 1px">
