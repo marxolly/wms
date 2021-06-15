@@ -14,8 +14,10 @@
             <p class="text-center"><img class='loading' src='/images/preloader.gif' alt='loading...' /><br />Generating Preview...</p>
         </div>
         <form class="adjust-style-colours mb-3 p-3 border rounded" action="/form/procAdjustColours" method="post">
-            <h4>Card Border Colour</h4>
             <div class="form-group row">
+                <div class="col-md-3">
+                    <h4>Card Border Colour</h4>
+                </div>
                 <div class="col-md-3">
                     <label class="col-form-label">Colour</label>
                     <div class="colour-picker input-group">
