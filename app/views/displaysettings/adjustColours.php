@@ -31,8 +31,8 @@
                     <input type="hidden" name="csrf_token" value="<?php echo Session::generateCsrfToken(); ?>" />
                     <input type="hidden" name="line_id" value="<?php  if(isset($styles['id'])) echo $styles['id']; else echo "0";?>" />
                     <input type="hidden" name="line" value="<?php echo $styles['card_border_colour'];?>" />
-                    <p><button id="preview" class="btn btn-sm btn-outline-secondary">Preview</button></p>
-                    <p><button type="submit" class="btn btn-sm btn-outline-secondary">Save</button></p>
+                    <p><button id="preview" class="btn btn-sm btn-outline-fsg">Preview Changes</button></p>
+                    <p><button type="submit" class="btn btn-sm btn-outline-fsg">Save Changes</button></p>
                 </div>
             </div>
         </form>
