@@ -50,9 +50,9 @@
                                 ]
                             })
                             .on('colorpickerChange', function(e){
-                                console.dir(e);
-                                console.log('target id '+ $(e.currentTarget).attr('id'));
-                                //$(e.currentTarget).valid();
+                                //console.dir(e);
+                                console.log('target id '+ $(e.currentTarget).children('input').attr('id'));
+                                $(e.currentTarget).children('input').valid();
                             });
 
                         $('button.preview').click(function(e){
