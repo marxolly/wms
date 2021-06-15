@@ -15,10 +15,10 @@
         </div>
         <form class="adjust-style-colours mb-3 p-3 border rounded" action="/form/procAdjustColours" method="post">
             <div class="form-group row">
-                <div class="col-md-3" style="margin: auto">
+                <div class="col-md-2" style="margin: auto">
                     <h4>Card Border Colour</h4>
                 </div>
-                <div class="col-md-5">
+                <div class="col-md-3">
                     <label class="col-form-label">Colour</label>
                     <div class="colour-picker input-group">
                         <input type="text" class="form-control" name="card_border_colour" id="card_border_colour" value="<?php echo $styles['card_border_colour'];?>" >
