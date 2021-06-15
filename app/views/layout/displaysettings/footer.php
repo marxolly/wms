@@ -68,7 +68,7 @@
                             {
                                 //$.blockUI({ message: '<div style="height:160px; padding-top:20px;"><h2>Generating the preview...</h2></div>' });
                                 var data = {
-                                    section : value;
+                                    section : value
                                 }
                                 actions.common['load-preview'](data);
                             }
