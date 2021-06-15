@@ -18,7 +18,7 @@
                 <div class="col-md-3 form-namecell">
                     <h4>Card Border Colour</h4>
                 </div>
-                <div class="col-md-3">
+                <div class="col-md-5">
                     <label class="col-form-label">Colour</label>
                     <div class="colour-picker input-group">
                         <input type="text" class="form-control" name="card_border_colour" id="card_border_colour" value="<?php echo $styles['card_border_colour'];?>" >
