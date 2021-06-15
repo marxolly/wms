@@ -25,6 +25,7 @@
                             }
                         );
                         $('.colour-picker').colorpicker({
+                            autoInputFallback: false,
                             extensions: [
                                 {
                                     name: 'swatches', // extension name to load
