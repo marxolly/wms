@@ -57,7 +57,7 @@
                             var $form = $(this).closest('form');
                             var section = $(this).data("section");
                             var value = $("input[name='"+section+"']").val();
-                            console.log("the chosen colour: "+value);
+                            console.log("the chosen colour for "+section+" is "+value);
                             if($form.valid())
                             {
                                 //$.blockUI({ message: '<div style="height:160px; padding-top:20px;"><h2>Generating the preview...</h2></div>' });
