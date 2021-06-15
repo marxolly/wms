@@ -25,7 +25,7 @@
                 },
                 'adjust-colours': {
                     init: function(){
-                    actions.common['load-preview'];
+                    actions.common['load-preview']();
                     $('.colour-picker')
                             .colorpicker({
                                 autoInputFallback: false,
