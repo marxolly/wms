@@ -51,7 +51,7 @@
                             })
                             .on('colorpickerChange', function(e){
                                 console.dir(e);
-                                //e.colorpicker.picker.valid();
+                                $(e.currentTarget).valid();
                             });
 
                         $('button.preview').click(function(e){
