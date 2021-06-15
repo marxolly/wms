@@ -26,6 +26,7 @@
                         );
                         $('.colour-picker').colorpicker({
                             autoInputFallback: false,
+                            format: 'rgba',
                             extensions: [
                                 {
                                     name: 'swatches', // extension name to load
