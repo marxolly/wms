@@ -9,8 +9,13 @@
                     init: function(){
 
                     },
-                    'load-preview': function(){
-                        $('#style_preview').load('/ajaxfunctions/loadStylePreview',{client_id: $("#client_id").val()},
+                    'load-preview': function(data){
+                        if(data === undefined) {
+                            data = {};
+                        }
+                        data['client_id'] = $("#client_id").val()
+                        }
+                        $('#style_preview').load('/ajaxfunctions/loadStylePreview',data,
                             function(responseText, textStatus, XMLHttpRequest){
                                 if(textStatus == 'error') {
                                     $(this).html('<div class=\'errorbox\'><h2>There has been an error</h2></div>');
