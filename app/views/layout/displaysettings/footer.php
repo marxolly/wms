@@ -42,7 +42,7 @@
                                             'info': '#5bc0de',
                                             'warning': '#f0ad4e',
                                             'danger': '#d9534f',
-                                            'fsg': '#4183c2'
+                                            'fsg blue': '#4183c2'
                                         }
                                     }
                                 }
