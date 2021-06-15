@@ -76,6 +76,7 @@ class ajaxfunctionsController extends Controller
 
     public function loadStylePreview()
     {
+        echo "<pre>",print_r($this->request->data),"</pre>"; die();
         $client_id = $this->request->data['client_id'];
         $client_styles = $this->displaystyle->getClientStyles($client_id);
         if(!empty($client_styles))
