@@ -24,30 +24,35 @@
                                 }
                             }
                         );
-                        $('.colour-picker').colorpicker({
-                            autoInputFallback: false,
-                            //format: 'rgba',
-                            extensions: [
-                                {
-                                    name: 'swatches', // extension name to load
-                                    options: { // extension options
-                                        colors: {
-                                            'black': '#000000',
-                                            'gray': '#888888',
-                                            'white': '#ffffff',
-                                            'red': '#ff0000',
-                                            'default': '#777777',
-                                            'primary': '#337ab7',
-                                            'success': '#5cb85c',
-                                            'info': '#5bc0de',
-                                            'warning': '#f0ad4e',
-                                            'danger': '#d9534f',
-                                            'fsg blue': '#4183c2'
+                        var cpicker = $('.colour-picker')
+                            .colorpicker({
+                                autoInputFallback: false,
+                                //format: 'rgba',
+                                extensions: [
+                                    {
+                                        name: 'swatches', // extension name to load
+                                        options: { // extension options
+                                            colors: {
+                                                'black': '#000000',
+                                                'gray': '#888888',
+                                                'white': '#ffffff',
+                                                'red': '#ff0000',
+                                                'default': '#777777',
+                                                'primary': '#337ab7',
+                                                'success': '#5cb85c',
+                                                'info': '#5bc0de',
+                                                'warning': '#f0ad4e',
+                                                'danger': '#d9534f',
+                                                'fsg blue': '#4183c2'
+                                            }
                                         }
                                     }
-                                }
-                            ]
-                        });
+                                ]
+                            })
+                            .on('colorpickerChange', function(e){
+                                e.colorpicker.valid();
+                            });
+
                         $('button.preview').click(function(e){
                             e.preventDefault();
                             var $form = $(this).closest('form');
