@@ -40,8 +40,8 @@ h2.page-header_preview {
 .homepagecard-preview{
     margin: 5px auto !important;
     border: thin solid <?php echo $card_border_colour;?>;
-    flex: 48% !important;
-    max-width: 48% !important;
+    flex: 65% !important;
+    max-width: 65% !important;
 }
 
 .homepagecard-previw .card-header,
@@ -52,6 +52,11 @@ h2.page-header_preview {
 .homepagecard-preview .card-header{
     background-color: <?php echo $card_header_background;?>;
     border-bottom: 1px solid <?php echo $card_header_border_colour;?>;
+}
+
+.homepagecard-preview .card-header,
+.homepagecard-preview .card-body{
+    color: <?php echo $card_header_colour;?>;
 }
 
 </style>
@@ -72,10 +77,11 @@ h2.page-header_preview {
             <div class="card homepagecard-preview">
                 <div class="card-header">
                     <h4>Card Header</h4>
+                    <p>Text colour and background colour is editable</p>
                 </div>
                 <div class="card-body text-center">
                     <a class="btn btn-lg btn-outline-fsg" href="">
-                        <i class="fab fa-jedi-order fa-2x"></i>
+                        <i class="fab fa-jedi-order fa-3x"></i>
                     </a>
                 </div>
             </div>
