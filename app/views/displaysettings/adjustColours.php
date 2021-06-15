@@ -30,7 +30,7 @@
                 <div class="col-md-3">
                     <label class="col-form-label">Colour</label>
                     <div class="colour-picker input-group">
-                        <input type="text" class="form-control" name="card_border_colour" id="card_border_colour" value="<?php echo $styles['card_border_colour'];?>" >
+                        <input type="text" class="form-control required" name="card_border_colour" id="card_border_colour" value="<?php echo $styles['card_border_colour'];?>" >
                         <div class="input-group-append">
                             <span class="input-group-text colorpicker-input-addon"><i></i></span>
                         </div>
