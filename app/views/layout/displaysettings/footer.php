@@ -25,7 +25,6 @@
                             }
                         );
                         $('.colour-picker').colorpicker({
-                            format: 'rgba',
                             extensions: [
                                 {
                                     name: 'swatches', // extension name to load
