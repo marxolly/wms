@@ -47,6 +47,12 @@
                                     }
                                 }
                             ]
+                        });
+                        $('button.preview').click(function(e){
+                            e.preventDefault();
+                            var $form = $(this).closest('form');
+
+                            $.blockUI({ message: '<div style="height:160px; padding-top:20px;"><h2>Adding Job Status...</h2></div>' });
                         })
                     }
                 }
