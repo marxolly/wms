@@ -8,11 +8,8 @@
                 common: {
                     init: function(){
 
-                    }
-                },
-                'adjust-colours': {
-                    init: function(){
-                        /* */
+                    },
+                    'load-preview': function(){
                         $('#style_preview').load('/ajaxfunctions/loadStylePreview',{client_id: $("#client_id").val()},
                             function(responseText, textStatus, XMLHttpRequest){
                                 if(textStatus == 'error') {
@@ -24,7 +21,12 @@
                                 }
                             }
                         );
-                        $('.colour-picker')
+                    }
+                },
+                'adjust-colours': {
+                    init: function(){
+                    actions.common['load-previw'];
+                    $('.colour-picker')
                             .colorpicker({
                                 autoInputFallback: false,
                                 //format: 'rgba',
