@@ -30,6 +30,30 @@ h2.page-header_preview {
     color: <?php echo $page_title_colour;?>;
 }
 
+.homepagedeck-preview {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    margin: 1rem 0;
+}
+
+.homepagecard-preview{
+    margin: 5px auto !important;
+    border: thin solid <?php echo $card_border_colour;?>;
+    flex: 48% !important;
+    max-width: 48% !important;
+}
+
+.homepagecard-previw .card-header,
+.homepagecard-preview .card-body{
+    color: <?php echo $card_header_colour;?>;
+}
+
+.homepagecard-preview .card-header{
+    background-color: <?php echo $card_header_background;?>;
+    border-bottom: 1px solid <?php echo $card_header_border_colour;?>;
+}
+
 </style>
 <div id="page_header_preview">
     <div class="col-lg-12">
