@@ -24,7 +24,7 @@
                                 }
                             }
                         );
-                        var cpicker = $('.colour-picker')
+                        $('.colour-picker')
                             .colorpicker({
                                 autoInputFallback: false,
                                 //format: 'rgba',
@@ -50,17 +50,15 @@
                                 ]
                             })
                             .on('colorpickerChange', function(e){
-                                //console.dir(e);
-                                console.log('target id '+ $(e.currentTarget).children('input').attr('id'));
                                 $(e.currentTarget).children('input').valid();
                             });
-
                         $('button.preview').click(function(e){
                             e.preventDefault();
                             var $form = $(this).closest('form');
                             if($form.valid())
                             {
-                                $.blockUI({ message: '<div style="height:160px; padding-top:20px;"><h2>Adding Job Status...</h2></div>' });
+                                $.blockUI({ message: '<div style="height:160px; padding-top:20px;"><h2>Generating the preview...</h2></div>' });
+
                             }
                             else
                             {
