@@ -50,7 +50,8 @@
                                 ]
                             })
                             .on('colorpickerChange', function(e){
-                                e.colorpicker.picker.valid();
+                                console.log("e is "+e);
+                                //e.colorpicker.picker.valid();
                             });
 
                         $('button.preview').click(function(e){
