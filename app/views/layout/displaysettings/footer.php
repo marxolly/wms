@@ -55,14 +55,13 @@
                         $('button.preview').click(function(e){
                             e.preventDefault();
                             var $form = $(this).closest('form');
+                            var section = $(this).data("section");
+                            var value = $("input[name='"+section+"']").val();
+                            conole.log("the chosen colour: "+value);
                             if($form.valid())
                             {
-                                $.blockUI({ message: '<div style="height:160px; padding-top:20px;"><h2>Generating the preview...</h2></div>' });
+                                //$.blockUI({ message: '<div style="height:160px; padding-top:20px;"><h2>Generating the preview...</h2></div>' });
 
-                            }
-                            else
-                            {
-                                return false;
                             }
                         })
                     }
