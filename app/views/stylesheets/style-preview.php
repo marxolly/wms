@@ -82,7 +82,8 @@ h2.page-header_preview {
                 <div class="card-body text-center">
                     <a class="btn btn-lg btn-outline-fsg" href="">
                         <i class="fab fa-jedi-order fa-3x"></i>
-                    </a>
+                    </a><br>
+                    This is a button. Colours and backgrounds are editable for normal and hover states.
                 </div>
             </div>
         </div>
