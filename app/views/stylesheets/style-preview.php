@@ -45,13 +45,13 @@ h2.page-header_preview {
     </div>
     <div id="page_container_preview" class="container">
         <div class="card-deck homepagedeck">
-            <div class="card homepagecard">
+            <div class="card homepagecard-preview">
                 <div class="card-header">
                     <h4>Card Header</h4>
                 </div>
                 <div class="card-body text-center">
                     <a class="btn btn-lg btn-outline-fsg" href="">
-                        <i class="fab fa-jedi-order"></i>    
+                        <i class="fab fa-jedi-order fa-2x"></i>
                     </a>
                 </div>
             </div>
