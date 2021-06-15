@@ -14,7 +14,9 @@ div#page_container_preview{
 div#page_header_preview{
     background: <?php echo $top_banner_background;?>;
     color: <?php echo $site_title_colour;?>;
-    text-align:center
+    text-align:center;
+    box-shadow: 0 5px 10px 0 rgb(50 50 50 / 30%);
+    border: thin solid rgba(0,0,0,0);
 }
 div#page_header_preview h1{
 }
