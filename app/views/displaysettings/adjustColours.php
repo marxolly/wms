@@ -13,6 +13,15 @@
         <div id="style_preview">
             <p class="text-center"><img class='loading' src='/images/preloader.gif' alt='loading...' /><br />Generating Preview...</p>
         </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <?php if(isset($_SESSION['feedback'])) :?>
+                   <div class='feedbackbox'><?php echo Session::getAndDestroy('feedback');?></div>
+                <?php if(isset($_SESSION['errorfeedback'])) :?>
+                   <div class='errorbox'><?php echo Session::getAndDestroy('errorfeedback');?></div>
+                <?php endif; ?>
+            </div>
+        </div>
         <form class="adjust-style-colours mb-3 p-3 border rounded" action="/form/procAdjustColours" method="post">
             <div class="form-group row">
                 <div class="col-md-3" style="margin: auto 1px">
@@ -31,10 +40,11 @@
                     <input type="hidden" name="csrf_token" value="<?php echo Session::generateCsrfToken(); ?>" />
                     <input type="hidden" name="line_id" value="<?php  if(isset($styles['id'])) echo $styles['id']; else echo "0";?>" />
                     <input type="hidden" name="line" value="<?php echo $styles['card_border_colour'];?>" />
-                    <p><button id="preview" class="btn btn-sm btn-outline-fsg">Preview Changes</button></p>
+                    <p><button data-section="card-border-colour" class="btn btn-sm btn-outline-fsg preview">Preview Changes</button></p>
                     <p><button type="submit" class="btn btn-sm btn-outline-fsg">Save Changes</button></p>
                 </div>
             </div>
+            <div id="card-border-colour-feedback" class="form-group row"></div>
         </form>
 
 
