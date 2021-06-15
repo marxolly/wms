@@ -13,9 +13,33 @@
         <div id="style_preview">
             <p class="text-center"><img class='loading' src='/images/preloader.gif' alt='loading...' /><br />Generating Preview...</p>
         </div>
+        <form class="adjust-style-colours mb-3 p-3 border rounded" action="/form/procAdjustColours" method="post">
+            <h4>Card Border Colour</h4>
+            <div class="col-md-3">
+                <label class="col-form-label">Colour</label>
+                <div class="colour-picker input-group">
+                    <input type="text" class="form-control" name="card_border_colour" id="card_border_colour" value="<?php echo $styles['card_border_colour'];?>" >
+                    <div class="input-group-append">
+                        <span class="input-group-text colorpicker-input-addon"><i></i></span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-1">
+                <input type="hidden" name="csrf_token" value="<?php echo Session::generateCsrfToken(); ?>" />
+                <input type="hidden" name="line_id" value="<?php  if(isset($styles['id'])) echo $styles['id']; else echo "0";?>" />
+                <input type="hidden" name="line" value="<?php echo $styles['card_border_colour'];?>" />
+                <p><button id="preview" class="btn btn-sm btn-outline-secondary">Preview</button></p>
+                <p><button type="submit" class="btn btn-sm btn-outline-secondary">Save</button></p>
+            </div>
+        </form>
+
+
+
+
+
         <?php include(Config::get('VIEWS_PATH')."layout/page-includes/form-top.php");?>
         <?php echo Form::displayError('general');?>
-        <?php echo "<pre>",print_r($styles),"</pre>";?>;?>
+        <?php echo "<pre>",print_r($styles),"</pre>";?>
         <form id="adjust_colours"  method="post" enctype="multipart/form-data" action="/form/procAdjustColours">
             <input type="hidden" name="csrf_token" value="<?php echo Session::generateCsrfToken(); ?>" />
             <div class="form-group row">

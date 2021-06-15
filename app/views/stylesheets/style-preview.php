@@ -10,6 +10,7 @@ div#page_container_preview{
     background-color: #fdfdfd;
     padding-top: 1rem;
     max-width: 80%;
+    box-shadow: -5px 0 5px -5px rgb(50 50 50 / 30%), 5px 0 5px -5px rgb(50 50 50 / 30%);
 }
 div#page_header_preview{
     background: <?php echo $top_banner_background;?>;
