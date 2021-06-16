@@ -66,9 +66,14 @@
                             console.log("the chosen colour for "+section+" is "+value);
                             if($form.valid())
                             {
-                                //$.blockUI({ message: '<div style="height:160px; padding-top:20px;"><h2>Generating the preview...</h2></div>' });
+                                $.blockUI({ message: '<div style="height:160px; padding-top:20px;"><h2>Generating the preview...</h2></div>' });
                                 var data = { [section] : value };
                                 actions.common['load-preview'](data);
+                                var $nav = $("nav.fixed-top");
+                                var scrollSpot = $("h2#page_header").offset().top - $nav.height();
+                                $('html, body').animate( {scrollTop: scrollSpot}, 1000, function(){
+                                    $.unblockUI(); 
+                                });
                             }
                         })
                     }
