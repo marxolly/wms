@@ -83,11 +83,11 @@
                                 var default_val = $input.data('defaultvalue');
                                 if($(this).attr('checked')){
 
-                                    $('input#'+section).val(default_val).attr("readonly",true);
+                                    $('input#'+section).val(default_val).prop("readOnly",true);
                                 }
                                 else
                                 {
-                                    $('input#'+section).val(default_val).attr("readonly",false); 
+                                    $('input#'+section).val(default_val).prop("readOnly",false);
                                 }
                             });
                         });
