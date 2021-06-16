@@ -95,7 +95,7 @@ div#style_preview{
     border: thin solid #eaeaea;
 }
 
-div#styling_intsructions{
+div#styling_instructions{
     background-colour:#ccebd6;
     line-height: 2 !important;
 }
