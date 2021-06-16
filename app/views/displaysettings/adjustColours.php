@@ -45,7 +45,7 @@
                 <div class="col-md-1">
                     <label class="col-form-label" for="default_0">Use Default</label>
                     <div class="custom-control custom-checkbox">
-                        <input type="checkbox" class="custom-control-input" id="default_0" name="default_0" />
+                        <input type="checkbox" class="custom-control-input defaultbox" data-section="card_border_colour" id="default_0" name="default_0" />
                         <label class="custom-control-label" for="default_0"></label>
                     </div>
                 </div>
