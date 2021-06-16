@@ -23,7 +23,9 @@
         <div class="row">
             <div id="styling_instructions" class="col m-2 p-3 border-rounded">
                 <p>Choose a colour by clicking on the coloured square and selecting the required colour</p>
-                <p>Any CSS3 compatable colour code can be manually entered - HEX, RGB, RGBA, and Linear Gradient can be accepted</p>
+                <p>RGB colour codes will be converted to HEX codes</p>
+                <p>Click the "Default" checkbox to keep the predesignated FSG colours</p>
+                <p>Invalid code entries will revert to standard Greys</p>
             </div>
         </div>
         <form class="adjust-style-colours p-3 border rounded" action="/form/procAdjustColours" method="post">
@@ -38,6 +40,13 @@
                         <div class="input-group-append">
                             <span class="input-group-text colorpicker-input-addon"><i></i></span>
                         </div>
+                    </div>
+                </div>
+                <div class="col-md-1">
+                    <label class="col-form-label" for="default_<?php echo $styles['id'];?>">Use Default</label>
+                    <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" id="default_<?php echo $styles['id'];?>" name="default_<?php echo $styles['id'];?>" />
+                        <label class="custom-control-label" for="active_<?php echo $s['id'];?>"></label>
                     </div>
                 </div>
                 <div class="col-md-2 text-right">
