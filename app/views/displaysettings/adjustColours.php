@@ -27,7 +27,7 @@
             </div>
         </div>
         <form class="adjust-style-colours p-3 border rounded" action="/form/procAdjustColours" method="post">
-            <div class="form-group row">
+            <div class="row">
                 <div class="col-md-3" style="margin: auto 1px">
                     <h4>Card Border Colour</h4>
                 </div>
@@ -45,7 +45,7 @@
                     <input type="hidden" name="line_id" value="<?php  if(isset($styles['id'])) echo $styles['id']; else echo "0";?>" />
                     <input type="hidden" name="line" value="<?php echo $styles['card_border_colour'];?>" />
                     <p><button data-section="card_border_colour" class="btn btn-sm btn-outline-fsg preview">Preview Changes</button></p>
-                    <p><button type="submit" class="btn btn-sm btn-outline-fsg">Save Changes</button></p>
+                    <p class="mb-0"><button type="submit" class="btn btn-sm btn-outline-fsg">Save Changes</button></p>
                 </div>
             </div>
             <div id="card-border-colour-feedback" class="form-group row"></div>
