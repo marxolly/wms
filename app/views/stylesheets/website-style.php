@@ -97,7 +97,6 @@ div#style_preview{
 
 div#styling_instructions{
     background-color:#ccebd6;
-    line-height: 2 !important;
     color: #221111;
     font-size: 12px;
     font-style: italic;
