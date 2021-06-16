@@ -89,7 +89,6 @@ class ajaxfunctionsController extends Controller
         {
             $styles = STYLE_DEFAULTS;
         }
-        //echo "<pre>",print_r($this->request->data),"</pre>"; die();
         //overwrite for preview
         foreach($this->request->data as $section => $value)
         {
@@ -102,7 +101,6 @@ class ajaxfunctionsController extends Controller
         $styles['fsg_button_hover_text_colour'] = Utility::getContrastColor($styles['fsg_button_colour_hover']);
         //adjust button border to suit
         $styles['fsg_button_hover_border_colour'] = ($styles['fsg_button_hover_text_colour'] == "#000000")? "#000000" : $styles['fsg_button_colour_hover'];
-        echo "STYLES<pre>",print_r($styles),"</pre>"; die();
         $this->view->render(Config::get('VIEWS_PATH') . 'stylesheets/style-preview.php', $styles);
     }
 
