@@ -81,13 +81,16 @@
                                 var section = $(this).data('section');
                                 var $input = $('input#'+section);
                                 var default_val = $input.data('defaultvalue');
+                                var cp = $input.colorpicker('colorpicker');
                                 if($(this).attr('checked')){
 
-                                    $('input#'+section).val(default_val).prop("readOnly",true);
+                                    $input.val(default_val);
+                                    cp.disable();
                                 }
                                 else
                                 {
-                                    $('input#'+section).val(default_val).prop("readOnly",false);
+                                    $input.val(default_val);
+                                    cp.enable();
                                 }
                             });
                         });
