@@ -97,7 +97,7 @@ div#style_preview{
 
 div#styling_intsructions{
     background-colour:#ccebd6;
-    line-height: 2;
+    line-height: 2 !important;
 }
 
 /*****
