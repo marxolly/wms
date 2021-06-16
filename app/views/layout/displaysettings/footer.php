@@ -72,10 +72,25 @@
                                 var $nav = $("nav.fixed-top");
                                 var scrollSpot = $("h2#page_header").offset().top - $nav.height();
                                 $('html, body').animate( {scrollTop: scrollSpot}, 1000, function(){
-                                    $.unblockUI(); 
+                                    $.unblockUI();
                                 });
                             }
-                        })
+                        });
+                        $('input.defaultbox').each(function(i,e){
+                            $(this).click(function(ev){
+                                var section = $(this).data('section');
+                                var $input = $('input#'+section);
+                                var default_val = $input.data('defaultvalue');
+                                if($(this).attr('checked')){
+
+                                    $('input#'+section).val(default_val).attr("readonly",true);
+                                }
+                                else
+                                {
+                                    $('input#'+section).val(default_val).attr("readonly",false); 
+                                }
+                            });
+                        });
                     }
                 }
             }
