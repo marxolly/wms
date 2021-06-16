@@ -89,7 +89,12 @@ class ajaxfunctionsController extends Controller
         {
             $styles = STYLE_DEFAULTS;
         }
-        echo "<pre>",print_r($this->request->data),"</pre>"; die();
+        //echo "<pre>",print_r($this->request->data),"</pre>"; die();
+        //overwrite for preview
+        foreach($this->request->data as $section => $value)
+        {
+            $styles[$section] = $value;
+        }
         //calculate page background colour
         list($r, $g, $b) = sscanf($styles['card_header_background'], "#%02x%02x%02x");
         $styles['page_background_colour'] = "rgba($r,$g,$b,0.1)";
