@@ -24,7 +24,7 @@
             <div class="col mb-3 p-3 border-rounded bg-info">
                 <p class="inst">
                     Choose a colour by clicking on the coloured square and selecting the required colour<br>
-                    Any CSS3 colour code can be manually e
+                    Any CSS3 capatable colour code can be manually entered - HEX, RGB, RGBA, and Linear Gradient can be accepted
                 </p>
             </div>
         </div>
