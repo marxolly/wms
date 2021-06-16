@@ -22,10 +22,8 @@
         </div>
         <div class="row">
             <div id="styling_instructions" class="col m-2 p-3 border-rounded">
-                <p class="inst">
-                    Choose a colour by clicking on the coloured square and selecting the required colour<br>
-                    Any CSS3 capatable colour code can be manually entered - HEX, RGB, RGBA, and Linear Gradient can be accepted
-                </p>
+                <p>Choose a colour by clicking on the coloured square and selecting the required colour</p>
+                <p>Any CSS3 capatable colour code can be manually entered - HEX, RGB, RGBA, and Linear Gradient can be accepted</p>
             </div>
         </div>
         <form class="adjust-style-colours mb-3 p-3 border rounded" action="/form/procAdjustColours" method="post">
