@@ -76,8 +76,9 @@ class ajaxfunctionsController extends Controller
 
     public function loadStylePreview()
     {
-        echo "<pre>",print_r($this->request->data),"</pre>"; die();
+        //echo "<pre>",print_r($this->request->data),"</pre>"; die();
         $client_id = $this->request->data['client_id'];
+        unset($this->request->data['client_id']);
         $client_styles = $this->displaystyle->getClientStyles($client_id);
         if(!empty($client_styles))
         {
@@ -88,6 +89,7 @@ class ajaxfunctionsController extends Controller
         {
             $styles = STYLE_DEFAULTS;
         }
+        echo "<pre>",print_r($this->request->data),"</pre>"; die();
         //calculate page background colour
         list($r, $g, $b) = sscanf($styles['card_header_background'], "#%02x%02x%02x");
         $styles['page_background_colour'] = "rgba($r,$g,$b,0.1)";
@@ -95,6 +97,7 @@ class ajaxfunctionsController extends Controller
         $styles['fsg_button_hover_text_colour'] = Utility::getContrastColor($styles['fsg_button_colour_hover']);
         //adjust button border to suit
         $styles['fsg_button_hover_border_colour'] = ($styles['fsg_button_hover_text_colour'] == "#000000")? "#000000" : $styles['fsg_button_colour_hover'];
+        echo "STYLES<pre>",print_r($styles),"</pre>"; die();
         $this->view->render(Config::get('VIEWS_PATH') . 'stylesheets/style-preview.php', $styles);
     }
 
