@@ -26,14 +26,14 @@
                 <p>Any CSS3 compatable colour code can be manually entered - HEX, RGB, RGBA, and Linear Gradient can be accepted</p>
             </div>
         </div>
-        <form class="adjust-style-colours mb-3 p-3 border rounded" action="/form/procAdjustColours" method="post">
+        <form class="adjust-style-colours p-3 border rounded" action="/form/procAdjustColours" method="post">
             <div class="form-group row">
                 <div class="col-md-3" style="margin: auto 1px">
                     <h4>Card Border Colour</h4>
                 </div>
                 <div class="col-md-3">
                     <label class="col-form-label">Colour</label>
-                    <div class="colour-picker input-group">
+                    <div class="colour-picker input-group mb-3">
                         <input type="text" class="form-control required" name="card_border_colour" id="card_border_colour" value="<?php echo $styles['card_border_colour'];?>" >
                         <div class="input-group-append">
                             <span class="input-group-text colorpicker-input-addon"><i></i></span>
