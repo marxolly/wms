@@ -95,6 +95,11 @@ div#style_preview{
     border: thin solid #eaeaea;
 }
 
+div#styling_intsructions{
+    background-colour:#ccebd6;
+    line-height: 2;
+}
+
 /*****
 The Section Cards
 ******/
