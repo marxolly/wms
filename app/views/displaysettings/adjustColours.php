@@ -31,7 +31,7 @@
         <?php include(Config::get('VIEWS_PATH')."layout/page-includes/form-top.php");?>
         <?php echo Form::displayError('general');?>
         <form id="adjust-style-colours" action="/form/procAdjustColours" method="post">
-            <div class="p-3 border rounded row">
+            <div class="p-3 m-2 border rounded row">
                 <div class="col-md-3" style="margin: auto 1px">
                     <h4>Card Border Colour</h4>
                 </div>
@@ -59,7 +59,7 @@
                     <p class="mb-0"><button type="submit" class="btn btn-sm btn-outline-fsg">Save Changes</button></p>
                 </div>
             </div>
-            <div class="p-3 border rounded row">
+            <div class="p-3 m-2 border rounded row">
                 <div class="col-md-3" style="margin: auto 1px">
                     <h4>Card Header Background</h4>
                 </div>
