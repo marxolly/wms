@@ -66,7 +66,7 @@
                 <div class="col-md-3">
                     <label class="col-form-label">Colour</label>
                     <div class="colour-picker input-group mb-3">
-                        <input type="text" class="form-control required" name="card_header_background" id="card_header_background" value="<?php echo $styles['card_header_background'];?>" >
+                        <input type="text" class="form-control required" name="card_header_background" id="card_header_background" data-defaultvalue="<?php echo STYLE_DEFAULTS['card_header_background'];?>" value="<?php echo $styles['card_header_background'];?>" >
                         <div class="input-group-append">
                             <span class="input-group-text colorpicker-input-addon"><i></i></span>
                         </div>
