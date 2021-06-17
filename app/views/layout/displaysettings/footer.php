@@ -83,11 +83,11 @@
                                 var default_val = $input.data('defaultvalue');
                                 if($(this).prop('checked')){
 
-                                    $input.val(default_val).prop("disabled", true);
+                                    $input.val(default_val).prop("disabled", true).valid();
                                 }
                                 else
                                 {
-                                    $input.val(default_val).prop("disabled", false);
+                                    $input.val(default_val).prop("disabled", false).valid();
                                 }
                             });
                         });
