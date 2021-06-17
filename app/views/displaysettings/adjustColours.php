@@ -31,12 +31,13 @@
         <?php include(Config::get('VIEWS_PATH')."layout/page-includes/form-top.php");?>
         <?php echo Form::displayError('general');?>
         <form id="adjust-style-colours" action="/form/procAdjustColours" method="post">
+
             <div class="p-3 m-2 border rounded row">
                 <div class="col-md-3" style="margin: auto 1px">
                     <h4>Card Border Colour</h4>
                 </div>
                 <div class="col-md-3">
-                    <label class="col-form-label">Colour</label>
+                    <label class="col-form-label"><sup><small><i class="fas fa-asterisk text-danger"></i></small></sup> Colour</label>
                     <div class="colour-picker input-group mb-3">
                         <input type="text" class="form-control required" name="card_border_colour" id="card_border_colour" data-defaultvalue="<?php echo STYLE_DEFAULTS['card_border_colour'];?>" value="<?php echo $styles['card_border_colour'];?>" >
                         <div class="input-group-append">
@@ -51,20 +52,14 @@
                         <label class="custom-control-label" for="default_0"></label>
                     </div>
                 </div>
-                <div class="col-md-2 text-right">
-                    <input type="hidden" name="csrf_token" value="<?php echo Session::generateCsrfToken(); ?>" />
-                    <input type="hidden" name="line_id" value="<?php  if(isset($styles['id'])) echo $styles['id']; else echo "0";?>" />
-                    <input type="hidden" name="line" value="<?php echo $styles['card_border_colour'];?>" />
-                    <p><button data-section="card_border_colour" class="btn btn-sm btn-outline-fsg preview">Preview Changes</button></p>
-                    <p class="mb-0"><button type="submit" class="btn btn-sm btn-outline-fsg">Save Changes</button></p>
-                </div>
             </div>
+
             <div class="p-3 m-2 border rounded row">
                 <div class="col-md-3" style="margin: auto 1px">
                     <h4>Card Header Background</h4>
                 </div>
                 <div class="col-md-3">
-                    <label class="col-form-label">Colour</label>
+                    <label class="col-form-label"><sup><small><i class="fas fa-asterisk text-danger"></i></small></sup> Colour</label>
                     <div class="colour-picker input-group mb-3">
                         <input type="text" class="form-control required" name="card_header_background" id="card_header_background" data-defaultvalue="<?php echo STYLE_DEFAULTS['card_header_background'];?>" value="<?php echo $styles['card_header_background'];?>" >
                         <div class="input-group-append">
@@ -80,6 +75,7 @@
                     </div>
                 </div>
             </div>
+            
             <div class="row">
                 <input type="hidden" name="csrf_token" value="<?php echo Session::generateCsrfToken(); ?>" />
                 <input type="hidden" name="line_id" value="<?php  if(isset($styles['id'])) echo $styles['id']; else echo "0";?>" />
