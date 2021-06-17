@@ -28,8 +28,10 @@
                 <p>Invalid code entries will revert to standard Greys</p>
             </div>
         </div>
-        <form class="adjust-style-colours p-3 border rounded" action="/form/procAdjustColours" method="post">
-            <div class="row">
+        <?php include(Config::get('VIEWS_PATH')."layout/page-includes/form-top.php");?>
+        <?php echo Form::displayError('general');?>
+        <form id="adjust-style-colours" action="/form/procAdjustColours" method="post">
+            <div class="p-3 border rounded row">
                 <div class="col-md-3" style="margin: auto 1px">
                     <h4>Card Border Colour</h4>
                 </div>
@@ -57,10 +59,7 @@
                     <p class="mb-0"><button type="submit" class="btn btn-sm btn-outline-fsg">Save Changes</button></p>
                 </div>
             </div>
-            <div id="card-border-colour-feedback" class="form-group row"></div>
-        </form>
-        <form class="adjust-style-colours p-3 border rounded" action="/form/procAdjustColours" method="post">
-            <div class="row">
+            <div class="p-3 border rounded row">
                 <div class="col-md-3" style="margin: auto 1px">
                     <h4>Card Header Background</h4>
                 </div>
@@ -73,30 +72,32 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-2 text-right">
-                    <input type="hidden" name="csrf_token" value="<?php echo Session::generateCsrfToken(); ?>" />
-                    <input type="hidden" name="line_id" value="<?php  if(isset($styles['id'])) echo $styles['id']; else echo "0";?>" />
-                    <input type="hidden" name="line" value="<?php echo $styles['card_header_background'];?>" />
-                    <p><button data-section="card_header_background" class="btn btn-sm btn-outline-fsg preview">Preview Changes</button></p>
-                    <p class="mb-0"><button type="submit" class="btn btn-sm btn-outline-fsg">Save Changes</button></p>
+                <div class="col-md-1">
+                    <label class="col-form-label" for="default_0">Use Default</label>
+                    <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input defaultbox" data-section="card_header_background" id="default_1" name="default_1" />
+                        <label class="custom-control-label" for="default_1"></label>
+                    </div>
                 </div>
             </div>
-            <div id="card_header_background-feedback" class="form-group row"></div>
+            <div class="row">
+                <input type="hidden" name="csrf_token" value="<?php echo Session::generateCsrfToken(); ?>" />
+                <input type="hidden" name="line_id" value="<?php  if(isset($styles['id'])) echo $styles['id']; else echo "0";?>" />
+                <div class="col-md-2 offset-md-6">
+                    <button id="preview_changes" class="btn btn-sm btn-outline-fsg">Preview Changes</button>
+                </div>
+                <div class="col-md-2">
+                    <button type="submit" class="btn btn-sm btn-outline-fsg">Save Changes</button>
+                </div>
+            </div>
         </form>
 
 
 
 
-        <?php include(Config::get('VIEWS_PATH')."layout/page-includes/form-top.php");?>
-        <?php echo Form::displayError('general');?>
+
+
         <?php echo "<pre>",print_r($styles),"</pre>";?>
-        <form id="adjust_colours"  method="post" enctype="multipart/form-data" action="/form/procAdjustColours">
-            <input type="hidden" name="csrf_token" value="<?php echo Session::generateCsrfToken(); ?>" />
-            <div class="form-group row">
-                <div class="col-md-4 offset-md-3">
-                    <button type="submit" class="btn btn-outline-fsg">Save Changes</button>
-                </div>
-            </div>
-        </form>
+
     </div>
 </div>
