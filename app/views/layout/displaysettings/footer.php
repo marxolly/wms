@@ -77,20 +77,17 @@
                             }
                         });
                         $('input.defaultbox').each(function(i,e){
-                            $(this).click(function(ev){
+                            $(this).change(function(ev){
                                 var section = $(this).data('section');
                                 var $input = $('input#'+section);
                                 var default_val = $input.data('defaultvalue');
-                                var cp = $input.colorpicker('colorpicker');
-                                if($(this).attr('checked')){
+                                if($(this).prop('checked')){
 
-                                    $input.val(default_val);
-                                    cp.disable();
+                                    $input.val(default_val).prop("disabled", true);
                                 }
                                 else
                                 {
-                                    $input.val(default_val);
-                                    cp.enable();
+                                    $input.val(default_val).prop("disabled", false);
                                 }
                             });
                         });
