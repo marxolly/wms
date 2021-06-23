@@ -57,6 +57,12 @@
                             })
                             .on('colorpickerChange', function(e){
                                 $(e.currentTarget).children('input').valid();
+                                var $field = $(e.currentTarget).children('input.colour');
+                                if (e.value === $field.val() || !e.color || !e.color.isValid()) {
+                                    // do not replace the input value if the color is invalid or equals
+                                    return;
+                                }
+                                $field.val(e.color.string());
                             }
                         );
                         $('button#preview_changes').click(function(e){
