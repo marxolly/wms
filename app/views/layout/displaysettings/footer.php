@@ -70,6 +70,7 @@
                                     data = { [section] : value };
                                 })
                                 $.blockUI({ message: '<div style="height:160px; padding-top:20px;"><h2>Generating the preview...</h2></div>' });
+                                console.dir(data);
                                 actions.common['load-preview'](data);
                                 var $nav = $("nav.fixed-top");
                                 var scrollSpot = $("h2#page_header").offset().top - $nav.height();
