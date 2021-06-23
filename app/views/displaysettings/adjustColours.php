@@ -72,9 +72,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-2">
+                <div class="col-md-2 text-right">
                     <label class="col-form-label" for="default_0">Use Default</label>
-                    <div class="custom-control custom-checkbox text-right">
+                    <div class="custom-control custom-checkbox">
                         <input type="checkbox" class="custom-control-input defaultbox" data-section="card_header_background" id="default_1" name="default_1" />
                         <label class="custom-control-label" for="default_1"></label>
                     </div>
