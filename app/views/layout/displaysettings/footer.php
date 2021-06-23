@@ -67,7 +67,7 @@
                                 $("input.colour").each(function(ind, el){
                                     var section = $(this).attr('id');
                                     var value = $(this).val();
-                                    data = { [section] : value };
+                                    data[section] = value;
                                 })
                                 $.blockUI({ message: '<div style="height:160px; padding-top:20px;"><h2>Generating the preview...</h2></div>' });
                                 console.dir(data);
