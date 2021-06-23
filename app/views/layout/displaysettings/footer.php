@@ -84,7 +84,7 @@
                                 var section = $(this).data('section');
                                 var $input = $('input#'+section);
                                 var $cp = $input.parent(".colour-picker");
-                                console.dir($cp);
+                                console.log('id: '+$cp.attr('id'));
                                 var default_val = $input.data('defaultvalue');
                                 if($(this).prop('checked')){
                                     $input.val(default_val).prop("disabled", true).valid();
