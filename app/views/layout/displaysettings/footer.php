@@ -29,46 +29,47 @@
                 },
                 'adjust-colours': {
                     init: function(){
-                    actions.common['load-preview']();
-                    $('.colour-picker')
-                        .colorpicker({
-                            autoInputFallback: false,
-                            //format: 'rgba',
-                            extensions: [
-                                {
-                                    name: 'swatches', // extension name to load
-                                    options: { // extension options
-                                        colors: {
-                                            'black': '#000000',
-                                            'gray': '#888888',
-                                            'white': '#ffffff',
-                                            'red': '#ff0000',
-                                            'default': '#777777',
-                                            'primary': '#337ab7',
-                                            'success': '#5cb85c',
-                                            'info': '#5bc0de',
-                                            'warning': '#f0ad4e',
-                                            'danger': '#d9534f',
-                                            'fsg blue': '#4183c2'
+                        actions.common['load-preview']();
+                        $('.colour-picker')
+                            .colorpicker({
+                                autoInputFallback: false,
+                                //format: 'rgba',
+                                extensions: [
+                                    {
+                                        name: 'swatches', // extension name to load
+                                        options: { // extension options
+                                            colors: {
+                                                'black': '#000000',
+                                                'gray': '#888888',
+                                                'white': '#ffffff',
+                                                'red': '#ff0000',
+                                                'default': '#777777',
+                                                'primary': '#337ab7',
+                                                'success': '#5cb85c',
+                                                'info': '#5bc0de',
+                                                'warning': '#f0ad4e',
+                                                'danger': '#d9534f',
+                                                'fsg blue': '#4183c2'
+                                            }
                                         }
                                     }
-                                }
-                            ]
-                        })
-                        .on('colorpickerChange', function(e){
-                            $(e.currentTarget).children('input').valid();
-                        }
-                    );
-                        $('button.preview').click(function(e){
+                                ]
+                            })
+                            .on('colorpickerChange', function(e){
+                                $(e.currentTarget).children('input').valid();
+                            }
+                        );
+                        $('button#preview_changes').click(function(e){
                             e.preventDefault();
-                            var $form = $(this).closest('form');
-                            var section = $(this).data("section");
-                            var value = $("input[name='"+section+"']").val();
-                            console.log("the chosen colour for "+section+" is "+value);
-                            if($form.valid())
+                            var data = {};
+                            if($('form#adjust-style-colours').valid())
                             {
+                                $("input.colour").each(function(ind, el){
+                                    var section = $(this).id;
+                                    var value = $(this).val();
+                                    data = { [section] : value };
+                                })
                                 $.blockUI({ message: '<div style="height:160px; padding-top:20px;"><h2>Generating the preview...</h2></div>' });
-                                var data = { [section] : value };
                                 actions.common['load-preview'](data);
                                 var $nav = $("nav.fixed-top");
                                 var scrollSpot = $("h2#page_header").offset().top - $nav.height();
