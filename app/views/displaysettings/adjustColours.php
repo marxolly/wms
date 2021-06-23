@@ -131,6 +131,31 @@
                 </div>
             </div>
 <!------------------------------------------------------------------------------------------------------------------------------------------->
+<!-------------------------------------------------     FSG Button Colour      ---------------------------------------------------------------->
+<!------------------------------------------------------------------------------------------------------------------------------------------->
+            <div class="p-3 m-2 border rounded row">
+                <div class="col-md-5" style="margin: auto 1px">
+                    <h4>Button Text Colour</h4>
+                    <p class="inst">This affects all buttons on the site. Including the "preview" and "save" buttons below</p>
+                </div>
+                <div class="col-md-4">
+                    <label class="col-form-label"><sup><small><i class="fas fa-asterisk text-danger"></i></small></sup> Colour</label>
+                    <div class="colour-picker input-group mb-3">
+                        <input type="text" class="form-control required colour" name="fsg_button_colour" id="fsg_button_colour" data-defaultvalue="<?php echo STYLE_DEFAULTS['fsg_button_colour'];?>" value="<?php echo $styles['fsg_button_colour'];?>" >
+                        <div class="input-group-append">
+                            <span class="input-group-text colorpicker-input-addon"><i></i></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2 text-right">
+                    <label class="col-form-label" for="default_4">Use Default</label>
+                    <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input defaultbox" data-section="fsg_button_colour" id="default_4" name="default_4" />
+                        <label class="custom-control-label" for="default_4"></label>
+                    </div>
+                </div>
+            </div>
+<!------------------------------------------------------------------------------------------------------------------------------------------->
 <!-------------------------------------------------     Previews and Form Submission     ---------------------------------------------------------------->
 <!------------------------------------------------------------------------------------------------------------------------------------------->
             <div class="row">
