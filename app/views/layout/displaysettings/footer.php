@@ -85,6 +85,14 @@
                                 var $input = $('input#'+section);
                                 var $cp = $input.parent(".colour-picker");
                                 console.log('id: '+$cp.attr('id'));
+                                if($cp.isEnabled())
+                                {
+                                    console.log('its a cp');
+                                }
+                                else
+                                {
+                                    console.log('its not');
+                                }
                                 var default_val = $input.data('defaultvalue');
                                 if($(this).prop('checked')){
                                     $input.val(default_val).prop("disabled", true).valid();
