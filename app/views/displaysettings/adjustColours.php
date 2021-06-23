@@ -35,10 +35,10 @@
 <!-------------------------------------------------     Card Border Colour     ---------------------------------------------------------------->
 <!------------------------------------------------------------------------------------------------------------------------------------------->
             <div class="p-3 m-2 border rounded row">
-                <div class="col-md-3" style="margin: auto 1px">
+                <div class="col-md-5" style="margin: auto 1px">
                     <h4>Card Border Colour</h4>
                 </div>
-                <div class="col-md-3">
+                <div class="col-md-4">
                     <label class="col-form-label"><sup><small><i class="fas fa-asterisk text-danger"></i></small></sup> Colour</label>
                     <div class="colour-picker input-group mb-3">
                         <input type="text" class="form-control required" name="card_border_colour" id="card_border_colour" data-defaultvalue="<?php echo STYLE_DEFAULTS['card_border_colour'];?>" value="<?php echo $styles['card_border_colour'];?>" >
@@ -47,7 +47,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-1">
+                <div class="col-md-2">
                     <label class="col-form-label" for="default_0">Use Default</label>
                     <div class="custom-control custom-checkbox">
                         <input type="checkbox" class="custom-control-input defaultbox" data-section="card_border_colour" id="default_0" name="default_0" />
@@ -74,7 +74,7 @@
                 </div>
                 <div class="col-md-2">
                     <label class="col-form-label" for="default_0">Use Default</label>
-                    <div class="custom-control custom-checkbox">
+                    <div class="custom-control custom-checkbox text-right">
                         <input type="checkbox" class="custom-control-input defaultbox" data-section="card_header_background" id="default_1" name="default_1" />
                         <label class="custom-control-label" for="default_1"></label>
                     </div>
