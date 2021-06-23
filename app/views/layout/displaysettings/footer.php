@@ -84,7 +84,6 @@
                                 var section = $(this).data('section');
                                 var $input = $('input#'+section);
                                 var $cp = $input.parent(".colour-picker").colorpicker('colorpicker');
-                                console.log('id: '+$cp.attr('id'));
                                 if($cp.isEnabled())
                                 {
                                     console.log('its a cp');
