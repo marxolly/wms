@@ -83,14 +83,16 @@
                             $(this).change(function(ev){
                                 var section = $(this).data('section');
                                 var $input = $('input#'+section);
+                                var $cp = $input.parent();
                                 var default_val = $input.data('defaultvalue');
                                 if($(this).prop('checked')){
-
                                     $input.val(default_val).prop("disabled", true).valid();
+                                    $cp.disable();
                                 }
                                 else
                                 {
                                     $input.val(default_val).prop("disabled", false).valid();
+                                    $cp.enable();
                                 }
                             });
                         });
