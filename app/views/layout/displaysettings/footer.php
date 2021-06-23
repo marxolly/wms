@@ -64,7 +64,7 @@
                                 console.log('e.value '+ e.value);
                                  console.log('e.value === field.val() '+ e.value === $field.val());
                                  console.log('--------------------------');
-                                if (e.value === $field.val() || !e.color || !e.color.isValid()) {
+                                if (e.value !== $field.val() || !e.color || !e.color.isValid()) {
                                     // do not replace the input value if the color is invalid or equals
                                     return;
                                 }
