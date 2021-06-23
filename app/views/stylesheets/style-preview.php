@@ -79,12 +79,12 @@ h2.page-header_preview {
     </div>
 </div>
 <div id="page-wrapper_preview">
-    <div class="row">
-        <div class="col-lg-12">
-            <h2 class="page-header_preview">page title colour</h2>
-        </div>
-    </div>
     <div id="page_container_preview" class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h2 class="page-header_preview">page title colour</h2>
+            </div>
+        </div>
         <div class="card-deck homepagedeck-preview">
             <div class="card homepagecard-preview">
                 <div class="card-header">
