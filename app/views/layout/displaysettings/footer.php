@@ -65,7 +65,7 @@
                             if($('form#adjust-style-colours').valid())
                             {
                                 $("input.colour").each(function(ind, el){
-                                    var section = $(this).id;
+                                    var section = $(this).attr('id');
                                     var value = $(this).val();
                                     data = { [section] : value };
                                 })
