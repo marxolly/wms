@@ -58,6 +58,8 @@
                             .on('colorpickerChange', function(e){
                                 $(e.currentTarget).children('input').valid();
                                 var $field = $(e.currentTarget).children('input.colour');
+                                console.log('value is '+ $field.val());
+                                console.log('e.color '+ e.color);
                                 if (e.value === $field.val() || !e.color || !e.color.isValid()) {
                                     // do not replace the input value if the color is invalid or equals
                                     return;
