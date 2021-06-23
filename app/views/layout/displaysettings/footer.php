@@ -60,6 +60,8 @@
                                 var $field = $(e.currentTarget).children('input.colour');
                                 console.log('value is '+ $field.val());
                                 console.log('e.color '+ e.color);
+                                console.log('e.color.isValid() '+ e.color.isValid());
+                                console.log('e.value '+ e.value);
                                 if (e.value === $field.val() || !e.color || !e.color.isValid()) {
                                     // do not replace the input value if the color is invalid or equals
                                     return;
