@@ -84,23 +84,15 @@
                                 var section = $(this).data('section');
                                 var $input = $('input#'+section);
                                 var $cp = $input.parent(".colour-picker").colorpicker('colorpicker');
-                                if($cp.isEnabled())
-                                {
-                                    console.log('its a cp');
-                                }
-                                else
-                                {
-                                    console.log('its not');
-                                }
                                 var default_val = $input.data('defaultvalue');
                                 if($(this).prop('checked')){
                                     $input.val(default_val).prop("disabled", true).valid();
-                                    //$cp.disable();
+                                    $cp.disable();
                                 }
                                 else
                                 {
                                     $input.val(default_val).prop("disabled", false).valid();
-                                    //$cp.enable();
+                                    $cp.enable();
                                 }
                             });
                         });
