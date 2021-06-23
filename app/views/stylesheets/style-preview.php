@@ -95,7 +95,7 @@ h2.page-header_preview {
                     <a class="btn btn-lg btn-outline-fsg-preview" href="">
                         <i class="fab fa-jedi-order fa-3x"></i>
                     </a><br>
-                    <button class="btn btn-lg btn-outline-fsg-preview">This is a button.</button> Colours and backgrounds are editable for normal and hover states.<br>
+                    This is a button. Colours and backgrounds are editable for normal and hover states.<br>
                     This text colour is the same as the card header text colour.
                 </div>
             </div>
