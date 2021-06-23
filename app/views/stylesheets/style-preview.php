@@ -60,6 +60,17 @@ h2.page-header_preview {
     color: <?php echo $card_header_colour;?>;
 }
 
+.btn-outline-fsg-preview {
+    color: <?php echo $fsg_button_colour;?>;
+    border-color: <?php echo $fsg_button_colour;?>;
+}
+
+.btn-outline-fsg-preview:hover {
+    color: <?php echo $fsg_button_hover_text_colour;?> !important;
+    background-color: <?php echo $fsg_button_colour_hover;?>;
+    border-color: <?php echo $fsg_button_hover_border_colour;?>;
+}
+
 </style>
 <div id="page_header_preview">
     <div class="col-lg-12">
@@ -81,10 +92,10 @@ h2.page-header_preview {
                     <p>Text colour and background colour is editable</p>
                 </div>
                 <div class="card-body text-center">
-                    <a class="btn btn-lg btn-outline-fsg" href="">
+                    <a class="btn btn-lg btn-outline-fsg-preview" href="">
                         <i class="fab fa-jedi-order fa-3x"></i>
                     </a><br>
-                    <button class="btn btn-lg btn-outline-fsg">This is a button.</button> Colours and backgrounds are editable for normal and hover states.<br>
+                    <button class="btn btn-lg btn-outline-fsg-preview">This is a button.</button> Colours and backgrounds are editable for normal and hover states.<br>
                     This text colour is the same as the card header text colour.
                 </div>
             </div>
