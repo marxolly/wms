@@ -98,10 +98,35 @@
                     </div>
                 </div>
                 <div class="col-md-2 text-right">
-                    <label class="col-form-label" for="default_1">Use Default</label>
+                    <label class="col-form-label" for="default_2">Use Default</label>
                     <div class="custom-control custom-checkbox">
                         <input type="checkbox" class="custom-control-input defaultbox" data-section="card_header_colour" id="default_2" name="default_2" />
                         <label class="custom-control-label" for="default_2"></label>
+                    </div>
+                </div>
+            </div>
+<!------------------------------------------------------------------------------------------------------------------------------------------->
+<!-------------------------------------------------     Card Header Border Colour      ---------------------------------------------------------------->
+<!------------------------------------------------------------------------------------------------------------------------------------------->
+            <div class="p-3 m-2 border rounded row">
+                <div class="col-md-5" style="margin: auto 1px">
+                    <h4>Card Header Border Colour</h4>
+                    <p class="inst">This only adjusts the border at the bottom of the card head</p>
+                </div>
+                <div class="col-md-4">
+                    <label class="col-form-label"><sup><small><i class="fas fa-asterisk text-danger"></i></small></sup> Colour</label>
+                    <div class="colour-picker input-group mb-3">
+                        <input type="text" class="form-control required colour" name="card_header_border_colour" id="card_header_border_colour" data-defaultvalue="<?php echo STYLE_DEFAULTS['card_header_border_colour'];?>" value="<?php echo $styles['card_header_border_colour'];?>" >
+                        <div class="input-group-append">
+                            <span class="input-group-text colorpicker-input-addon"><i></i></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2 text-right">
+                    <label class="col-form-label" for="default_3">Use Default</label>
+                    <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input defaultbox" data-section="card_header_border_colour" id="default_3" name="default_3" />
+                        <label class="custom-control-label" for="default_3"></label>
                     </div>
                 </div>
             </div>
