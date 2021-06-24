@@ -39,7 +39,7 @@
                         });
                         $('div.sp-colorize-container.sp-add-on')
                             .css({
-                                cursor: pointer
+                                cursor: "pointer"
                             })
                             .click(function(ev){
                                 $(this).next('input.colour-picker').spectrum("show");
