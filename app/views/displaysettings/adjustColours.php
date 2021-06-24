@@ -42,9 +42,6 @@
                     <label class="col-form-label"><sup><small><i class="fas fa-asterisk text-danger"></i></small></sup> Colour</label>
                     <div class="colour-picker input-group mb-3">
                         <input type="text" class="form-control required colour" name="card_border_colour" id="card_border_colour" data-defaultvalue="<?php echo STYLE_DEFAULTS['card_border_colour'];?>" value="<?php echo $styles['card_border_colour'];?>" >
-                        <div class="input-group-append">
-                            <span class="input-group-text colorpicker-input-addon"><i></i></span>
-                        </div>
                     </div>
                 </div>
                 <div class="col-md-2 text-right">
