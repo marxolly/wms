@@ -37,6 +37,14 @@
                             showAlpha: false,
                             allowEmpty: false
                         });
+                        $('div.sp-colorize-container.sp-add-on')
+                            .css({
+                                cursor: pointer
+                            })
+                            .click(function(ev){
+                                $(this).next('input.colour-picker').spectrum("show");
+                                return false;
+                            })
                         $('button#preview_changes').click(function(e){
                             e.preventDefault();
                             var data = {};
