@@ -30,7 +30,7 @@
                 'adjust-colours': {
                     init: function(){
                         actions.common['load-preview']();
-                        $('.colour').spectrum({
+                        $('.colour-picker').spectrum({
                                 type: "component",
                                 showPalette: false,
                                 showInput: true,
