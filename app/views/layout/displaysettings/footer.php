@@ -30,12 +30,11 @@
                 'adjust-colours': {
                     init: function(){
                         actions.common['load-preview']();
-                        $('.colour-picker').each(function(ind,el){
-                            $(this).spectrum({
-                                type: "color",
-                                hideAfterPaletteSelect: true,
-                                showButtons: false,
-                                showInput:true
+                        $('.colour-picker').spectrum({
+                                showPalette: false,
+                                showInput: true,
+                                showAlpha: false,
+                                allowEmpty: false
                             })
                         })
                         $('button#preview_changes').click(function(e){
