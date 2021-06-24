@@ -69,16 +69,13 @@
                             $(this).change(function(ev){
                                 var section = $(this).data('section');
                                 var $input = $('input#'+section);
-                                var $cp = $input.parent(".colour-picker").colorpicker('colorpicker');
                                 var default_val = $input.data('defaultvalue');
                                 if($(this).prop('checked')){
-                                    $input.val(default_val).prop("disabled", true).valid();
-                                    $cp.disable();
+                                    $input.val(default_val).spectrum("disable").prop("disabled", true).valid();
                                 }
                                 else
                                 {
-                                    $input.val(default_val).prop("disabled", false).valid();
-                                    $cp.enable();
+                                    $input.val(default_val).spectrum("enable").prop("disabled", false).valid();
                                 }
                             });
                         });
