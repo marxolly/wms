@@ -34,7 +34,7 @@
                             .colorpicker({
                                 autoInputFallback: false,
                                 //autoHexInputFallback: true,
-                                format: null,
+                                //format: 'null',
                                 extensions: [
                                     {
                                         name: 'swatches', // extension name to load
