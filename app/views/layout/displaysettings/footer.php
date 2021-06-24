@@ -31,6 +31,7 @@
                     init: function(){
                         actions.common['load-preview']();
                         $('.colour').spectrum({
+                                type: "component",
                                 showPalette: false,
                                 showInput: true,
                                 showAlpha: false,
