@@ -32,9 +32,10 @@
                         actions.common['load-preview']();
                         $('.colour-picker').each(function(ind,el){
                             $(this).spectrum({
-                                type: "component",
+                                type: "color",
                                 hideAfterPaletteSelect: true,
-                                showButtons: false
+                                showButtons: false,
+                                showInput:true
                             })
                         })
                         $('button#preview_changes').click(function(e){
