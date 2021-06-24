@@ -71,6 +71,10 @@ h2.page-header_preview {
     border-color: <?php echo $fsg_button_hover_border_colour;?>;
 }
 
+ol.breadcrumb-preview{
+    font-size: 0.9em;
+}
+
 </style>
 <div id="page_header_preview">
     <div class="col-lg-12">
@@ -81,7 +85,7 @@ h2.page-header_preview {
 <div id="page-wrapper_preview">
     <div id="page_container_preview" class="container">
         <div class="mr-auto">
-            <ol class="breadcrumb">
+            <ol class="breadcrumb breadcrumb-preview">
                 <li class="breadcrumb-item"><i class="fad fa-home"></i></li>
                 <li class="breadcrumb-item">Section Name</li>
                 <li class="breadcrumb-item">Page Name</li>
