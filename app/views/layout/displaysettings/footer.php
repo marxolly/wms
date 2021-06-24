@@ -41,10 +41,11 @@
                             .css({
                                 cursor: "pointer"
                             })
+                            .off("click")
                             .click(function(ev){
                                 $(this).next('input.colour-picker').spectrum("show");
                                 return false;
-                            })
+                            });
                         $('button#preview_changes').click(function(e){
                             e.preventDefault();
                             var data = {};
@@ -72,10 +73,24 @@
                                 var default_val = $input.data('defaultvalue');
                                 if($(this).prop('checked')){
                                     $input.val(default_val).spectrum("disable").prop("disabled", true).valid();
+                                    $input.prev('div.sp-colorize-container.sp-add-on')
+                                        .css({
+                                            cursor: "auto"
+                                        })
+                                        .off('click');
                                 }
                                 else
                                 {
                                     $input.val(default_val).spectrum("enable").prop("disabled", false).valid();
+                                    $input.prev('div.sp-colorize-container.sp-add-on')
+                                        .css({
+                                            cursor: "pointer"
+                                        })
+                                        .off('click')
+                                        .click(function(ev){
+                                            $(this).next('input.colour-picker').spectrum("show");
+                                            return false;
+                                        });
                                 }
                             });
                         });
