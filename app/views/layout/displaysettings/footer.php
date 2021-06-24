@@ -33,6 +33,7 @@
                         $('.colour-picker')
                             .colorpicker({
                                 autoInputFallback: false,
+                                autoHexInputFallback: true,
                                 //format: 'rgba',
                                 extensions: [
                                     {
