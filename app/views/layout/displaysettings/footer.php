@@ -51,7 +51,7 @@
                             var data = {};
                             if($('form#adjust-style-colours').valid())
                             {
-                                $("input.colour").each(function(ind, el){
+                                $("input.colour-picker").each(function(ind, el){
                                     var section = $(this).attr('id');
                                     var value = $(this).val();
                                     data[section] = value;
