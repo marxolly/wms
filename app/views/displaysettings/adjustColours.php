@@ -40,9 +40,7 @@
                 </div>
                 <div class="col-md-4">
                     <label class="col-form-label"><sup><small><i class="fas fa-asterisk text-danger"></i></small></sup> Colour</label>
-                    <div class="input-group mb-3">
-                        <input type="text" class="form-control required colour-picker" name="card_border_colour" id="card_border_colour" data-defaultvalue="<?php echo STYLE_DEFAULTS['card_border_colour'];?>" value="<?php echo $styles['card_border_colour'];?>" >
-                    </div>
+                    <input type="text" class="form-control required colour-picker" name="card_border_colour" id="card_border_colour" data-defaultvalue="<?php echo STYLE_DEFAULTS['card_border_colour'];?>" value="<?php echo $styles['card_border_colour'];?>" >
                 </div>
                 <div class="col-md-2 text-right">
                     <label class="col-form-label" for="default_0">Use Default</label>
@@ -62,12 +60,7 @@
                 </div>
                 <div class="col-md-4">
                     <label class="col-form-label"><sup><small><i class="fas fa-asterisk text-danger"></i></small></sup> Colour</label>
-                    <div class="input-group mb-3">
-                        <input type="text" class="form-control required colour-picker" name="card_header_background" id="card_header_background" data-defaultvalue="<?php echo STYLE_DEFAULTS['card_header_background'];?>" value="<?php echo $styles['card_header_background'];?>" >
-                        <div class="input-group-append">
-                            <span class="input-group-text colorpicker-input-addon"><i></i></span>
-                        </div>
-                    </div>
+                    <input type="text" class="form-control required colour-picker" name="card_header_background" id="card_header_background" data-defaultvalue="<?php echo STYLE_DEFAULTS['card_header_background'];?>" value="<?php echo $styles['card_header_background'];?>" >
                 </div>
                 <div class="col-md-2 text-right">
                     <label class="col-form-label" for="default_1">Use Default</label>
@@ -87,12 +80,7 @@
                 </div>
                 <div class="col-md-4">
                     <label class="col-form-label"><sup><small><i class="fas fa-asterisk text-danger"></i></small></sup> Colour</label>
-                    <div class="input-group mb-3">
-                        <input type="text" class="form-control required colour-picker" name="card_header_colour" id="card_header_colour" data-defaultvalue="<?php echo STYLE_DEFAULTS['card_header_colour'];?>" value="<?php echo $styles['card_header_colour'];?>" >
-                        <div class="input-group-append">
-                            <span class="input-group-text colorpicker-input-addon"><i></i></span>
-                        </div>
-                    </div>
+                    <input type="text" class="form-control required colour-picker" name="card_header_colour" id="card_header_colour" data-defaultvalue="<?php echo STYLE_DEFAULTS['card_header_colour'];?>" value="<?php echo $styles['card_header_colour'];?>" >
                 </div>
                 <div class="col-md-2 text-right">
                     <label class="col-form-label" for="default_2">Use Default</label>
@@ -112,12 +100,7 @@
                 </div>
                 <div class="col-md-4">
                     <label class="col-form-label"><sup><small><i class="fas fa-asterisk text-danger"></i></small></sup> Colour</label>
-                    <div class="input-group mb-3">
-                        <input type="text" class="form-control required colour-picker" name="card_header_border_colour" id="card_header_border_colour" data-defaultvalue="<?php echo STYLE_DEFAULTS['card_header_border_colour'];?>" value="<?php echo $styles['card_header_border_colour'];?>" >
-                        <div class="input-group-append">
-                            <span class="input-group-text colorpicker-input-addon"><i></i></span>
-                        </div>
-                    </div>
+                    <input type="text" class="form-control required colour-picker" name="card_header_border_colour" id="card_header_border_colour" data-defaultvalue="<?php echo STYLE_DEFAULTS['card_header_border_colour'];?>" value="<?php echo $styles['card_header_border_colour'];?>" >
                 </div>
                 <div class="col-md-2 text-right">
                     <label class="col-form-label" for="default_3">Use Default</label>
@@ -137,12 +120,7 @@
                 </div>
                 <div class="col-md-4">
                     <label class="col-form-label"><sup><small><i class="fas fa-asterisk text-danger"></i></small></sup> Colour</label>
-                    <div class="colour-picker input-group mb-3">
-                        <input type="text" class="form-control required colour" name="fsg_button_colour" id="fsg_button_colour" data-defaultvalue="<?php echo STYLE_DEFAULTS['fsg_button_colour'];?>" value="<?php echo $styles['fsg_button_colour'];?>" >
-                        <div class="input-group-append">
-                            <span class="input-group-text colorpicker-input-addon"><i></i></span>
-                        </div>
-                    </div>
+                    <input type="text" class="form-control required colour-picker" name="fsg_button_colour" id="fsg_button_colour" data-defaultvalue="<?php echo STYLE_DEFAULTS['fsg_button_colour'];?>" value="<?php echo $styles['fsg_button_colour'];?>" >
                 </div>
                 <div class="col-md-2 text-right">
                     <label class="col-form-label" for="default_4">Use Default</label>
