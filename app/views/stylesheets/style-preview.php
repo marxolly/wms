@@ -80,6 +80,15 @@ h2.page-header_preview {
 </div>
 <div id="page-wrapper_preview">
     <div id="page_container_preview" class="container">
+        <div class="mr-auto">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><i class="fad fa-home"></i></li>
+                <li class="breadcrumb-item">Section Name</li>
+                <li class="breadcrumb-item">Page Name</li>
+                <li class="breadcrumb-item">Page Name</li>
+                <li class="breadcrumb-item">Page Name</li>
+            </ol>
+        </div>
         <div class="row">
             <div class="col-lg-12">
                 <h2 class="page-header_preview">page title colour</h2>
