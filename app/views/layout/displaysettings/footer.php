@@ -31,13 +31,12 @@
                     init: function(){
                         actions.common['load-preview']();
                         $('.colour-picker').spectrum({
-                                type: "component",
-                                showPalette: false,
-                                showInput: true,
-                                showAlpha: false,
-                                allowEmpty: false
-                            })
-                        })
+                            type: "component",
+                            showPalette: false,
+                            showInput: true,
+                            showAlpha: false,
+                            allowEmpty: false
+                        });
                         $('button#preview_changes').click(function(e){
                             e.preventDefault();
                             var data = {};
