@@ -37,10 +37,10 @@
     <!------------------------------------------------------------------------------------------------------------------------------------------->
                 <div class="col-sm-12 col-md-6 p-3 mb-2">
                     <div class="card h-100 adjustcolour-card">
-                        <div class="card-header d-flex h-100">
+                        <div class="card-header">
                             <h4>Card Border Colour</h4>
                         </div>
-                        <div class="card-body flex-column h-100">
+                        <div class="card-body">
                             <div class="form-group row">
                                 <label class="col-md-4"><sup><small><i class="fas fa-asterisk text-danger"></i></small></sup> Colour</label>
                                 <div class="col-md-5">
@@ -59,10 +59,10 @@
     <!------------------------------------------------------------------------------------------------------------------------------------------->
                 <div class="col-sm-12 col-md-6 p-3 mb-2">
                     <div class="card h-100 adjustcolour-card">
-                        <div class="card-header d-flex h-100">
+                        <div class="card-header">
                             <h4>Card Header Background Colour</h4>
                         </div>
-                        <div class="card-body flex-column h-100">
+                        <div class="card-body">
                             <div class="form-group row">
                                 <p class="inst">This also affects the page background colour</p>
                             </div>
