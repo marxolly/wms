@@ -47,12 +47,9 @@
                                     <input type="text" class="form-control required colour-picker" name="card_border_colour" id="card_border_colour" data-defaultvalue="<?php echo STYLE_DEFAULTS['card_border_colour'];?>" value="<?php echo $styles['card_border_colour'];?>" >
                                 </div>
                             </div>
-                            <div class="form-group row">
-                                <label class="col-md-4" for="default_0">Use Default</label>
-                                <div class="col-md-8 custom-control custom-checkbox">
-                                    <input type="checkbox" class="custom-control-input defaultbox" data-section="card_border_colour" id="default_0" name="default_0" />
-                                    <label class="custom-control-label" for="default_0"></label>
-                                </div>
+                            <div class="form-group row custom-control custom-checkbox custom-control-right">
+                                <input type="checkbox" class="custom-control-input defaultbox" data-section="card_border_colour" id="default_0" name="default_0" />
+                                <label class="custom-control-label col-md-8" for="default_0">Use Default</label>
                             </div>
                         </div>
                     </div>
