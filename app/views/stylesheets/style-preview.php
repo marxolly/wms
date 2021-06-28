@@ -1,5 +1,5 @@
 <?php
-
+ echo "<pre>",print_r($data),"</pre>";
 ?>
 <style>
 div#page-wrapper_preview{
@@ -117,4 +117,4 @@ ol.breadcrumb-preview{
         </div>
     </div>
 </div>
-<?php echo "<pre>",print_r($data),"</pre>";?>
+<?php ?>
