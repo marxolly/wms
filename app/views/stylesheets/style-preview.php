@@ -117,3 +117,4 @@ ol.breadcrumb-preview{
         </div>
     </div>
 </div>
+<?php echo "<pre>",print_r($data),"</pre>";?>
