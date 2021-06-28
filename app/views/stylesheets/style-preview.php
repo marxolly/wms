@@ -108,7 +108,8 @@ ol.breadcrumb-preview{
                     <a class="btn btn-lg btn-outline-fsg-preview" href="">
                         <i class="fab fa-jedi-order fa-3x"></i>
                     </a><br>
-                    This is a button. Colours and backgrounds are editable for normal and hover states.<br>
+                    This behaves like a button button. Colours and backgrounds are editable for normal and hover states.<br>
+                    <button class="btn btn-lg btn-outline-fsg-preview">Test Other Buytton Colours Here</button></br>
                     This text colour is the same as the card header text colour.
                 </div>
             </div>
