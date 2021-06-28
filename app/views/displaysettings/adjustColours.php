@@ -36,19 +36,23 @@
     <!-------------------------------------------------     Card Border Colour     ---------------------------------------------------------------->
     <!------------------------------------------------------------------------------------------------------------------------------------------->
                 <div class="col-sm-12 col-md-6 p-3 mb-2">
-                    <div class='border rounded'>
-                        <div class="col-md-6" style="margin: auto 1px">
+                    <div class="card h-100 adjustcolour-card">
+                        <div class="card-header">
                             <h4>Card Border Colour</h4>
                         </div>
-                        <div class="col-md-4">
-                            <label class="col-form-label"><sup><small><i class="fas fa-asterisk text-danger"></i></small></sup> Colour</label>
-                            <input type="text" class="form-control required colour-picker" name="card_border_colour" id="card_border_colour" data-defaultvalue="<?php echo STYLE_DEFAULTS['card_border_colour'];?>" value="<?php echo $styles['card_border_colour'];?>" >
-                        </div>
-                        <div class="col-md-2 text-right">
-                            <label class="col-form-label" for="default_0">Use Default</label>
-                            <div class="custom-control custom-checkbox">
-                                <input type="checkbox" class="custom-control-input defaultbox" data-section="card_border_colour" id="default_0" name="default_0" />
-                                <label class="custom-control-label" for="default_0"></label>
+                        <div class="card-body">
+                            <div class="form-group row">
+                                <label class="col-md-4"><sup><small><i class="fas fa-asterisk text-danger"></i></small></sup> Colour</label>
+                                <div class="col-md-8">
+                                    <input type="text" class="form-control required colour-picker" name="card_border_colour" id="card_border_colour" data-defaultvalue="<?php echo STYLE_DEFAULTS['card_border_colour'];?>" value="<?php echo $styles['card_border_colour'];?>" >
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-md-4" for="default_0">Use Default</label>
+                                <div class="col-md-8 custom-control custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input defaultbox" data-section="card_border_colour" id="default_0" name="default_0" />
+                                    <label class="custom-control-label" for="default_0"></label>
+                                </div>
                             </div>
                         </div>
                     </div>
