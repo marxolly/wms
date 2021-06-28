@@ -37,7 +37,7 @@
     <!------------------------------------------------------------------------------------------------------------------------------------------->
                 <div class="col-sm-12 col-md-6 p-3 mb-2">
                     <div class="card h-100 adjustcolour-card">
-                        <div class="card-header">
+                        <div class="card-header h-100">
                             <h4>Card Border Colour</h4>
                         </div>
                         <div class="card-body">
@@ -62,7 +62,7 @@
     <!------------------------------------------------------------------------------------------------------------------------------------------->
                 <div class="col-sm-12 col-md-6 p-3 mb-2">
                     <div class="card h-100 adjustcolour-card">
-                        <div class="card-header">
+                        <div class="card-header h-100">
                             <h4>Card Header Background Colour</h4>
                         </div>
                         <div class="card-body">
