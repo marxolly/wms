@@ -167,7 +167,7 @@
                         </div>
                         <div class="card-body">
                             <div class="form-group row">
-                                <p class="inst">This affects all buttons on the site. Including the "preview" and "save" buttons below</p>
+                                <p class="inst">The hover text colour is calculated based on this colour</p>
                             </div>
                             <div class="form-group row">
                                 <label class="col-md-4"><sup><small><i class="fas fa-asterisk text-danger"></i></small></sup> Colour</label>
