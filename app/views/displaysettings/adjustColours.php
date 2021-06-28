@@ -92,7 +92,7 @@
                         </div>
                         <div class="card-body">
                             <div class="form-group row">
-                                <p class="inst">>This also sets the text colour in the card body</p>
+                                <p class="inst">This also sets the text colour in the card body</p>
                             </div>
                             <div class="form-group row">
                                 <label class="col-md-4"><sup><small><i class="fas fa-asterisk text-danger"></i></small></sup> Colour</label>
