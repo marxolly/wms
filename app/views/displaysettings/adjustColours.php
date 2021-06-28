@@ -57,20 +57,23 @@
     <!------------------------------------------------------------------------------------------------------------------------------------------->
     <!-------------------------------------------------     Card Header Background      ---------------------------------------------------------------->
     <!------------------------------------------------------------------------------------------------------------------------------------------->
-                <div class="p-3 mb-2 border rounded col-sm-12 col-md-6">
-                    <div class="col-md-6" style="margin: auto 1px">
-                        <h4>Card Header Background Colour</h4>
-                        <p class="inst">This also sets the page background colour</p>
-                    </div>
-                    <div class="col-md-4">
-                        <label class="col-form-label"><sup><small><i class="fas fa-asterisk text-danger"></i></small></sup> Colour</label>
-                        <input type="text" class="form-control required colour-picker" name="card_header_background" id="card_header_background" data-defaultvalue="<?php echo STYLE_DEFAULTS['card_header_background'];?>" value="<?php echo $styles['card_header_background'];?>" >
-                    </div>
-                    <div class="col-md-2 text-right">
-                        <label class="col-form-label" for="default_1">Use Default</label>
-                        <div class="custom-control custom-checkbox">
-                            <input type="checkbox" class="custom-control-input defaultbox" data-section="card_header_background" id="default_1" name="default_1" />
-                            <label class="custom-control-label" for="default_1"></label>
+                <div class="col-sm-12 col-md-6 p-3 mb-2">
+                    <div class="card h-100 adjustcolour-card">
+                        <div class="card-header">
+                            <h4>Card Header Background Colour</h4>
+                            <p class="inst">This also sets the page background colour</p>
+                        </div>
+                        <div class="card-body">
+                            <div class="form-group row">
+                                <label class="col-md-4"><sup><small><i class="fas fa-asterisk text-danger"></i></small></sup> Colour</label>
+                                <div class="col-md-5">
+                                    <input type="text" class="form-control required colour-picker" name="card_header_background" id="card_header_background" data-defaultvalue="<?php echo STYLE_DEFAULTS['card_header_background'];?>" value="<?php echo $styles['card_header_background'];?>" >
+                                </div>
+                            </div>
+                            <div class="form-group row custom-control custom-checkbox custom-control-right">
+                                <input type="checkbox" class="custom-control-input defaultbox" data-section="card_header_background" id="default_1" name="default_1" />
+                                <label class="custom-control-label col-md-5" for="default_1">Use Default</label>
+                            </div>
                         </div>
                     </div>
                 </div>
