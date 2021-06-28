@@ -198,8 +198,7 @@ h2.quick_links{
 
 @media screen and (min-width: 576px) {
     .homepagecard,
-    .backordercard,
-    .adjustcolour-card {
+    .backordercard {
         flex: 48% !important;
         max-width: 48% !important;
     }
@@ -219,8 +218,7 @@ h2.quick_links{
 
 @media screen and (min-width: 768px) {
     .homepagecard,
-    .backordercard,
-    .adjustcolour-card {
+    .backordercard{
         flex: 33% !important;
         max-width: 31% !important;
         }
@@ -229,8 +227,7 @@ h2.quick_links{
 
 @media screen and (min-width: 960px) {
     .homepagecard,
-    .backordercard,
-    .adjustcolour-card {
+    .backordercard {
         flex: 25% !important;
         max-width: 23% !important;
     }
