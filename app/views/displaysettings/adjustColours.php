@@ -46,7 +46,7 @@
                             </div>
                             <div class="form-group row">
                                 <label class="col-md-4"><sup><small><i class="fas fa-asterisk text-danger"></i></small></sup> Colour</label>
-                                <div class="col-md-5">
+                                <div class="col-md-8">
                                     <input type="text" class="form-control required colour-picker" name="card_border_colour" id="card_border_colour" data-defaultvalue="<?php echo STYLE_DEFAULTS['card_border_colour'];?>" value="<?php echo $styles['card_border_colour'];?>" >
                                 </div>
                             </div>
@@ -71,7 +71,7 @@
                             </div>
                             <div class="form-group row">
                                 <label class="col-md-4"><sup><small><i class="fas fa-asterisk text-danger"></i></small></sup> Colour</label>
-                                <div class="col-md-5">
+                                <div class="col-md-8">
                                     <input type="text" class="form-control required colour-picker" name="card_header_background" id="card_header_background" data-defaultvalue="<?php echo STYLE_DEFAULTS['card_header_background'];?>" value="<?php echo $styles['card_header_background'];?>" >
                                 </div>
                             </div>
@@ -96,7 +96,7 @@
                             </div>
                             <div class="form-group row">
                                 <label class="col-md-4"><sup><small><i class="fas fa-asterisk text-danger"></i></small></sup> Colour</label>
-                                <div class="col-md-5">
+                                <div class="col-md-8">
                                     <input type="text" class="form-control required colour-picker" name="card_header_colour" id="card_header_colour" data-defaultvalue="<?php echo STYLE_DEFAULTS['card_header_colour'];?>" value="<?php echo $styles['card_header_colour'];?>" >
                                 </div>
                             </div>
