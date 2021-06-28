@@ -110,40 +110,50 @@
     <!------------------------------------------------------------------------------------------------------------------------------------------->
     <!-------------------------------------------------     Card Header Border Colour      ---------------------------------------------------------------->
     <!------------------------------------------------------------------------------------------------------------------------------------------->
-                <div class="p-3 mb-2 border rounded col-sm-12 col-md-6">
-                    <div class="col-md-6" style="margin: auto 1px">
-                        <h4>Card Header Border Colour</h4>
-                        <p class="inst">This only adjusts the border at the bottom of the card head</p>
-                    </div>
-                    <div class="col-md-4">
-                        <label class="col-form-label"><sup><small><i class="fas fa-asterisk text-danger"></i></small></sup> Colour</label>
-                        <input type="text" class="form-control required colour-picker" name="card_header_border_colour" id="card_header_border_colour" data-defaultvalue="<?php echo STYLE_DEFAULTS['card_header_border_colour'];?>" value="<?php echo $styles['card_header_border_colour'];?>" >
-                    </div>
-                    <div class="col-md-2 text-right">
-                        <label class="col-form-label" for="default_3">Use Default</label>
-                        <div class="custom-control custom-checkbox">
-                            <input type="checkbox" class="custom-control-input defaultbox" data-section="card_header_border_colour" id="default_3" name="default_3" />
-                            <label class="custom-control-label" for="default_3"></label>
+                <div class="col-sm-12 col-md-6 p-3 mb-2">
+                    <div class="card h-100 adjustcolour-card">
+                        <div class="card-header">
+                            <h4>Card Header Border Colour</h4>
+                        </div>
+                        <div class="card-body">
+                            <div class="form-group row">
+                                <p class="inst">This only adjusts the border at the bottom of the card head</p>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-md-4"><sup><small><i class="fas fa-asterisk text-danger"></i></small></sup> Colour</label>
+                                <div class="col-md-8">
+                                    <input type="text" class="form-control required colour-picker" name="card_header_border_colour" id="card_header_border_colour" data-defaultvalue="<?php echo STYLE_DEFAULTS['card_header_border_colour'];?>" value="<?php echo $styles['card_header_border_colour'];?>" >
+                                </div>
+                            </div>
+                            <div class="form-group row custom-control custom-checkbox custom-control-right">
+                                <input type="checkbox" class="custom-control-input defaultbox" data-section="card_header_border_colour" id="default_3" name="default_3" />
+                                <label class="custom-control-label col-md-5" for="default_3">Use Default</label>
+                            </div>
                         </div>
                     </div>
                 </div>
     <!------------------------------------------------------------------------------------------------------------------------------------------->
     <!-------------------------------------------------     FSG Button Colour      ---------------------------------------------------------------->
     <!------------------------------------------------------------------------------------------------------------------------------------------->
-                <div class="p-3 mb-2 border rounded col-sm-12 col-md-6">
-                    <div class="col-md-6" style="margin: auto 1px">
-                        <h4>Button Text Colour</h4>
-                        <p class="inst">This affects all buttons on the site. Including the "preview" and "save" buttons below</p>
-                    </div>
-                    <div class="col-md-4">
-                        <label class="col-form-label"><sup><small><i class="fas fa-asterisk text-danger"></i></small></sup> Colour</label>
-                        <input type="text" class="form-control required colour-picker" name="fsg_button_colour" id="fsg_button_colour" data-defaultvalue="<?php echo STYLE_DEFAULTS['fsg_button_colour'];?>" value="<?php echo $styles['fsg_button_colour'];?>" >
-                    </div>
-                    <div class="col-md-2 text-right">
-                        <label class="col-form-label" for="default_4">Use Default</label>
-                        <div class="custom-control custom-checkbox">
-                            <input type="checkbox" class="custom-control-input defaultbox" data-section="fsg_button_colour" id="default_4" name="default_4" />
-                            <label class="custom-control-label" for="default_4"></label>
+                <div class="col-sm-12 col-md-6 p-3 mb-2">
+                    <div class="card h-100 adjustcolour-card">
+                        <div class="card-header">
+                            <h4>Button Text Colour</h4>
+                        </div>
+                        <div class="card-body">
+                            <div class="form-group row">
+                                <p class="inst">This affects all buttons on the site. Including the "preview" and "save" buttons below</p>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-md-4"><sup><small><i class="fas fa-asterisk text-danger"></i></small></sup> Colour</label>
+                                <div class="col-md-8">
+                                    <input type="text" class="form-control required colour-picker" name="fsg_button_colour" id="fsg_button_colour" data-defaultvalue="<?php echo STYLE_DEFAULTS['fsg_button_colour'];?>" value="<?php echo $styles['fsg_button_colour'];?>" >
+                                </div>
+                            </div>
+                            <div class="form-group row custom-control custom-checkbox custom-control-right">
+                                <input type="checkbox" class="custom-control-input defaultbox" data-section="fsg_button_colour" id="default_4" name="default_4" />
+                                <label class="custom-control-label col-md-5" for="default_4">Use Default</label>
+                            </div>
                         </div>
                     </div>
                 </div>
