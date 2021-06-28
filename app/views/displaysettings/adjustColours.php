@@ -42,6 +42,9 @@
                         </div>
                         <div class="card-body">
                             <div class="form-group row">
+                                <p class="inst">&nbsp;</p>
+                            </div>
+                            <div class="form-group row">
                                 <label class="col-md-4"><sup><small><i class="fas fa-asterisk text-danger"></i></small></sup> Colour</label>
                                 <div class="col-md-5">
                                     <input type="text" class="form-control required colour-picker" name="card_border_colour" id="card_border_colour" data-defaultvalue="<?php echo STYLE_DEFAULTS['card_border_colour'];?>" value="<?php echo $styles['card_border_colour'];?>" >
