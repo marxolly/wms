@@ -169,8 +169,15 @@ h2.quick_links{
     border: thin solid #74a3d4;
 }
 
+.adjustcolour-card{
+    margin: 5px 1% !important;
+    border: thin solid <?php echo $card_border_colour;?>;
+}
+
 .homepagecard .card-header,
-.homepagecard .card-body{
+.homepagecard .card-body,
+.adjustcolour-card .card-header,
+.adjustcolour-card .card-body{
     color: <?php echo $card_header_colour;?>;
 }
 .backordercard .card-header,
@@ -178,7 +185,8 @@ h2.quick_links{
     color: #74a3d4
 }
 
-.homepagecard .card-header{
+.homepagecard .card-header,
+.adjustcolour-card .card-header{
     background-color: <?php echo $card_header_background;?>;
     border-bottom: 1px solid <?php echo $card_header_border_colour;?>;
 }
@@ -190,7 +198,8 @@ h2.quick_links{
 
 @media screen and (min-width: 576px) {
     .homepagecard,
-    .backordercard {
+    .backordercard,
+    .adjustcolour-card {
         flex: 48% !important;
         max-width: 48% !important;
     }
@@ -202,14 +211,16 @@ h2.quick_links{
     }
 
     .homepagecard .card-header,
-    .backordercard .card-header{
+    .backordercard .card-header,
+    .adjustcolour-card .car-header{
         height:90px;
     }
 }
 
 @media screen and (min-width: 768px) {
     .homepagecard,
-    .backordercard {
+    .backordercard,
+    .adjustcolour-card {
         flex: 33% !important;
         max-width: 31% !important;
         }
@@ -218,7 +229,8 @@ h2.quick_links{
 
 @media screen and (min-width: 960px) {
     .homepagecard,
-    .backordercard {
+    .backordercard,
+    .adjustcolour-card {
         flex: 25% !important;
         max-width: 23% !important;
     }
