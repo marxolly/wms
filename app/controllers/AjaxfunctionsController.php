@@ -93,9 +93,9 @@ class ajaxfunctionsController extends Controller
         foreach($this->request->data as $section => $value)
         {
             $styles[$section] = $value;
-            echo "<p>Gonna change {$section} to {$value}</p>";
+            //echo "<p>Gonna change {$section} to {$value}</p>";
         }
-        die();
+        //die();
         //calculate page background colour
         list($r, $g, $b) = sscanf($styles['card_header_background'], "#%02x%02x%02x");
         $styles['page_background_colour'] = "rgba($r,$g,$b,0.1)";
