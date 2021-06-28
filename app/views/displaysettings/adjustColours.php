@@ -133,7 +133,7 @@
                     </div>
                 </div>
     <!------------------------------------------------------------------------------------------------------------------------------------------->
-    <!-------------------------------------------------     FSG Button Colour      ---------------------------------------------------------------->
+    <!-------------------------------------------------     FSG Button Text Colour      ---------------------------------------------------------------->
     <!------------------------------------------------------------------------------------------------------------------------------------------->
                 <div class="col-sm-12 col-md-6 p-3 mb-2">
                     <div class="card h-100 adjustcolour-card">
@@ -153,6 +153,31 @@
                             <div class="form-group row custom-control custom-checkbox custom-control-right">
                                 <input type="checkbox" class="custom-control-input defaultbox" data-section="fsg_button_colour" id="default_4" name="default_4" />
                                 <label class="custom-control-label col-md-5" for="default_4">Use Default</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    <!------------------------------------------------------------------------------------------------------------------------------------------->
+    <!-------------------------------------------------     FSG Button Text Colour      ---------------------------------------------------------------->
+    <!------------------------------------------------------------------------------------------------------------------------------------------->
+                <div class="col-sm-12 col-md-6 p-3 mb-2">
+                    <div class="card h-100 adjustcolour-card">
+                        <div class="card-header">
+                            <h4>Button Hover Text Colour</h4>
+                        </div>
+                        <div class="card-body">
+                            <div class="form-group row">
+                                <p class="inst">This affects all buttons on the site. Including the "preview" and "save" buttons below</p>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-md-4"><sup><small><i class="fas fa-asterisk text-danger"></i></small></sup> Colour</label>
+                                <div class="col-md-8">
+                                    <input type="text" class="form-control required colour-picker" name="fsg_button_colour_hover" id="fsg_button_colour_hover" data-defaultvalue="<?php echo STYLE_DEFAULTS['fsg_button_colour_hover'];?>" value="<?php echo $styles['fsg_button_colour_hover'];?>" >
+                                </div>
+                            </div>
+                            <div class="form-group row custom-control custom-checkbox custom-control-right">
+                                <input type="checkbox" class="custom-control-input defaultbox" data-section="fsg_button_colour_hover" id="default_5" name="default_5" />
+                                <label class="custom-control-label col-md-5" for="default_5">Use Default</label>
                             </div>
                         </div>
                     </div>
