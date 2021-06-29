@@ -79,6 +79,9 @@
                                 }
                             });
                         }
+                        $('#required_date, #date').change(function(e){
+                            $(this).valid();
+                        })
                     },
                     finisherAutocomplete: function(){
                         autoCompleter.productionJobFinisherAutoComplete( $('#finisher_name'), selectFinisherCallback, changeFinisherCallback);
