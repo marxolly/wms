@@ -888,6 +888,10 @@ highlighting sections
 /********
 bootstrap adjustments
 ********/
+    /** Width and Height Extras **/
+    .h-35{
+        height:35% !important;
+    }
     /** Breadcrumbs **/
     .breadcrumb-item + .breadcrumb-item::before{
         content: "|";
