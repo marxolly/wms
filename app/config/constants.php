@@ -26,7 +26,6 @@
         'card_header_border_colour' => '#545380',
         'fsg_button_colour'         => '#4183c2',
         'fsg_button_colour_hover'   => '#242359',
-        'fsg_button_hover_text_colour'  => '#ffffff',
         'page_title_colour'         => '#242359',
         'site_title_colour'         => '#fbfbfb',
         'quicklinks_header_colour'  => '#17142c',

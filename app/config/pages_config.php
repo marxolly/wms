@@ -943,7 +943,11 @@ $client = array(
         ),
         'adjust-colours'    => array(
             'display'   => true,
-            'icon'      => '<i class="fad fa-palette fa-2x"></i>' 
+            'icon'      => '<i class="fad fa-palette fa-2x"></i>'
+        ),
+        'upload-images'     => array(
+            'display'   => true,
+            'icon'      => $fontastic_icons['customers']['add-customer']
         )
     )
 );
