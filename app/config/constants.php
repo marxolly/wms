@@ -20,16 +20,17 @@
     * style settings defaullts
     **********************************************************************/
     define('STYLE_DEFAULTS', array(
-        'card_border_colour'        => '#545380',
-        'card_header_colour'        => '#242359',
-        'card_header_background'    => '#b4c3dc',
-        'card_header_border_colour' => '#545380',
-        'fsg_button_colour'         => '#4183c2',
-        'fsg_button_colour_hover'   => '#242359',
-        'page_title_colour'         => '#242359',
-        'site_title_colour'         => '#fbfbfb',
-        'quicklinks_header_colour'  => '#17142c',
-        'top_banner_background'     => 'linear-gradient(161deg, rgba(138,105,140,1) 0%, rgba(36,35,89,1) 25%, rgba(23,20,44,1) 40%, rgba(23,20,44,1) 70%, rgba(65,131,194,1) 90%, rgba(130,165,208,1) 100%)'
+        'card_border_colour'            => '#545380',
+        'card_header_colour'            => '#242359',
+        'card_header_background'        => '#b4c3dc',
+        'card_header_border_colour'     => '#545380',
+        'fsg_button_colour'             => '#4183c2',
+        'fsg_button_colour_hover'       => '#242359',
+        'page_title_colour'             => '#242359',
+        'site_title_colour'             => '#fbfbfb',
+        'quicklinks_header_colour'      => '#17142c',
+        'top_banner_background'         => 'linear-gradient(161deg, rgba(138,105,140,1) 0%, rgba(36,35,89,1) 25%, rgba(23,20,44,1) 40%, rgba(23,20,44,1) 70%, rgba(65,131,194,1) 90%, rgba(130,165,208,1) 100%)',
+        'top_banner_background_colour'  => '#242359'
     ));
 
 /*************************************************************************
