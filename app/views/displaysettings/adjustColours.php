@@ -166,7 +166,7 @@
                             <h4>Button Hover Colour</h4>
                         </div>
                         <div class="card-body">
-                            <div class="form-group row h-25">
+                            <div class="form-group row h-35">
                                 <p class="inst">The hover text colour is calculated based on this colour</p>
                             </div>
                             <div class="form-group row">
