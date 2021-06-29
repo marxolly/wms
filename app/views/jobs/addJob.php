@@ -83,6 +83,12 @@ else
                                 </div>
                             </div>
                             <div class="form-group row">
+                                <label class="col-md-4">Quote Number</label>
+                                <div class="col-md-8">
+                                    <input type="text" class="form-control" name="quote_number" id="quote_number" value="<?php echo Form::value('quote_number');?>" />
+                                </div>
+                            </div>
+                            <div class="form-group row">
                                 <label class="col-md-4">Customer PO Number</label>
                                 <div class="col-md-8">
                                     <input type="text" class="form-control" name="customer_po_number" id="customer_po_number" value="<?php echo Form::value('customer_po_number');?>" />
