@@ -432,6 +432,7 @@ div#page_header{
     text-align: center;
     color: <?php echo $site_title_colour;?>;
     padding-top: 100px;
+    background: <?php echo $top_banner_background_colour;?>;
     background: <?php echo $top_banner_background;?>;
     box-shadow: 0 5px 10px 0 rgba(50, 50, 50, 0.3);
     transition:all 600ms linear;
