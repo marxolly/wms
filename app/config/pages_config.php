@@ -947,7 +947,7 @@ $client = array(
         ),
         'upload-images'     => array(
             'display'   => true,
-            'icon'      => $fontastic_icons['customers']['add-customer']
+            'icon'      => $fontastic_icons['display-settings']['upload-images']
         )
     )
 );
