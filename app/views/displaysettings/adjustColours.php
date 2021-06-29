@@ -220,7 +220,7 @@
                                     <p class="inst">This only needs to be adjusted if you used a CSS3 code previously and need a backup for older browsers</p>
                                 </div>
                                 <div class="form-group row">
-                                    <label class="col-md-4"><sup><small>Select a Colour</label>
+                                    <label class="col-md-4">Select a Colour</label>
                                     <div class="col-md-8">
                                         <input type="text" class="form-control colour-picker" name="top_banner_background_colour" id="top_banner_background_colour" data-defaultvalue="<?php echo STYLE_DEFAULTS['top_banner_background_colour'];?>" value="<?php echo $styles['top_banner_background_colour'];?>" >
                                     </div>
