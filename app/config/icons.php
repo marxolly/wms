@@ -14,7 +14,7 @@ $fontastic_icons = array(
         'view-customers'    => '<div class="fa-2x"><span class="fa-layers fa-fw"><i class="fad fa-user-tie"></i><i class="fal fa-binoculars" data-fa-transform="shrink-6 up-2 right-6 rotate-30"></i></span></div>',
     ),
     'display-settings'  => array(
-        'upload-images' => '<div class="fa-2x"><span class="fa-layers fa-fw"><i class="fad fa-file-image"></i><i class="fas fa-arrow-up" data-fa-transform="shrink-6 down-2"></i></span></div>'
+        'upload-images' => '<div class="fa-2x"><span class="fa-layers fa-fw"><i class="fad fa-file-image" data-fa-transform="grow-3"></i><i class="fas fa-arrow-up" data-fa-transform="shrink-6 up-10"></i></span></div>'
     ),
     'finishers' => array(
         'default'           => '<i class="fad fa-people-arrows"></i>',
