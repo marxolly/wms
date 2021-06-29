@@ -41,7 +41,7 @@
                             <h4>Card Border Colour</h4>
                         </div>
                         <div class="card-body ">
-                            <div class="form-group row">
+                            <div class="form-group row h-35">
                                 <p class="inst">&nbsp;</p>
                             </div>
                             <div class="form-group row">
@@ -66,7 +66,7 @@
                             <h4>Card Header Background Colour</h4>
                         </div>
                         <div class="card-body">
-                            <div class="form-group row">
+                            <div class="form-group row h-35">
                                 <p class="inst">This also affects the page background colour</p>
                             </div>
                             <div class="form-group row">
@@ -91,7 +91,7 @@
                             <h4>Card Header Text Colour</h4>
                         </div>
                         <div class="card-body">
-                            <div class="form-group row">
+                            <div class="form-group row h-35">
                                 <p class="inst">This also sets the text colour in the card body</p>
                             </div>
                             <div class="form-group row">
@@ -116,7 +116,7 @@
                             <h4>Card Header Border Colour</h4>
                         </div>
                         <div class="card-body">
-                            <div class="form-group row">
+                            <div class="form-group row h-35">
                                 <p class="inst">This only adjusts the border at the bottom of the card head</p>
                             </div>
                             <div class="form-group row">
@@ -141,7 +141,7 @@
                             <h4>Button Text Colour</h4>
                         </div>
                         <div class="card-body">
-                            <div class="form-group row">
+                            <div class="form-group row h-35">
                                 <p class="inst">This affects all buttons on the site. Including the "preview" and "save" buttons below</p>
                             </div>
                             <div class="form-group row">
