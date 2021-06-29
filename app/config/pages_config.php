@@ -943,7 +943,7 @@ $client = array(
         ),
         'adjust-colours'    => array(
             'display'   => true,
-            'icon'      => '<i class="fad fa-palette fa-2x"></i>'
+            'icon'      => '<i class="fad fa-palette fa-3x"></i>'
         ),
         'upload-images'     => array(
             'display'   => true,
