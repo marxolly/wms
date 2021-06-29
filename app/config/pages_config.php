@@ -969,6 +969,7 @@ return array(
     "PRODUCTION_PAGES"                => $prod,
     "ADMIN_PAGES"                     => $admin ,
     'WAREHOUSE_PAGES'                 => $warehouse,
+    'CLIENT_ADMIN_PAGES'              => $client,
     'CLIENT_PAGES'                    => $client
 )
 ?>
