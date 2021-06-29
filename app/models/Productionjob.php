@@ -241,6 +241,7 @@ class Productionjob extends Model{
         if(!empty($data['postcode'])) $vals['postcode'] = $data['postcode'];
         if(!empty($data['country'])) $vals['country'] = $data['country'];
         if(!empty($data['previous_job_id'])) $vals['previous_job_id'] = $data['previous_job_id'];
+        if(!empty($data['quote_number'])) $vals['quote_number'] = $data['quote_number'];
         if(!empty($data['related_job_id'])) $vals['related_job_id'] = $data['related_job_id'];
         if(isset($data['customer_contact_id']) && $data['customer_contact_id'] > 0) $vals['customer_contact_id'] = $data['customer_contact_id'];
         if(!empty($data['salesrep_id'])) $vals['salesrep_id'] = $data['salesrep_id'];
@@ -308,7 +309,8 @@ class Productionjob extends Model{
             'priority'              => 0,
             'notes'                 => null,
             'delivery_notes'        => null,
-            'customer_po_number'    => null
+            'customer_po_number'    => null,
+            'quote_number'          => null
         );
         $vals['strict_dd'] = (isset($data['strict_dd']))? 1 : 0;
         if(!empty($data['previous_job_id'])) $vals['previous_job_id'] = $data['previous_job_id'];
@@ -326,6 +328,7 @@ class Productionjob extends Model{
         if(!empty($data['delivery_notes'])) $vals['delivery_notes'] = $data['delivery_notes'];
         if(!empty($data['priority'])) $vals['priority'] = $data['priority'];
         if(!empty($data['customer_po_number'])) $vals['customer_po_number'] = $data['customer_po_number'];
+        if(!empty($data['quote_number'])) $vals['quote_number'] = $data['quote_number'];
         $id = $db->updateDatabaseFields($this->table, $vals, $data['id']);
         return $id;
     }
