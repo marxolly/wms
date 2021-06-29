@@ -183,6 +183,57 @@
                     </div>
                 </div>
     <!------------------------------------------------------------------------------------------------------------------------------------------->
+    <!-------------------------------------------------     Top Banner Background      ---------------------------------------------------------------->
+    <!------------------------------------------------------------------------------------------------------------------------------------------->
+                <div class="col-sm-12 mb-2">
+                    <div class="col-sm-12 col-md-6 p-3">
+                        <div class="card h-100 adjustcolour-card">
+                            <div class="card-header">
+                                <h4>Top Banner Background</h4>
+                            </div>
+                            <div class="card-body">
+                                <div class="form-group row h-35">
+                                    <p class="inst">This accepts any CSS background property</p>
+                                    <p class="inst">If you only use a colour, there is no need to use the backup colour in the next card</p>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-md-4"><sup><small><i class="fas fa-asterisk text-danger"></i></small></sup> Select a Colour or Type a property</label>
+                                    <div class="col-md-8">
+                                        <input type="text" class="form-control required colour-picker" name="top_banner_background" id="top_banner_background" data-defaultvalue="<?php echo STYLE_DEFAULTS['top_banner_background'];?>" value="<?php echo $styles['top_banner_background'];?>" >
+                                    </div>
+                                </div>
+                                <div class="form-group row custom-control custom-checkbox custom-control-right">
+                                    <input type="checkbox" class="custom-control-input defaultbox" data-section="top_banner_background" id="default_6" name="default_6" />
+                                    <label class="custom-control-label col-md-5" for="default_6">Use Default</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-md-6 p-3">
+                        <div class="card h-100 adjustcolour-card">
+                            <div class="card-header">
+                                <h4>Top Banner Background Colour Backup</h4>
+                            </div>
+                            <div class="card-body">
+                                <div class="form-group row h-35">
+                                    <p class="inst">Only enter HEX, RGB or RGBA colour codes here</p>
+                                    <p class="inst">This only needs to be adjusted if you used a CSS3 code previously and need a backup for older browsers</p>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-md-4"><sup><small>Select a Colour</label>
+                                    <div class="col-md-8">
+                                        <input type="text" class="form-control colour-picker" name="top_banner_background_colour" id="top_banner_background_colour" data-defaultvalue="<?php echo STYLE_DEFAULTS['top_banner_background_colour'];?>" value="<?php echo $styles['top_banner_background_colour'];?>" >
+                                    </div>
+                                </div>
+                                <div class="form-group row custom-control custom-checkbox custom-control-right">
+                                    <input type="checkbox" class="custom-control-input defaultbox" data-section="top_banner_background_colour" id="default_7" name="default_7" />
+                                    <label class="custom-control-label col-md-5" for="default_7">Use Default</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    <!------------------------------------------------------------------------------------------------------------------------------------------->
     <!-------------------------------------------------     Previews and Form Submission     ---------------------------------------------------------------->
     <!------------------------------------------------------------------------------------------------------------------------------------------->
             </div>
