@@ -13,6 +13,7 @@ div#page_container_preview{
     box-shadow: -5px 0 5px -5px rgb(50 50 50 / 30%), 5px 0 5px -5px rgb(50 50 50 / 30%);
 }
 div#page_header_preview{
+    background: <?php echo $top_banner_background_colour;?>;
     background: <?php echo $top_banner_background;?>;
     color: <?php echo $site_title_colour;?>;
     text-align:center;
