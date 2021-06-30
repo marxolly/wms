@@ -81,7 +81,22 @@
                         }
                         $('#required_date, #date').change(function(e){
                             $(this).valid();
-                        })
+                        });
+                        $('#asap').change(function(ev){
+                            if(this.checked)
+                            {
+                                $('div#required_date_holder').slideUp();
+                                $('#required_date')
+                                    .removeClass('required')
+                                    .val('');
+                                $('input#required_date_value').val('');
+                            }
+                            else
+                            {
+                                $('div#required_date_holder').slideDown();
+                                $('#required_date').addClass('required');
+                            }
+                        });
                     },
                     finisherAutocomplete: function(){
                         autoCompleter.productionJobFinisherAutoComplete( $('#finisher_name'), selectFinisherCallback, changeFinisherCallback);
