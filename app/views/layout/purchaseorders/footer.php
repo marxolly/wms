@@ -298,6 +298,11 @@
                     init: function(){
 
                     }
+                },
+                'view-purchase-orders':{
+                    init: function(){
+
+                    }
                 }
             }
             //console.log('current page: '+config.curPage);
