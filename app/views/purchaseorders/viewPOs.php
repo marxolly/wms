@@ -19,7 +19,7 @@
                             <th data-priority="1">PO Number</th>
                             <th>Date Created</th>
                             <th data-priority="1">Date Required</th>
-                            <th data-priority="1">Finisher</th>
+                            <th data-priority="1">Supplier</th>
                             <th data-priority="2">Job</th>
                             <th data-priority="4">Quote</th>
                             <th data-priority="1">Items</th>
