@@ -102,9 +102,10 @@
                     {
                         list($item_id, $qty, $description) = explode('|', $i);
                         $item_string .= "<div class='border-bottom border-secondary border-bottom-dashed mb-3 pb-2'>";
-                        $item_string .= "<span class='font-weight-bold'>$description</span> - $qty";
+                        $item_string .= "<span class='font-weight-bold'>".strip_tags($description)."</span> - $qty";
                         $item_string .= "</div";
                     }
+                    return $item_string;
                 }
             ),
             array(
