@@ -3,6 +3,7 @@ $finisher_id = (empty(Form::value('finisher_id')))? 0 : Form::value('finisher_id
 $fsg_job_id = (empty(Form::value('fsg_job_id')))? 0 : Form::value('fsg_job_id');
 $date = (empty(Form::value('date_value')))? time() : Form::value('date_value');
 $asap = !empty(Form::value('asap'));
+$ddd = ( $asap )? "none":"block";
 if( empty(Form::value('required_date')) )
 {
     $required_date_value = $required_date = "";
@@ -67,7 +68,7 @@ $dd = ( empty(Form::value('finisher_id')) )? "none":"block";
                                     <?php echo Form::displayError('date');?>
                                     <input type="hidden" name="date_value" id="date_value" value="<?php echo $date;?>" />
                                 </div>
-                                <div id="required_date_holder">
+                                <div id="required_date_holder" style="display:<?php echo $ddd;?>">
                                     <div class="form-group row">
                                         <label class="col-md-12"><sup><small><i class="fas fa-asterisk text-danger"></i></small></sup> Required</label>
                                         <div class="col-md-12 input-group">
