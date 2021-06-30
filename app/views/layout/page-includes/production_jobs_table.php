@@ -9,6 +9,7 @@
         <tr>
             <th data-priority="10001" nowwrap>Priority<br /><select id="priority_all" class="selectpicker" data-style="btn-outline-secondary btn-sm" data-width="fit"><option value="0">--</option><?php echo Utility::getPrioritySelect();?></select>&nbsp;<em><small>(all)</small></em></th>
             <th data-priority="1">Job Number</th>
+            <th data-priority="3">Quote Number</th>
             <th data-priority="1">Client</th>
             <th class="no-sort" data-priority="2" style="max-width: 250px;">Description</th>
             <th class="no-sort">Finisher(s)</th>
@@ -67,6 +68,9 @@
                         </p>
                     <?php endif;?>
                     <?php echo "<p>Created: ".date("d/m/Y", $job['created_date'])."</p>"; ?>
+                </td>
+                <td class="number">
+                    <?php echo $job['quote_number'];?>
                 </td>
                 <td data-label="Client">
                     <span style="font-size: larger">
