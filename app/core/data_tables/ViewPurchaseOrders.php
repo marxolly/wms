@@ -119,7 +119,7 @@
         );
         // Build the SQL query string from the request
         $limit = self::limit( $request );
-        $order = self::order( $request, self::$columns);
+        $order = self::order( $request, self::$columns, " ORDER BY id DESC ");
         $having = self::havingFilter( $request, self::$columns );
         
         $query = self::createQuery();

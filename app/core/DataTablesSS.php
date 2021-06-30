@@ -88,7 +88,7 @@ class DataTablesSS{
      *  @param  array $request Data sent to server by DataTables
      *  @return string SQL order by clause
      */
-    protected static function order ( $request, $columns )
+    protected static function order ( $request, $columns, $default = FALSE )
     {
         $order = '';
         if ( isset($request['order']) && count($request['order']) )
@@ -113,6 +113,10 @@ class DataTablesSS{
             if ( count( $orderBy ) ) {
                 $order = ' ORDER BY '.implode(', ', $orderBy);
             }
+        }
+        elseif($default)
+        {
+            $order = $default;
         }
         return $order;
     }
