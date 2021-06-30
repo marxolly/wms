@@ -63,7 +63,7 @@
                 'db' => 'finisher_name',
                 'dt' => 3,
                 'formatter' => function($d, $row){
-                    $details = "<p class='font-weight-bold'>$d";
+                    $details = "<p><span class='font-weight-bold'>$d</span>";
                     if(!empty($row['finisher_email'])) $details .= "<br>Email: ".$row['finisher_email'];
                     if(!empty($row['finisher_phone'])) $details .= "<br>Phone: ".$row['finisher_phone'];
                     $details .= "</p><p>";
