@@ -176,7 +176,7 @@ class FormController extends Controller {
         {
             Form::setError('date', 'The date for this purchase order is required');
         }
-        if(!$this->dataSubbed($required_date))
+        if(!$this->dataSubbed($required_date) && !isset($asap))
         {
             Form::setError('required_date', 'Please indicate when this is required');
         }
