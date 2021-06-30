@@ -66,16 +66,22 @@ $dd = ( empty(Form::value('finisher_id')) )? "none":"block";
                                     <?php echo Form::displayError('date');?>
                                     <input type="hidden" name="date_value" id="date_value" value="<?php echo $date;?>" />
                                 </div>
-                                <div class="form-group row">
-                                    <label class="col-md-12"><sup><small><i class="fas fa-asterisk text-danger"></i></small></sup> Required</label>
-                                    <div class="col-md-12 input-group">
-                                        <input type="text" class="required form-control" name="required_date" id="required_date" value="<?php echo $required_date;?>" />
-                                        <div class="input-group-append">
-                                            <span id="required_date_calendar" class="input-group-text"><i class="fad fa-calendar-alt"></i></span>
+                                <div id="required_date_holder">
+                                    <div class="form-group row">
+                                        <label class="col-md-12"><sup><small><i class="fas fa-asterisk text-danger"></i></small></sup> Required</label>
+                                        <div class="col-md-12 input-group">
+                                            <input type="text" class="required form-control" name="required_date" id="required_date" value="<?php echo $required_date;?>" />
+                                            <div class="input-group-append">
+                                                <span id="required_date_calendar" class="input-group-text"><i class="fad fa-calendar-alt"></i></span>
+                                            </div>
                                         </div>
+                                        <?php echo Form::displayError('required_date');?>
+                                        <input type="hidden" name="required_date_value" id="required_date_value" value="<?php echo $required_date_value;?>" />
                                     </div>
-                                    <?php echo Form::displayError('required_date');?>
-                                    <input type="hidden" name="required_date_value" id="required_date_value" value="<?php echo $required_date_value;?>" />
+                                </div>
+                                <div class="form-group row custom-control custom-checkbox custom-control-right">
+                                    <input class="custom-control-input" type="checkbox" id="asap" name="asap"  />
+                                    <label class="custom-control-label col-md-5" for="asap">Required ASAP</label>
                                 </div>
                                 <div class="form-group row">
                                     <label class="col-12">FSG Job No</label>
