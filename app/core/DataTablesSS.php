@@ -113,6 +113,10 @@ class DataTablesSS{
             if ( count( $orderBy ) ) {
                 $order = ' ORDER BY '.implode(', ', $orderBy);
             }
+            elseif($default)
+            {
+                $order = $default;
+            }
         }
         elseif($default)
         {
