@@ -301,7 +301,24 @@
                 },
                 'view-purchase-orders':{
                     init: function(){
-
+                        dataTable.init($('table#view_purchase_orders_table'), {
+                            "columnDefs": [
+                                { "searchable": false, "targets": [7] },
+                                { "orderable": false, "targets": [6,7] }
+                            ],
+                            "processing": true,
+                            "mark": true,
+                            "language": {
+                                processing: 'Fetching results and updating the display.....'
+                            },
+                            "serverSide": true,
+                            "ajax": {
+                                "url": "/ajaxfunctions/dataTablesViewPurchaseOrders",
+                                "data": function( d ){
+                                    d.clientID = $("#client_id").val();
+                                }
+                            }
+                        } );
                     }
                 }
             }

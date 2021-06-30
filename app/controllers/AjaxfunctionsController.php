@@ -24,6 +24,7 @@ class ajaxfunctionsController extends Controller
             'dataTablesClientsViewInventory',
             'dataTablesViewInventory',
             'dataTablesViewProducts',
+            'dataTablesViewPurchaseOrders',
             'deactivateUser',
             'deleteClientLocation',
             'deleteConfiguration',
@@ -103,6 +104,13 @@ class ajaxfunctionsController extends Controller
             $data['html'] .= "<p>There are no more POD items fo this order<br>It should now be showing in the current orders list</p>";
         }
 
+        $this->view->renderJson($data);
+    }
+
+    public function dataTablesViewPurchaseOrders()
+    {
+        $data = ViewPurchaseOrders::collectData($_GET );
+        //echo json_encode($data);
         $this->view->renderJson($data);
     }
 
