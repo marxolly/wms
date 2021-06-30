@@ -2,6 +2,7 @@
 $finisher_id = (empty(Form::value('finisher_id')))? 0 : Form::value('finisher_id');
 $fsg_job_id = (empty(Form::value('fsg_job_id')))? 0 : Form::value('fsg_job_id');
 $date = (empty(Form::value('date_value')))? time() : Form::value('date_value');
+$asap = !empty(Form::value('asap'));
 if( empty(Form::value('required_date')) )
 {
     $required_date_value = $required_date = "";
@@ -80,7 +81,7 @@ $dd = ( empty(Form::value('finisher_id')) )? "none":"block";
                                     </div>
                                 </div>
                                 <div class="form-group row custom-control custom-checkbox custom-control-right">
-                                    <input class="custom-control-input" type="checkbox" id="asap" name="asap"  />
+                                    <input class="custom-control-input" type="checkbox" id="asap" name="asap" <?php if($asap) echo "checked";?>  />
                                     <label class="custom-control-label col-md-5" for="asap">Required ASAP</label>
                                 </div>
                                 <div class="form-group row">
