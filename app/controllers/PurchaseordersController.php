@@ -72,6 +72,17 @@ class PurchaseOrdersController extends Controller
         ]);
     }
 
+    public function viewPurchaseOrders()
+    {
+        //render the page
+        Config::setJsConfig('curPage', "view-purchase-orders");
+        Config::set('curPage', "view-purchase-orders");
+        $this->view->renderWithLayouts(Config::get('VIEWS_PATH') . "layout/purchaseorders/", Config::get('VIEWS_PATH') . 'purchaseorders/viewPOs.php', [
+            'page_title'    => "View Purchase Orders",
+            'pht'           =>  ": View Purchase Orders",
+        ]);
+    }
+
 
     public function isAuthorized()
     {
